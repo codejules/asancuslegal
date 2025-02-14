@@ -1,0 +1,13 @@
+---
+import Section from "@/layouts/Section.astro";
+
+const title = `"En <span class="text-primary">Sancus Legal</span>, entendemos que cada caso es único. Por eso,
+            nuestros abogados especializados trabajan de cerca contigo
+            para desarrollar soluciones legales que se adapten a tus objetivos."`;
+---
+
+<Section>
+    <div class="py-10">
+        <h2 set:html={title} class="px-8 text-center text-xl md:text-2xl" />
+    </div>
+</Section>

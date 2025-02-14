@@ -1,30 +1,31 @@
 ---
 import Section from "@/layouts/Section.astro";
+
+const title = 'Porque cada caso merece atención personalizada';
+const paragraph = 'Garantizamos transparencia y comunicación constante durante todo el proceso legal.';
+const email = 'info@asancuslegal.com';
 ---
 
 <Section>
-    <div class="relative lg:flex lg:h-lvh bg-primary">
+    <div class="relative flex min-h-lvh bg-primary">
         <div
-            class="relative z-10 flex h-lvh flex-col gap-8 items-left justify-center px-4 text-left text-white bg-center bg-cover lg:w-1/2 lg:bg-navy-900 lg:px-12"
+            class="relative z-10 flex flex-col justify-center gap-8 p-4 text-white lg:w-1/2 lg:bg-navy-900 lg:p-12"
         >
-            <h1 class="text-xl font-bold md:text-4xl">
-                Porque cada caso merece atención personalizada
+            <h1 class="text-2xl font-bold md:text-4xl">
+                {title}
             </h1>
             <p>
-                Garantizamos transparencia y comunicación constante durante todo
-                el proceso legal.
+                {paragraph}
             </p>
-            <button
-                class="rounded-lg px-8 py-3 border border-white w-full md:w-fit"
-            >
-                info@asancuslegal.com
+            <button class="w-full rounded-lg border px-8 py-3 md:w-fit">
+                {email}
             </button>
         </div>
 
         <div class="absolute inset-0 lg:relative lg:w-1/2">
-            <div class="absolute inset-0 bg-black opacity-40 lg:block"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
             <div
-                class="h-full w-full bg-[url(/src/assets/img/hero.webp)] bg-center bg-cover"
+                class="h-full bg-[url(/src/assets/img/hero.webp)] bg-cover bg-center"
             >
             </div>
         </div>
