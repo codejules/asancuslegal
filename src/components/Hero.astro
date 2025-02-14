@@ -1,0 +1,32 @@
+---
+import Section from "@/layouts/Section.astro";
+---
+
+<Section>
+    <div class="relative lg:flex lg:h-lvh bg-primary">
+        <div
+            class="relative z-10 flex h-lvh flex-col gap-8 items-left justify-center px-4 text-left text-white bg-center bg-cover lg:w-1/2 lg:bg-navy-900 lg:px-12"
+        >
+            <h1 class="text-xl font-bold md:text-4xl">
+                Porque cada caso merece atención personalizada
+            </h1>
+            <p>
+                Garantizamos transparencia y comunicación constante durante todo
+                el proceso legal.
+            </p>
+            <button
+                class="rounded-lg px-8 py-3 border border-white w-full md:w-fit"
+            >
+                info@asancuslegal.com
+            </button>
+        </div>
+
+        <div class="absolute inset-0 lg:relative lg:w-1/2">
+            <div class="absolute inset-0 bg-black opacity-40 lg:block"></div>
+            <div
+                class="h-full w-full bg-[url(/src/assets/img/hero.webp)] bg-center bg-cover"
+            >
+            </div>
+        </div>
+    </div>
+</Section>
