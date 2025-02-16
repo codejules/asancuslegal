@@ -9,7 +9,7 @@ const NAV = [
 ---
 
 <header>
-    <nav id="nav-bar" class="fixed top-0 start-0 z-20 w-full bg-white">
+    <nav id="nav-bar" class="bg-white fixed top-0 start-0 z-20 w-full">
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
@@ -40,7 +40,7 @@ const NAV = [
                     id="menu-button"
                     data-collapse-toggle="navbar-sticky"
                     type="button"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 md:hidden"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-slate-500 md:hidden"
                     aria-controls="navbar-sticky"
                     aria-expanded="false"
                 >
@@ -48,27 +48,27 @@ const NAV = [
                     <Burger class="size-5" />
                 </button>
             </div>
-        </div>
-        <div
-            class="border-t-2 hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
-            id="navbar-sticky"
-        >
-            <ul
-                class="flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse"
+            <div
+                class="max-md:border-t-2 max-md:mt-2 hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
+                id="navbar-sticky"
             >
-                {
-                    NAV.map(({ text, href }) => (
-                        <li>
-                            <a
-                                href={href}
-                                class="block rounded-sm px-3 py-2 text-gray-900"
-                            >
-                                {text}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+                <ul
+                    class="flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse"
+                >
+                    {
+                        NAV.map(({ text, href }) => (
+                            <li>
+                                <a
+                                    href={href}
+                                    class="block rounded-sm px-3 py-2 text-gray-900"
+                                >
+                                    {text}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
