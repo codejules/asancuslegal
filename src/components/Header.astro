@@ -1,11 +1,14 @@
 ---
 import MenuBurger from "./MenuBurger.astro";
-import { NAV } from '@/types/nav';
-const email = 'info@asancuslegal.com';
+import { NAV } from "@/types/nav";
+const email = "info@asancuslegal.com";
 ---
 
 <header>
-    <nav id="nav-bar" class="bg-white fixed top-0 start-0 z-20 w-full">
+    <nav
+        id="nav-bar"
+        class="bg-white fixed lg:top-3 z-20 w-full max-w-screen-xl lg:mx-auto lg:left-0 lg:right-0 lg:rounded-xl"
+    >
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
@@ -22,9 +25,7 @@ const email = 'info@asancuslegal.com';
             <div
                 class="items-center justify-between hidden w-full lg:flex lg:w-auto"
             >
-                <ul
-                    class="flex flex-row gap-10"
-                >
+                <ul class="flex flex-row gap-10">
                     {
                         NAV.map(({ title, url }) => (
                             <li>
@@ -45,9 +46,7 @@ const email = 'info@asancuslegal.com';
                     type="button"
                     class="rounded-lg bg-primary px-4 py-2 text-sm text-white"
                 >
-                    <a href=`mailto:${email}`
-                        >{email}</a
-                    >
+                    <a href=`mailto:${email}`>{email}</a>
                 </button>
             </div>
             <MenuBurger />
