@@ -1,6 +1,7 @@
 ---
 import MenuBurger from "./MenuBurger.astro";
 import { NAV } from '@/types/nav';
+const email = 'info@asancuslegal.com';
 ---
 
 <header>
@@ -44,8 +45,8 @@ import { NAV } from '@/types/nav';
                     type="button"
                     class="rounded-lg bg-primary px-4 py-2 text-sm text-white"
                 >
-                    <a href="mailto:info@asancuslegal.com"
-                        >info@asancuslegal.com</a
+                    <a href=`mailto:${email}`
+                        >{email}</a
                     >
                 </button>
             </div>

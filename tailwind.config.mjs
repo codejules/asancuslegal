@@ -6,7 +6,6 @@ export default {
 			backgroundImage: {
 				'hero': "url('/src/assets/img/hero.webp')",
 			},
-
 		}
 	},
 	plugins: [],
