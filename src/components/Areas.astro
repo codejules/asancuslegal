@@ -3,26 +3,28 @@ import Section from "@/layouts/Section.astro";
 
 const ACCORDIONS = [
     {
-        number: "1",
+        number: "01",
         title: "Área Fiscal",
         image: "/src/assets/img/area-fiscal.webp",
         description:
             "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
     },
     {
-        number: "2",
+        number: "02",
         title: "Área Mercancil",
         image: "/src/assets/img/area-mercantil.webp",
         description:
             "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
     },
 ];
+
+const title = 'Nuestras principales Áreas';
 ---
 
 <Section>
     <div class="bg-primary py-10">
-        <h2 class="text-white text-center text-xl md:text-2xl">
-            Nuestras principales Áreas
+        <h2 class="text-white text-center text-2xl md:text-4xl">
+            {title}
         </h2>
 
         <div
@@ -40,7 +42,7 @@ const ACCORDIONS = [
                             aria-expanded="true"
                             aria-controls={`accordion-collapse-body-${number}`}
                         >
-                            <span class="text-white">{number}</span>
+                            <span class="text-slate-400 text-sm">{number}</span>
                             <p class="text-white">{title}</p>
                         </button>
                     </h2>

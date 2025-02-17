@@ -1,0 +1,102 @@
+---
+const NAV = [
+    {
+        title: "Servicios",
+        url: "/areas",
+    },
+    {
+        title: "Soluciones",
+        url: "/soluciones",
+    },
+    {
+        title: "Contacto",
+        url: "/contacto",
+    },
+];
+
+const BURGER_LINE_CLASS =
+    "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
+const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
+            lg:flex-row lg:mt-0 lg:border-0`;
+---
+
+<menu-burguer class="lg:hidden">
+    <div>
+        <ul id="nav-list" class={NAV_LIST}>
+            {
+                NAV.map(({ title, url }) => (
+                    <li id="nav-item" class="border-b-[1px] border-b-gray-400">
+                        <a
+                            href={url}
+                            id="nav-link"
+                            class=" hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
+                            py-2 px-3 lg:p-0 text-slate-600"
+                        >
+                            {title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <button id="nav-burguer" class="block" aria-label="Menu Burger">
+            {[...Array(3)].map(() => <span class={BURGER_LINE_CLASS} />)}
+        </button>
+    </div>
+</menu-burguer>
+
+<script>
+    class MenuBurguer extends HTMLElement {
+        connectedCallback() {
+            const hamburger = document.querySelector("#nav-burguer");
+            const navList = document.querySelector("#nav-list");
+
+            if (hamburger && navList) {
+                hamburger.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    hamburger.classList.toggle("active");
+                    navList.classList.toggle("active");
+                });
+
+                document.addEventListener("click", (e) => {
+                    if (
+                        !hamburger.contains(e.target as Node) &&
+                        !navList.contains(e.target as Node)
+                    ) {
+                        hamburger.classList.remove("active");
+                        navList.classList.remove("active");
+                    }
+                });
+            }
+        }
+    }
+
+    customElements.define("menu-burguer", MenuBurguer);
+</script>
+
+<style>
+    @media (max-width: 1023px) {
+        .nav-burguer-line {
+            margin: 5px 0;
+        }
+        #nav-list {
+            height: calc(50vh - 70px);
+        }
+
+        #nav-list.active {
+            top: 3.6rem;
+        }
+
+        #nav-burguer.active .nav-burguer-line:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        #nav-burguer.active .nav-burguer-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        #nav-burguer.active .nav-burguer-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+</style>

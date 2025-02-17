@@ -1,10 +1,19 @@
 ---
-import Burger from "@/icons/Burger.astro";
+import MenuBurger from "./MenuBurger.astro";
 
 const NAV = [
-    { text: "Nosotros", href: "#" },
-    { text: "Servicios", href: "#" },
-    { text: "Contacto", href: "#" },
+    {
+        title: "Servicios",
+        url: "/areas",
+    },
+    {
+        title: "Soluciones",
+        url: "/soluciones",
+    },
+    {
+        title: "Contacto",
+        url: "/contacto",
+    },
 ];
 ---
 
@@ -23,10 +32,28 @@ const NAV = [
                     alt="Flowbite Logo"
                 />
             </a>
-
             <div
-                class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+                class="items-center justify-between hidden w-full lg:flex lg:w-auto"
             >
+                <ul
+                    class="flex flex-row gap-10"
+                >
+                    {
+                        NAV.map(({ title, url }) => (
+                            <li>
+                                <a
+                                    href={url}
+                                    class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
+                            py-2 px-3 lg:p-0 text-black lg:hover:bg-transparent"
+                                >
+                                    {title}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button
                     type="button"
                     class="rounded-lg bg-primary px-4 py-2 text-sm text-white"
@@ -35,65 +62,8 @@ const NAV = [
                         >info@asancuslegal.com</a
                     >
                 </button>
-
-                <button
-                    id="menu-button"
-                    data-collapse-toggle="navbar-sticky"
-                    type="button"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-slate-500 md:hidden"
-                    aria-controls="navbar-sticky"
-                    aria-expanded="false"
-                >
-                    <span class="sr-only">Open main menu</span>
-                    <Burger class="size-5" />
-                </button>
             </div>
-            <div
-                class="max-md:border-t-2 max-md:mt-2 hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
-                id="navbar-sticky"
-            >
-                <ul
-                    class="flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse"
-                >
-                    {
-                        NAV.map(({ text, href }) => (
-                            <li>
-                                <a
-                                    href={href}
-                                    class="block rounded-sm px-3 py-2 text-gray-900"
-                                >
-                                    {text}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
+            <MenuBurger />
         </div>
     </nav>
 </header>
-
-<script>
-    const burger = document.querySelector("#navbar-sticky");
-    const menuButton = document.querySelector("#menu-button");
-
-    if (burger && menuButton) {
-        document.addEventListener("click", (e) => {
-            if (
-                !burger.contains(e.target as Node) &&
-                !menuButton.contains(e.target as Node)
-            ) {
-                menuButton?.addEventListener("click", () => {
-                    const isExpanded =
-                        menuButton.getAttribute("aria-expanded") === "true";
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        (!isExpanded).toString(),
-                    );
-                    burger?.classList.toggle("hidden");
-                });
-                burger.classList.add("hidden");
-            }
-        });
-    }
-</script>
