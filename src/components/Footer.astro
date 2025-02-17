@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+const copyright = `©${year} Asancus Legal. Todos los derechos reservados`;
+
+const LINKS = [
+    {
+        text: "Aviso Legal",
+    },
+    {
+        text: "Política de Privacidad",
+    },
+    {
+        text: "Contacto",
+    },
+];
+---
+
+<footer class="border-t-1 border-slate-300 mx-4">
+    <div class="py-4 flex flex-col gap-4 justify-center items-center">
+        <ul class="flex flex-wrap items-center mt-3 text-sm">
+            {
+                LINKS.map(({ text }) => (
+                    <>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">
+                                {text}
+                            </a>
+                        </li>
+                    </>
+                ))
+            }
+        </ul>
+        <div class="flex flex-row gap-4 justify-center items-center">
+            <span class="text-[12px] text-gray-400">
+                {copyright}
+            </span>
+        </div>
+    </div>
+</footer>
