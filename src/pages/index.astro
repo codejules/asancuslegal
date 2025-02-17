@@ -1,5 +1,5 @@
 ---
-import Areas from "@/components/Areas.astro";
+import Areas from "@/components/Areas.jsx";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import Hero from "@/components/Hero.astro";
@@ -14,7 +14,7 @@ import "@/styles/global.css";
 	<main>
 		<Hero />
 		<Info />
-		<Areas />
+		<Areas client:visible />
 		<Soluciones />
 	</main>
 	<Footer />
