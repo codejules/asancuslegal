@@ -19,10 +19,10 @@ export default function AccordionSection() {
           />
           <div className="flex flex-col gap-4">
             {ACCORDIONS.map(({ number, title, description }, index) => (
-              <div key={number} className={`flex flex-col ${activeIndex === index ? 'gap-4' : ''}`}>
+              <div key={number} className={`flex flex-col ${activeIndex === index ? 'gap-4' : ''} border-t-1 lg:border-t-white `}>
                 <button
                   type="button"
-                  className="hover:cursor-pointer dark:bg-primary border-t-1 lg:border-t-white pt-5 flex items-center gap-3 justify-start w-full font-medium"
+                  className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full font-medium"
                   onClick={() => setActiveIndex(index)}
                 >
                   <span className="text-slate-400 text-sm">{number}</span>
