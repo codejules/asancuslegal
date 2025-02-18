@@ -28,13 +28,14 @@ import { SERVICES } from "@/types/services";
                             <div
                                 class={`rounded-xl group relative h-[550px] w-auto lg:w-96  bg-cover bg-center`}
                                 style={`background-image: url(${background})`}
+                                tabindex="0"
                             >
                                 <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
 
                                 <p class={`text-[11px] p-3 ${titleColor}`}>
                                     {position}
                                 </p>
-                                <div class="transition-height absolute bottom-0 h-24 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96">
+                                <div class="transition-height absolute bottom-0 h-24 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
                                     <h2 class={`text-3xl ${colorDescription}`}>
                                         {title}
                                     </h2>
