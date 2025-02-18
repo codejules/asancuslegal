@@ -6,14 +6,18 @@ export type Nav = {
 export const NAV: Nav[] = [
     {
         title: "Servicios",
-        url: "/areas",
+        url: "#areas",
     },
     {
         title: "Soluciones",
-        url: "/soluciones",
+        url: "#soluciones",
+    },
+    {
+        title: "Equipo",
+        url: "#equipo",
     },
     {
         title: "Contacto",
-        url: "/contacto",
+        url: "#contacto",
     },
 ];

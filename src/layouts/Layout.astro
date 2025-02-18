@@ -21,10 +21,19 @@ import { ClientRouter } from "astro:transitions";
 </html>
 
 <style is:global>
-	html,
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100vh;
+	}
+	
+	@media (reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>

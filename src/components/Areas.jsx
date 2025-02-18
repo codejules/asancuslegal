@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks";
-
 import { ACCORDIONS } from "@/types/accordion";
 
 const title = "Nuestras principales Áreas";
@@ -8,7 +7,7 @@ export default function AccordionSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-primary">
+    <div id="areas" className="bg-primary">
       <div className="py-10 lg:py-20 max-w-screen-xl mx-auto px-4">
         <h2 className="text-xl md:text-2xl bg-gray-300 font-light px-6 py-3 rounded-full w-fit">{title}</h2>
         <div className="pt-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
