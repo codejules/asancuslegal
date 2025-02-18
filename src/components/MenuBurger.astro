@@ -1,5 +1,5 @@
 ---
-import { NAV } from '@/types/nav';
+import { NAV } from "@/types/nav";
 
 const BURGER_LINE_CLASS =
     "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
@@ -43,6 +43,12 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
                     e.stopPropagation();
                     hamburger.classList.toggle("active");
                     navList.classList.toggle("active");
+                });
+
+                navList.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    hamburger.classList.remove("active");
+                    navList.classList.remove("active");
                 });
 
                 document.addEventListener("click", (e) => {
