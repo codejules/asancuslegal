@@ -9,7 +9,7 @@ export type Services = {
 
 export const SERVICES: Services[] = [
     {
-        background: "src/assets/img/sandra-serra-asancus-legal.webp",
+        background: "/assets/img/sandra-serra-asancus-legal.webp",
         position: "01",
         title: "Sandra Serra",
         titleColor: "text-black",
@@ -22,7 +22,7 @@ export const SERVICES: Services[] = [
         `,
     },
     {
-        background: "src/assets/img/alejandro-toledo-asancus-legal.webp",
+        background: "/assets/img/alejandro-toledo-asancus-legal.webp",
         position: "02",
         title: "Alejandro Toledo",
         titleColor: "text-black",
