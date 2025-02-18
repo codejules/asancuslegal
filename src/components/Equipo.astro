@@ -4,12 +4,15 @@ import { SERVICES } from "@/types/services";
 ---
 
 <Section>
-    <div class="grid">
-        <h1 class="py-10 lg:py-20 text-center text-2xl lg:text-3xl px-5">
-            Equipo
-        </h1>
+    <div class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5">
+        <div class="flex flex-col lg:flex-row justify-between gap-4">
+            <h1 class="w-fit text-xl lg:text-2xl bg-gray-300 font-light px-6 py-3 rounded-full">
+                Equipo Asancus Legal
+            </h1>
+            <h2 class="text-xl lg:text-4xl">Lorem ipsum dolor sit amet consectetur.</h2>
+        </div>
         <div
-            class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-3 justify-center max-w-screen-xl mx-auto pb-5"
+            class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:justify-evenly max-lg:gap-5 pb-5"
         >
             {
                 SERVICES.map(
@@ -23,7 +26,7 @@ import { SERVICES } from "@/types/services";
                     }) => {
                         return (
                             <div
-                                class={`rounded-xl group relative h-[550px] w-96 bg-cover bg-center`}
+                                class={`rounded-xl group relative h-[550px] w-auto lg:w-96  bg-cover bg-center`}
                                 style={`background-image: url(${background})`}
                             >
                                 <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
@@ -32,15 +35,13 @@ import { SERVICES } from "@/types/services";
                                     {position}
                                 </p>
                                 <div class="transition-height absolute bottom-0 h-24 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96">
-                                    <h2
-                                        class={`text-3xl ${colorDescription}`}
-                                    >
+                                    <h2 class={`text-3xl ${colorDescription}`}>
                                         {title}
                                     </h2>
                                     <p
                                         class={`mt-16 text-sm ${colorDescription}`}
                                         set:html={description}
-                                    ></p>
+                                    />
                                 </div>
                             </div>
                         );
