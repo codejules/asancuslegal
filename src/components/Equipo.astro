@@ -1,0 +1,52 @@
+---
+import Section from "@/layouts/Section.astro";
+import { SERVICES } from "@/types/services";
+---
+
+<Section>
+    <div class="grid">
+        <h1 class="py-10 lg:py-20 text-center text-2xl lg:text-3xl px-5">
+            Equipo
+        </h1>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-3 justify-center max-w-screen-xl mx-auto pb-5"
+        >
+            {
+                SERVICES.map(
+                    ({
+                        background,
+                        position,
+                        title,
+                        titleColor,
+                        description,
+                        colorDescription,
+                    }) => {
+                        return (
+                            <div
+                                class={`rounded-xl group relative h-[550px] w-96 bg-cover bg-center`}
+                                style={`background-image: url(${background})`}
+                            >
+                                <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
+
+                                <p class={`text-[11px] p-3 ${titleColor}`}>
+                                    {position}
+                                </p>
+                                <div class="transition-height absolute bottom-0 h-24 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96">
+                                    <h2
+                                        class={`text-3xl ${colorDescription}`}
+                                    >
+                                        {title}
+                                    </h2>
+                                    <p
+                                        class={`mt-16 text-sm ${colorDescription}`}
+                                        set:html={description}
+                                    ></p>
+                                </div>
+                            </div>
+                        );
+                    },
+                )
+            }
+        </div>
+    </div>
+</Section>
