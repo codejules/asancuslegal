@@ -10,7 +10,7 @@ export type Services = {
 export const SERVICES: Services[] = [
     {
         background: "/assets/img/sandra-serra-asancus-legal.webp",
-        position: "01",
+        position: "Área Mercantil",
         title: "Sandra Serra",
         titleColor: "text-black",
         colorDescription: "text-white",
@@ -23,7 +23,7 @@ export const SERVICES: Services[] = [
     },
     {
         background: "/assets/img/alejandro-toledo-asancus-legal.webp",
-        position: "02",
+        position: "Área Fiscal",
         title: "Alejandro Toledo",
         titleColor: "text-black",
         colorDescription: "text-white",
