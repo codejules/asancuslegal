@@ -2,16 +2,20 @@
 import Section from "@/layouts/Section.astro";
 import { SERVICES } from "@/types/services";
 
-const title = "Equipo Asancus Legal"
+const title = "Equipo Asancus Legal";
 ---
 
 <Section id="equipo">
-    <div class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5">
-        <div class="flex flex-col lg:flex-row justify-between gap-4">
-            <h1 class="w-fit text-xs bg-gray-300 px-4 py-2 rounded-full uppercase self-start lg:self-center">
-                Equipo Asancus Legal
+    <div
+        class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
+    >
+        <div class="flex flex-col lg:flex-row justify-between gap-4 items-start lg:items-center">
+            <h1 class="badge">
+                {title}
             </h1>
-            <h2 class="text-xl lg:text-4xl">Lorem ipsum dolor sit amet consectetur.</h2>
+            <h2 class="text-xl lg:text-4xl">
+                Lorem ipsum dolor sit amet consectetur.
+            </h2>
         </div>
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:justify-evenly max-lg:gap-5 pb-5"
