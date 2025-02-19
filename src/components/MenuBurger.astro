@@ -11,18 +11,42 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
     <div>
         <ul id="nav-list" class={NAV_LIST}>
             {
-                NAV.map(({ title, url }) => (
-                    <li id="nav-item" class="border-b-[1px] border-b-gray-400">
-                        <a
-                            href={url}
-                            id="nav-link"
-                            class=" hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
-                            py-2 px-3 lg:p-0 text-slate-600"
+                NAV.map(
+                    ({
+                        id,
+                        title,
+                        url,
+                        target,
+                        show,
+                        controls,
+                        placement,
+                        edge,
+                        offset,
+                    }) => (
+                        <li
+                            id="nav-item"
+                            class="border-b-[1px] border-b-gray-400"
                         >
-                            {title}
-                        </a>
-                    </li>
-                ))
+                            <a
+                                id={id ? id : ""}
+                                data-drawer-target={target ? target : ""}
+                                data-drawer-show={show ? show : ""}
+                                data-drawer-placement={
+                                    placement ? placement : ""
+                                }
+                                data-drawer-edge={edge ? edge : ""}
+                                data-drawer-edge-offset={offset ? offset : ""}
+                                aria-controls={controls ? controls : ""}
+                                href={url}
+                                id="nav-link"
+                                class=" hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
+                            py-2 px-3 lg:p-0 text-slate-600"
+                            >
+                                {title}
+                            </a>
+                        </li>
+                    ),
+                )
             }
         </ul>
 

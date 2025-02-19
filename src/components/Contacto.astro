@@ -1,0 +1,105 @@
+---
+import Section from "@/layouts/Section.astro";
+---
+
+<Section>
+    <div>
+        <div
+            id="drawer-swipe"
+            class="fixed z-40 max-w-screen-xl mx-2 xl:mx-auto overflow-y-auto rounded-t-lg bg-gray-800 transition-transform left-0 right-0 translate-y-full bottom-8"
+            tabindex="-1"
+            aria-labelledby="drawer-swipe-label"
+        >
+            <div
+                class="p-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700"
+                data-drawer-toggle="drawer-swipe"
+            >
+                <span
+                    class="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"
+                ></span>
+            </div>
+            <div class="max-w-screen-sm mx-auto">
+                <form class="my-10 max-xl:px-2">
+                    <div class="mb-6">
+                        <label
+                            for="email"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Your email</label
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="name@company.com"
+                            required
+                        />
+                    </div>
+                    <div class="mb-6">
+                        <label
+                            for="subject"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Subject</label
+                        >
+                        <input
+                            type="text"
+                            id="subject"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Let us know how we can help you"
+                            required
+                        />
+                    </div>
+                    <div class="mb-6">
+                        <label
+                            for="message"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Your message</label
+                        >
+                        <textarea
+                            id="message"
+                            rows="4"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Your message..."></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block"
+                        >Send message</button
+                    >
+                </form>
+            </div>
+        </div>
+    </div>
+</Section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const drawerToggle = document.querySelector(
+            "[data-drawer-toggle='drawer-swipe']",
+        );
+        const drawer = document.getElementById("drawer-swipe");
+        const contactoId = document.getElementById("contacto");
+
+        if (drawer && contactoId) {
+            document.addEventListener("click", () => {
+                drawer.classList.remove("bottom-8");
+                drawer.classList.add("bottom-0");
+            });
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (
+                        mutation.type === "attributes" &&
+                        document.body.classList.contains("overflow-hidden")
+                    ) {
+                        document.body.classList.remove("overflow-hidden");
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                attributes: true,
+                attributeFilter: ["class"],
+            });
+        }
+    });
+</script>
