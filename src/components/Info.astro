@@ -1,13 +1,16 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const title = `"En <span class="text-primary">Sancus Legal</span>, entendemos que cada caso es único. Por eso,
-            nuestros abogados especializados trabajan de cerca contigo
-            para desarrollar soluciones legales que se adapten a tus objetivos."`;
+const title = `En <span class="text-primary font-semibold">Asancus Legal</span>, entendemos que cada caso es único.`;
+const subtitle =
+    "Por eso, nuestros abogados especializados trabajan de cerca contigo para desarrollar soluciones legales que se adapten a tus objetivos.";
 ---
 
 <Section>
     <div class="py-10 lg:py-20 max-w-screen-md md:mx-auto">
-        <h2 set:html={title} class="px-8 md:px-28 text-center text-xl md:text-2xl" />
+        <div class="px-8 md:px-22 text-pretty text-center font-mono md:text-xl lg:text-2xl flex flex-col gap-3">
+            <h1 set:html={title} />
+            <h2>{subtitle}</h2>
+        </div>
     </div>
 </Section>
