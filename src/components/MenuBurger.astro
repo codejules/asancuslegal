@@ -1,5 +1,6 @@
 ---
 import { NAV } from "@/types/nav";
+import NavLink from "./NavLink.astro";
 
 const BURGER_LINE_CLASS =
     "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
@@ -11,42 +12,14 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
     <div>
         <ul id="nav-list" class={NAV_LIST}>
             {
-                NAV.map(
-                    ({
-                        id,
-                        title,
-                        url,
-                        target,
-                        show,
-                        controls,
-                        placement,
-                        edge,
-                        offset,
-                    }) => (
-                        <li
-                            id="nav-item"
-                            class="border-b-[1px] border-b-gray-400"
-                        >
-                            <a
-                                id={id ? id : ""}
-                                data-drawer-target={target ? target : ""}
-                                data-drawer-show={show ? show : ""}
-                                data-drawer-placement={
-                                    placement ? placement : ""
-                                }
-                                data-drawer-edge={edge ? edge : ""}
-                                data-drawer-edge-offset={offset ? offset : ""}
-                                aria-controls={controls ? controls : ""}
-                                href={url}
-                                id="nav-link"
-                                class=" hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
-                            py-2 px-3 lg:p-0 text-slate-600"
-                            >
-                                {title}
-                            </a>
-                        </li>
-                    ),
-                )
+                NAV.map((link) => (
+                    <li id="nav-item" class="border-b-[1px] border-b-gray-400">
+                        <NavLink
+                            {...link}
+                            class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600"
+                        />
+                    </li>
+                ))
             }
         </ul>
 
@@ -87,7 +60,6 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
             }
         }
     }
-
     customElements.define("menu-burguer", MenuBurguer);
 </script>
 

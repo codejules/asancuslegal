@@ -1,6 +1,8 @@
 ---
 import MenuBurger from "./MenuBurger.astro";
 import { NAV } from "@/types/nav";
+import NavLink from "./NavLink.astro";
+
 const email = "info@asancuslegal.com";
 ---
 
@@ -24,22 +26,12 @@ const email = "info@asancuslegal.com";
             >
                 <ul class="flex flex-row gap-10">
                     {
-                        NAV.map(({ id, title, url, target, show, controls, placement, edge, offset }) => (
+                        NAV.map((link) => (
                             <li>
-                                <a
-                                    id={id ? id : ''}
-                                    data-drawer-target={target ? target : ''}
-                                    data-drawer-show={show ? show : ''}
-                                    data-drawer-placement={placement ? placement : ''}
-                                    data-drawer-edge={edge ? edge : ''}
-                                    data-drawer-edge-offset={offset ? offset : ''}
-                                    aria-controls={controls ? controls : ''}
-                                    href={url}
-                                    class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
-                            py-2 px-3 lg:p-0  lg:hover:bg-transparent"
-                                >
-                                    {title}
-                                </a>
+                                <NavLink
+                                    {...link}
+                                    class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent"
+                                />
                             </li>
                         ))
                     }

@@ -24,7 +24,7 @@ export const NAV: Nav[] = [
         url: "#equipo",
     },
     {
-        id: 'contacto',
+        id: 'contactoNav',
         title: "Contacto",
         url: "#contacto",
         target: "drawer-swipe",
