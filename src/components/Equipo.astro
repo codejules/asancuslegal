@@ -39,17 +39,17 @@ const title = "Equipo Asancus Legal";
                                 style={`background-image: url(${background})`}
                                 tabindex="0"
                             >
-                                <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
+                                <div class="absolute inset-0 bg-black opacity-20 group-focus:opacity-50 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
 
                                 <p class={`text-[11px] p-3 ${titleColor}`}>
                                     {position}
                                 </p>
                                 <div class="transition-height absolute bottom-0 h-36 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
-                                    <h2 class={`text-3xl ${colorDescription}`}>
+                                    <h2 class={`group-hover:mb-3 group-focus:mb-3 text-3xl ${colorDescription}`}>
                                         {title}
                                     </h2>
                                     <div
-                                        class={`mt-52 group-hover:mt-0 flex flex-col gap-3 ${colorDescription}`}
+                                        class={`mt-36 lg:mt-52 group-hover:mt-0 group-focus:mt-0 flex flex-col gap-5 ${colorDescription}`}
                                     >
                                         {descriptions
                                             .slice(0, 3)
