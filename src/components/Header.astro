@@ -12,10 +12,7 @@ const email = "info@asancuslegal.com";
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
-            <a
-                href="#"
-                class="flex items-center space-x-3 rtl:space-x-reverse"
-            >
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img
                     src="https://flowbite.com/docs/images/logo.svg"
                     class="h-8"
@@ -32,7 +29,7 @@ const email = "info@asancuslegal.com";
                                 <a
                                     href={url}
                                     class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block 
-                            py-2 px-3 lg:p-0 text-black lg:hover:bg-transparent"
+                            py-2 px-3 lg:p-0  lg:hover:bg-transparent"
                                 >
                                     {title}
                                 </a>
@@ -43,7 +40,7 @@ const email = "info@asancuslegal.com";
             </div>
             <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button
-                type="button"
+                    type="button"
                     class="cursor-pointer rounded-lg bg-primary px-4 py-2 text-sm text-white hover:bg-white hover:border-slate-300 border-1 hover:text-primary hover:scale-105 transition duration-300 ease-in"
                 >
                     <a href=`mailto:${email}`>{email}</a>
@@ -53,3 +50,23 @@ const email = "info@asancuslegal.com";
         </div>
     </nav>
 </header>
+
+<style>
+    @media (min-width: 1280px) {
+        header > nav {
+            animation: blur linear both 5s;
+            animation-timeline: scroll();
+            animation-range: 0 300px;
+            width: 1280px;
+        }
+
+        @keyframes blur {
+            to {
+                backdrop-filter: blur(20px);
+                background-color: transparent;
+                border: 1px solid black;
+                width: 1024px;
+            }
+        }
+    }
+</style>
