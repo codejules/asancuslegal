@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import SERVICIOS from "@/data/servicios.json"; // Asegúrate de que la ruta sea correcta
+import SERVICIOS from "@/data/servicios.json";
 
 const title = "Nuestras principales Áreas";
 

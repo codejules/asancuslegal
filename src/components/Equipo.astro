@@ -1,6 +1,6 @@
 ---
 import Section from "@/layouts/Section.astro";
-import { SERVICES } from "@/types/services";
+import EQUIPO from "@/data/equipo.json";
 
 const title = "Equipo Asancus Legal";
 ---
@@ -9,30 +9,33 @@ const title = "Equipo Asancus Legal";
     <div
         class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
     >
-        <div class="flex flex-col lg:flex-row justify-between gap-4 items-start lg:items-center">
+        <div
+            class="flex flex-col lg:flex-row justify-between gap-4 items-start lg:items-center"
+        >
             <h1 class="badge">
                 {title}
             </h1>
             <h2 class="text-xl lg:text-3xl font-light text-gray-600">
-               Tu problema legal, nuestra prioridad
+                Tu problema legal, nuestra prioridad
             </h2>
         </div>
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:justify-evenly max-lg:gap-5 pb-5"
         >
             {
-                SERVICES.map(
+                EQUIPO.map(
                     ({
                         background,
                         position,
                         title,
                         titleColor,
-                        description,
+                        descriptions,
                         colorDescription,
+                        email,
                     }) => {
                         return (
                             <div
-                                class={`rounded-xl group relative h-[550px] w-auto lg:w-96  bg-cover bg-center`}
+                                class={`rounded-xl group relative h-[550px] w-auto lg:w-96 bg-cover bg-center`}
                                 style={`background-image: url(${background})`}
                                 tabindex="0"
                             >
@@ -41,14 +44,29 @@ const title = "Equipo Asancus Legal";
                                 <p class={`text-[11px] p-3 ${titleColor}`}>
                                     {position}
                                 </p>
-                                <div class="transition-height absolute bottom-0 h-24 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
+                                <div class="transition-height absolute bottom-0 h-36 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
                                     <h2 class={`text-3xl ${colorDescription}`}>
                                         {title}
                                     </h2>
-                                    <p
-                                        class={`mt-16 text-sm ${colorDescription}`}
-                                        set:html={description}
-                                    />
+                                    <div
+                                        class={`mt-52 group-hover:mt-0 flex flex-col gap-3 ${colorDescription}`}
+                                    >
+                                        {descriptions
+                                            .slice(0, 3)
+                                            .map((description) => (
+                                                <p class="text-white text-xs lg:text-sm">
+                                                    {description}
+                                                </p>
+                                            ))}
+                                        <button class="w-fit cursor-pointer bg-gray-300 text-primary hover:text-white hover:scale-105 hover:bg-transparent hover:border-white hover:border-1 hover:transition hover:duration-300 hover:ease-in rounded-2xl px-2 py-1 font-light text-sm">
+                                            <a
+                                                href={`mailto:${email}`}
+                                                title={`Enviar email a: ${title}`}
+                                            >
+                                                {email}
+                                            </a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         );
