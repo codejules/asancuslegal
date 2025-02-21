@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { sendEmail } from "../../utils/email";
 
+export const prerender = false;
+
 export const POST: APIRoute = async ({ request, redirect }) => {
   // Get the form data submitted by the user on the home page
   const formData = await request.formData();
@@ -16,12 +18,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // Try to send the email using a `sendEmail` function we'll create next. Throw
   // an error if it fails.
   try {
-    const html = `
-    <h3>Nuevo mensaje de contacto de Asancus Legal</h3>
-    <p>De: ${to}</p>
-    <p>Asunto: ${subject}</p>
-    <p>Mensaje: ${message}</p>
-    `;
+    const html = `<div>${message}</div>`;
     await sendEmail({ to, subject, html });
   } catch (error) {
     throw new Error("Failed to send email");
