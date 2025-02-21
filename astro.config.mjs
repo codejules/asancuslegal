@@ -7,10 +7,10 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
   vite: {
     plugins: [tailwindcss()]
   },
-
   integrations: [preact()],
   adapter: netlify(),
 });
