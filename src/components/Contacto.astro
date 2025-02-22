@@ -1,5 +1,6 @@
 ---
 import Section from "@/layouts/Section.astro";
+import Form from "./Form.tsx";
 ---
 
 <Section>
@@ -19,63 +20,7 @@ import Section from "@/layouts/Section.astro";
                 ></span>
             </div>
             <div class="max-w-screen-sm mx-auto">
-                <form
-                    class="mb-10 max-xl:px-4"
-                    action="/actions/send-email"
-                    method="post"
-                >
-                    <h2 class="py-10 text-lg text-white text-center">
-                        Para más información, rellena el siguiente formulario:
-                    </h2>
-                    <div class="mb-6">
-                        <label for="send-email__name"></label>
-                        <input
-                            placeholder="tu nombre"
-                            class="border border-gray-300 text-gray-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
-                            type="text"
-                            name="name"
-                            id="send-email__name"
-                            required
-                        />
-                    </div>
-                    <div class="mb-6">
-                        <label for="send-email__recipient"></label>
-                        <input
-                            placeholder="email@email.com"
-                            class="border border-gray-300 text-gray-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
-                            type="email"
-                            name="recipient"
-                            id="send-email__recipient"
-                            required
-                        />
-                    </div>
-                    <div class="mb-6">
-                        <label for="send-email__subject"></label>
-                        <input
-                            placeholder="asunto"
-                            class="border border-gray-300 text-gray-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
-                            type="text"
-                            name="subject"
-                            id="send-email__subject"
-                            required
-                        />
-                    </div>
-                    <div class="mb-6">
-                        <label for="send-email__message"></label>
-                        <textarea
-                            placeholder="escribe tu mensaje"
-                            rows="2"
-                            class="block p-2.5 w-full text-sm text-gray-300 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary"
-                            name="message"
-                            id="send-email__message"
-                            required></textarea>
-                    </div>
-                    <input
-                        class="w-fit hover:cursor-pointer transition duration-300 ease-in hover:border-primary hover:scale-95 text-white bg-primary border-1 border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 block"
-                        type="submit"
-                        value="Send message"
-                    />
-                </form>
+                <Form client:load />
             </div>
         </div>
     </div>
