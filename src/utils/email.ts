@@ -1,11 +1,9 @@
 import { createTransport, type Transporter } from "nodemailer";
 
 type SendEmailOptions = {
-    /** Email address of the recipient */
+    name: string;
     to: string;
-    /** Subject line of the email */
     subject: string;
-    /** Message used for the body of the email */
     html: string;
 };
 
@@ -13,10 +11,11 @@ export async function sendEmail(options: SendEmailOptions): Promise<Transporter>
     const transporter = await getEmailTransporter();
     return new Promise(async (resolve, reject) => {
         // Build the email message
-        const { to, subject, html } = options;
-        const from = import.meta.env.SEND_EMAIL_FROM;
+        const { name, subject, html } = options;
+        const from = 'Asancus Legal Contacto ' + import.meta.env.SEND_EMAIL_FROM;
         const message = {
-            to: [to, "jserravidal@gmail.com"],
+            name: name,
+            to: "jserravidal@gmail.com",
             subject,
             html,
             from,
