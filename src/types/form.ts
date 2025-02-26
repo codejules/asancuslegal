@@ -11,7 +11,7 @@ export const INPUTS: Inputs[] = [
         id: "send-email__name",
         type: "text",
         name: "name",
-        placeholder: "tu nombre",
+        placeholder: "nombre",
         required: true,
     },
     {

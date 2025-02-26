@@ -33,9 +33,6 @@ const ContactForm = () => {
 
     return (
         <form class="max-xl:px-4" onSubmit={handleSubmit}>
-            <h2 class="py-10 text-lg text-white text-center">
-                Para más información, rellena el siguiente formulario:
-            </h2>
 
             {INPUTS.map(({ id, type, name, placeholder, required }) => {
                 if (type === "textarea") {
@@ -55,7 +52,7 @@ const ContactForm = () => {
                 }
 
                 return (
-                    <div class="mb-6" key={id}>
+                    <div class="mb-3" key={id}>
                         <label htmlFor={id} class="block mb-2 text-sm font-medium text-white" />
                         <input
                             placeholder={placeholder}
@@ -72,7 +69,7 @@ const ContactForm = () => {
             {/* Botón dinámico */}
             <button
                 type="submit"
-                class={`w-fit transition duration-300 ease-in text-white bg-primary border border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 block ${isSubmitting || isSent ? "opacity-50 cursor-not-allowed" : "hover:cursor-pointer hover:border-primary hover:scale-95"
+                class={`w-fit flex mx-auto transition duration-300 ease-in text-white bg-primary border border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ${isSubmitting || isSent ? "opacity-50 cursor-not-allowed" : "hover:cursor-pointer hover:border-primary hover:scale-95"
                     }`}
                 disabled={isSubmitting || isSent}
             >

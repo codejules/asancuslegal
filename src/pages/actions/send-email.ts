@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { sendEmail } from "../../utils/email";
+import { sendEmail } from "@/utils/email";
 
 export const prerender = false;
 
@@ -25,9 +25,9 @@ export const POST: APIRoute = async ({ request }) => {
     await sendEmail({ name, to, subject, html });
   } catch (error) {
     console.error("Error al enviar el correo:", error);
-    return new Response("Failed to send email", { status: 500 });
+    return new Response("Error al enviar el correo", { status: 500 });
   }
 
   // Retornar un estado 200 en lugar de redirigir
-  return new Response("Email sent successfully", { status: 200 });
+  return new Response("Email enviado correctamente", { status: 200 });
 };

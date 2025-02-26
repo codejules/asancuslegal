@@ -1,12 +1,27 @@
 ---
 import Section from "@/layouts/Section.astro";
 import Form from "./Form.tsx";
+
+const title = "Contacto";
+const subtitle = "Para más información, rellena el siguiente formulario:";
 ---
 
 <Section id="contacto">
-    <div class="bg-primary pb-20 my-10">
-        <div class="max-w-screen-sm mx-auto">
-            <Form client:load />
+    <div class="bg-primary">
+        <div
+            class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
+        >
+            <div class="flex flex-col justify-start gap-4 items-start">
+                <h1 class="badge">
+                    {title}
+                </h1>
+                <h2 class="text-xl lg:text-2xl font-light text-white">
+                    {subtitle}
+                </h2>
+            </div>
+            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
+                <Form client:load />
+            </div>
         </div>
     </div>
 </Section>
