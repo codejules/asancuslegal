@@ -27,11 +27,5 @@ export const NAV: Nav[] = [
         id: 'contactoNav',
         title: "Contacto",
         url: "#contacto",
-        target: "drawer-swipe",
-        show: "drawer-swipe",
-        controls: "drawer-swipe",
-        placement: "bottom",
-        edge: "true",
-        offset: "bottom-[30px]"
     },
 ];

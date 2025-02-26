@@ -3,24 +3,12 @@ const {
     id,
     title,
     url,
-    target,
-    show,
-    controls,
-    placement,
-    edge,
-    offset,
     class: className,
 } = Astro.props;
 ---
 
 <a
     id={id || ""}
-    data-drawer-target={target || ""}
-    data-drawer-show={show || ""}
-    data-drawer-placement={placement || ""}
-    data-drawer-edge={edge || ""}
-    data-drawer-edge-offset={offset || ""}
-    aria-controls={controls || ""}
     href={url}
     class={className || ""}
 >
