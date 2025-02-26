@@ -3,30 +3,10 @@ import Section from "@/layouts/Section.astro";
 import Form from "./Form.tsx";
 ---
 
-<Section>
-    <div>
-        <div
-            id="drawer-swipe"
-            class="fixed z-40 max-w-screen-lg mx-2 lg:mx-auto overflow-y-auto rounded-t-lg bg-gray-700 transition-transform bottom-0 left-0 right-0 translate-y-full bottom-[30px]"
-            tabindex="-1"
-            aria-labelledby="drawer-swipe-label"
-        >
-            <div
-                class="p-4 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700"
-                data-drawer-toggle="drawer-swipe"
-            >
-                <span
-                    class="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2"
-                ></span>
-            </div>
-            <div class="max-w-screen-sm mx-auto">
-                <Form client:load />
-            </div>
+<Section id="contacto">
+    <div class="bg-primary pb-20 my-10">
+        <div class="max-w-screen-sm mx-auto">
+            <Form client:load />
         </div>
     </div>
 </Section>
-
-<script>
-    import { drawerToggle } from "@/assets/js/drawer";
-    document.addEventListener("astro:page-load", drawerToggle);
-</script>

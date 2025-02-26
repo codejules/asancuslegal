@@ -32,7 +32,7 @@ const ContactForm = () => {
     };
 
     return (
-        <form class="mb-10 max-xl:px-4" onSubmit={handleSubmit}>
+        <form class="max-xl:px-4" onSubmit={handleSubmit}>
             <h2 class="py-10 text-lg text-white text-center">
                 Para más información, rellena el siguiente formulario:
             </h2>
