@@ -32,16 +32,16 @@ const ContactForm = () => {
     };
 
     return (
-        <form class="max-xl:px-4" onSubmit={handleSubmit}>
+        <form class="flex flex-col gap-2 md:gap-3" onSubmit={handleSubmit}>
 
             {INPUTS.map(({ id, type, name, placeholder, required }) => {
                 if (type === "textarea") {
                     return (
-                        <div class="mb-6" key={id}>
+                        <div key={id}>
                             <label htmlFor={id} class="block mb-2 text-sm font-medium text-white" />
                             <textarea
                                 placeholder={placeholder}
-                                rows={2}
+                                rows={4}
                                 class="block p-2.5 w-full text-sm text-gray-300 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary"
                                 name={name}
                                 id={id}
@@ -52,7 +52,7 @@ const ContactForm = () => {
                 }
 
                 return (
-                    <div class="mb-3" key={id}>
+                    <div key={id}>
                         <label htmlFor={id} class="block mb-2 text-sm font-medium text-white" />
                         <input
                             placeholder={placeholder}
@@ -66,10 +66,14 @@ const ContactForm = () => {
                 );
             })}
 
-            {/* Botón dinámico */}
+            <div class="flex items-center">
+                <input required id="checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500" />
+                <label for="checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">He leído y acepto la Política de Privacidad</label>
+            </div>
+
             <button
                 type="submit"
-                class={`w-fit flex mx-auto transition duration-300 ease-in text-white bg-primary border border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ${isSubmitting || isSent ? "opacity-50 cursor-not-allowed" : "hover:cursor-pointer hover:border-primary hover:scale-95"
+                class={`mt-6 w-fit flex mx-auto transition duration-300 ease-in text-white bg-primary border border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ${isSubmitting || isSent ? "opacity-50 cursor-not-allowed" : "hover:cursor-pointer hover:border-primary hover:scale-95"
                     }`}
                 disabled={isSubmitting || isSent}
             >
