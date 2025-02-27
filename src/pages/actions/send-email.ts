@@ -216,7 +216,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       <p><b>De:</b> ${to}</p>
       <p><b>Asunto:</b> ${subject}</p>
       <p><b>Mensaje:</b> ${message}</p>
-      <p><b>Fecha y hora:</b> ${new Date().toLocaleString('es-ES')}</p>
     </div>`;
     
     await sendEmail({ name, to, subject, html });
