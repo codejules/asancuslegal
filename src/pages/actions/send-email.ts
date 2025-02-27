@@ -5,7 +5,7 @@ export const prerender = false;
 
 // Función para verificar el token de Turnstile
 async function verifyTurnstileToken(token: string) {
-  const secretKeyCloudflare = import.meta.env.CLOUDFLARE_SECRET_KEY;
+  const secretKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SECRET_KEY;
 
   const formData = new FormData();
   formData.append('secret', secretKeyCloudflare);

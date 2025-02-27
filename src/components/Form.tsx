@@ -18,10 +18,11 @@ const ContactForm = () => {
     const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const turnstileRef = useRef<HTMLDivElement>(null);
     const widgetIdRef = useRef<string | null>(null);
-    const siteKeyCloudflare = import.meta.env.CLOUDFLARE_SITE_KEY;
+    const siteKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SITE_KEY;
 
     useEffect(() => {
         // Cargar el script de Turnstile
+
         const script = document.createElement("script");
         script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
         script.async = true;
