@@ -1,6 +1,6 @@
 const InputField = ({ id, type, name, placeholder, required, value, onChange, error }) => (
     <div key={id}>
-      <label htmlFor={id} className="block mb-2 text-sm font-medium text-white" />
+      <label for={id} htmlFor={id} className="block mb-2 text-sm font-medium text-white" />
       {type === "textarea" ? (
         <textarea
           placeholder={placeholder}

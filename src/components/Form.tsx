@@ -2,8 +2,8 @@ import { useContactForm } from "@/hooks/useContactForm";
 import InputField from './InputField';
 import ErrorMessage from './ErrorMessage';
 import Checkbox from './Checkbox';
-import Spinner from './Spinner';
 import { INPUTS } from "@/types/form.js";
+import SubmitButton from "./ButtonSubmit";
 
 const ContactForm = () => {
     const {
@@ -25,7 +25,7 @@ const ContactForm = () => {
     return (
         <form ref={formRef} className="flex flex-col gap-2 md:gap-3" onSubmit={handleSubmit} noValidate>
             <div aria-hidden="true" class="hidden">
-                <label htmlFor="bot-trap"></label>
+                <label for="bot-trap" htmlFor="bot-trap"></label>
                 <input
                     type="text"
                     id="bot-trap"
@@ -76,22 +76,7 @@ const ContactForm = () => {
             <div ref={turnstileRef} className="flex justify-start mt-8"></div>
             {errors.turnstile && <p className="text-red-500 text-xs text-left">{errors.turnstile}</p>}
 
-            <button
-                type="submit"
-                className={`mt-6 w-fit flex mx-auto transition duration-300 ease-in text-white bg-primary border border-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ${isSubmitting || isSent ? "opacity-50 cursor-not-allowed" : "hover:cursor-pointer hover:border-primary hover:scale-95"}`}
-                disabled={isSubmitting || isSent}
-            >
-                {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                        <Spinner />
-                        Enviando email...
-                    </span>
-                ) : isSent ? (
-                    "Mensaje enviado correctamente ✅"
-                ) : (
-                    "Enviar mensaje"
-                )}
-            </button>
+            <SubmitButton isSubmitting={isSubmitting} isSent={isSent} />
         </form>
     );
 };
