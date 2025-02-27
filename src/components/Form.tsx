@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "preact/hooks";
 import { INPUTS } from "@/types/form.js";
 import Spinner from "./Spinner";
+import { DANGEROUS_PATTERNS, EMAIL_REGEX, NAME_REGEX } from "@/utils/validators";
 
 // Definir la interfaz para las propiedades de window.turnstile
 declare global {
@@ -16,20 +17,6 @@ declare global {
 type ValidationErrors = {
   [key: string]: string;
 };
-
-// Expresiones regulares para validaciones
-const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const NAME_REGEX = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/;
-const DANGEROUS_PATTERNS = [
-  /<script/i,
-  /javascript:/i,
-  /on\w+=/i,
-  /alert\(/i,
-  /http:\/\/|https:\/\//i, // URLs en mensajes podrían ser indicadores de spam
-  /SELECT.*FROM/i, // Posibles intentos de SQL injection
-  /INSERT.*INTO/i,
-  /DROP.*TABLE/i
-];
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -249,6 +236,7 @@ const ContactForm = () => {
             if (response.ok) {
                 setIsSent(true);
                 setFormValues({});
+                setPrivacyChecked(false)
                 if (formRef.current) {
                     formRef.current.reset();
                 }
@@ -257,6 +245,10 @@ const ContactForm = () => {
                 if (window.turnstile && widgetIdRef.current) {
                     window.turnstile.reset(widgetIdRef.current);
                 }
+
+                setTimeout(() => {
+                    setIsSent(false) // volver estado inicial
+                }, 4000);
             } else {
                 const data = await response.json().catch(() => null);
                 const errorMessage = data?.message || "Error al enviar el mensaje.";
