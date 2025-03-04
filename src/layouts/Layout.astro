@@ -1,5 +1,12 @@
 ---
 import { ClientRouter } from "astro:transitions";
+
+interface Props {
+	description: string,
+	title: string,
+}
+
+const { description, title } = Astro.props
 ---
 
 <!doctype html>
@@ -7,8 +14,9 @@ import { ClientRouter } from "astro:transitions";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Asancus Legal - Despacho Abogados Fiscal Mercantil</title>
+		<title>{title}</title>
 		<ClientRouter />
 	</head>
 	<body>

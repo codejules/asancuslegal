@@ -13,4 +13,11 @@ export default defineConfig({
   },
   integrations: [preact()],
   adapter: netlify(),
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    }
+  }
 });

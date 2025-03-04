@@ -1,10 +1,9 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const title = "Porque cada caso merece atención personalizada";
-const paragraph =
-    "Garantizamos transparencia y comunicación constante durante todo el proceso legal.";
-const email = "info@asancuslegal.com";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Section>
@@ -14,16 +13,16 @@ const email = "info@asancuslegal.com";
         >
             <div class="flex flex-col gap-6 md:gap-10 min-xl:max-w-screen-sm lg:px-12">
                 <h1 class="text-2xl md:text-4xl">
-                    {title}
+                    {i18n.HERO_TITLE}
                 </h1>
                 <p>
-                    {paragraph}
+                    {i18n.HERO_PARAGRAPH}
                 </p>
                 <button
                     type="button"
                     class="w-fit cursor-pointer rounded-lg border px-8 py-3 md:w-fit hover:bg-white hover:text-primary hover:scale-105 transition duration-300 ease-in"
                 >
-                    {email}
+                    {i18n.HERO_EMAIL}
                 </button>
             </div>
         </div>
