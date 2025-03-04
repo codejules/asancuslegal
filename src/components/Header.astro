@@ -2,6 +2,9 @@
 import MenuBurger from "./MenuBurger.astro";
 import { NAV } from "@/types/nav";
 import NavLink from "./NavLink.astro";
+import LanguageSelector from "./LanguageSelector";
+
+const { currentLocale } = Astro;
 
 const email = "info@asancuslegal.com";
 ---
@@ -37,6 +40,9 @@ const email = "info@asancuslegal.com";
                     }
                 </ul>
             </div>
+
+            <LanguageSelector currentLocale={currentLocale} client:load/>
+
             <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button
                     type="button"
@@ -62,7 +68,7 @@ const email = "info@asancuslegal.com";
         @keyframes blur {
             to {
                 backdrop-filter: blur(20px);
-                border: 1px solid #333;
+                background: rgba(255, 255, 255, 0.2);
                 width: 1140px;
             }
         }
