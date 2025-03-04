@@ -1,11 +1,7 @@
 ---
-const { id, url, class: className } = Astro.props;
-
-import { getI18N } from "@/i18n";
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { id, title, url, class: className } = Astro.props;
 ---
 
-<a id={id} href={url} class={className || ""}>
-    {Object.entries(i18n.NAV).map(([value]) => ({ value }))}
+<a id={id || ""} href={url} class={className || ""}>
+    {title}
 </a>
