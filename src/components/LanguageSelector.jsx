@@ -1,11 +1,13 @@
-import { useState } from 'preact/hooks';
-import SpainFlag from '../../src/assets/icons/SpainFlag';
-import EnglishFlag from '../../src/assets/icons/EnglishFlag';
-import Arrow from '../../src/assets/icons/Arrow';
+import { useState, useEffect, useRef } from 'preact/hooks';
+import SpainFlag from '@/icons/SpainFlag';
+import EnglishFlag from '@/icons/EnglishFlag';
+import Arrow from '@/icons/Arrow';
 
 const LanguageSwitcher = ({ currentLocale }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
+  // Determine current and alternative locales
   const locales = [
     {
       code: 'es',
@@ -24,12 +26,30 @@ const LanguageSwitcher = ({ currentLocale }) => {
   const currentLocaleData = locales.find(locale => locale.code === currentLocale);
   const alternativeLocales = locales.filter(locale => locale.code !== currentLocale);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="relative inline-block text-left">
+    <div
+      ref={dropdownRef}
+      className="relative inline-block text-left"
+    >
       <div className="group text-white rounded-md text-xs font-semibold bg-black/30 hover:bg-black/70 transition-all">
         <button
           type="button"
-          className="grid grid-cols-3 items-center gap-2 p-2"
+          className="cursor-pointer grid grid-cols-3 items-center gap-2 p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -42,7 +62,7 @@ const LanguageSwitcher = ({ currentLocale }) => {
         </button>
 
         {isOpen && (
-          <ul className="absolute w-full pt-0.5 animate-fade-down animate-duration-200">
+          <ul className="absolute w-full pt-0.5 animate-fade-down animate-duration-200 z-10">
             {alternativeLocales.map((locale) => (
               <li key={locale.code} className="py-[2px]">
                 <a

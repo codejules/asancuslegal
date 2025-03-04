@@ -2,6 +2,10 @@
 import { NAV } from "@/types/nav";
 import NavLink from "./NavLink.astro";
 
+import LanguageSelector from "./LanguageSelector";
+
+const { currentLocale } = Astro;
+
 const BURGER_LINE_CLASS =
     "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
 const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
@@ -21,9 +25,16 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
                     </li>
                 ))
             }
+            <div>
+                <LanguageSelector currentLocale={currentLocale} client:load />
+            </div>
         </ul>
 
-        <button id="nav-burguer" class="block cursor-pointer" aria-label="Menu Burger">
+        <button
+            id="nav-burguer"
+            class="block cursor-pointer"
+            aria-label="Menu Burger"
+        >
             {[...Array(3)].map(() => <span class={BURGER_LINE_CLASS} />)}
         </button>
     </div>
@@ -34,21 +45,36 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
         connectedCallback() {
             const hamburger = document.querySelector("#nav-burguer");
             const navList = document.querySelector("#nav-list");
+            const languageSelector = document.querySelector(
+                "[data-language-selector]",
+            );
 
             if (hamburger && navList) {
+                // Toggle menu on hamburger click
                 hamburger.addEventListener("click", (e) => {
                     e.stopPropagation();
                     hamburger.classList.toggle("active");
                     navList.classList.toggle("active");
                 });
 
+                // Handle clicks within the nav list
                 navList.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    hamburger.classList.remove("active");
-                    navList.classList.remove("active");
+                    // Prevent closing if clicking on language selector or its children
+                    if (languageSelector?.contains(e.target as Node)) {
+                        e.stopPropagation();
+                        return;
+                    }
+
+                    // Close nav items when clicking a nav link
+                    if ((e.target as Element).closest("#nav-item")) {
+                        hamburger.classList.remove("active");
+                        navList.classList.remove("active");
+                    }
                 });
 
+                // Close menu when clicking outside
                 document.addEventListener("click", (e) => {
+                    // Check if click is outside both hamburger and nav list
                     if (
                         !hamburger.contains(e.target as Node) &&
                         !navList.contains(e.target as Node)
@@ -60,6 +86,7 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
             }
         }
     }
+
     customElements.define("menu-burguer", MenuBurguer);
 </script>
 

@@ -41,7 +41,9 @@ const email = "info@asancuslegal.com";
                 </ul>
             </div>
 
-            <LanguageSelector currentLocale={currentLocale} client:load/>
+            <div class="hidden lg:block">
+                <LanguageSelector currentLocale={currentLocale} client:load />
+            </div>
 
             <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button
