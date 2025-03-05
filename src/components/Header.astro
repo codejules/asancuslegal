@@ -1,25 +1,12 @@
 ---
 import MenuBurger from "./MenuBurger.astro";
 import LanguageSelector from "./LanguageSelector";
+import { getNavItems, itemsHeader } from "@/types/nav";
 
 import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-
-const classItems = 'hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
-
-type NavItems = {
-    title: string;
-    href: string;
-}
-
-const NAV_ITEMS: NavItems[] = [
-    { title: i18n.NAV_SERVICES, href: "#areas" },
-    { title: i18n.NAV_SOLUTIONS, href: "#soluciones" },
-    { title: i18n.NAV_TEAM, href: "#equipo" },
-    { title: i18n.NAV_CONTACT, href: "#contacto" },
-];
-
+const NAV_ITEMS = getNavItems(currentLocale || 'es');
 ---
 
 <header>
@@ -44,7 +31,9 @@ const NAV_ITEMS: NavItems[] = [
                     {
                         NAV_ITEMS.map(({ title, href }) => (
                             <li>
-                                <a class={classItems} href={href}>{title}</a>
+                                <a class={itemsHeader} href={href}>
+                                    {title}
+                                </a>
                             </li>
                         ))
                     }

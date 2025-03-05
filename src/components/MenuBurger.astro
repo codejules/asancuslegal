@@ -1,29 +1,10 @@
 ---
 import LanguageSelector from "./LanguageSelector";
 
-import { getI18N } from "@/i18n";
+import { getNavItems, itemsHeader, burgerLine, navList } from "@/types/nav";
+
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
-
-const classItems =
-    "hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600";
-
-type NavItems = {
-    title: string
-    href: string;
-};
-
-const NAV_ITEMS: NavItems[] = [
-    { title: i18n.NAV_SERVICES, href: "#areas" },
-    { title: i18n.NAV_SOLUTIONS, href: "#soluciones" },
-    { title: i18n.NAV_TEAM, href: "#equipo" },
-    { title: i18n.NAV_CONTACT, href: "#contacto" },
-];
-
-const burgerLineClass =
-    "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
-const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
-            lg:flex-row lg:mt-0 lg:border-0`;
+const NAV_ITEMS = getNavItems(currentLocale || 'es');
 ---
 
 <menu-burguer class="lg:hidden">
@@ -32,7 +13,7 @@ const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full 
             {
                 NAV_ITEMS.map(({ title, href }) => (
                     <li id="nav-item" class="border-b-[1px] border-b-gray-400">
-                        <a class={classItems} href={href}>
+                        <a class={itemsHeader} href={href}>
                             {title}
                         </a>
                     </li>
@@ -48,7 +29,7 @@ const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full 
             class="block cursor-pointer"
             aria-label="Menu Burger"
         >
-            {[...Array(3)].map(() => <span class={burgerLineClass} />)}
+            {[...Array(3)].map(() => <span class={burgerLine} />)}
         </button>
     </div>
 </menu-burguer>
