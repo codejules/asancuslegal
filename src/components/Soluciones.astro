@@ -6,7 +6,17 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
 const image = "/assets/img/soluciones-asancus-legal.webp";
-import { SOLUTIONS } from "@/types/solutions";
+
+type Solutions = {
+    percentage: string;
+    description: string;
+}
+const SOLUTIONS: Solutions[] = [
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_1, description: i18n.SOLUTIONS_DESCRIPTION_1 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_2, description: i18n.SOLUTIONS_DESCRIPTION_2 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_3, description: i18n.SOLUTIONS_DESCRIPTION_3 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_4, description: i18n.SOLUTIONS_DESCRIPTION_4 }
+];
 ---
 
 <Section id="soluciones">
@@ -33,33 +43,20 @@ import { SOLUTIONS } from "@/types/solutions";
         </div>
 
         <div class="flex flex-col md:flex-row gap-4 lg:gap-12">
-            {
-                SOLUTIONS.map(({ percentage, description}) => (
-                    <div class="flex flex-row md:flex-col md:justify-between gap-6">
-                        <div class="flex flex-col items-start justify-center">
-                            {percentage.includes("up to") ? (
-                                <>
-                                    <span class="text-primary text-xs">
-                                        up to
-                                    </span>
-                                    <span class="text-primary text-base md:text-2xl">
-                                        {percentage.split(" ")[2]}
-                                    </span>
-                                </>
-                            ) : (
-                                <span class="text-primary text-base md:text-2xl md:pt-4">
-                                    {percentage}
-                                </span>
-                            )}
-                        </div>
-                        <div>
-                            <p class="text-primary text-xs">
-                                {description}
-                            </p>
-                        </div>
-                    </div>
-                ))
-            }
-        </div>
+            {SOLUTIONS.map((solution) => (
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col items-start justify-center">
+                  <span class="text-primary text-base md:text-2xl">
+                    {solution.percentage}
+                  </span>
+                </div>
+                <div>
+                  <p class="text-primary text-xs">
+                    {solution.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
     </div>
 </Section>

@@ -9,15 +9,15 @@ const classItems =
     "hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600";
 
 type NavItems = {
-    title: keyof typeof i18n.NAV;
+    title: string
     href: string;
 };
 
 const NAV_ITEMS: NavItems[] = [
-    { title: "SERVICES", href: "#areas" },
-    { title: "SOLUTIONS", href: "#soluciones" },
-    { title: "TEAM", href: "#equipo" },
-    { title: "CONTACT", href: "#contacto" },
+    { title: i18n.NAV_SERVICES, href: "#areas" },
+    { title: i18n.NAV_SOLUTIONS, href: "#soluciones" },
+    { title: i18n.NAV_TEAM, href: "#equipo" },
+    { title: i18n.NAV_CONTACT, href: "#contacto" },
 ];
 
 const burgerLineClass =
@@ -33,7 +33,7 @@ const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full 
                 NAV_ITEMS.map(({ title, href }) => (
                     <li id="nav-item" class="border-b-[1px] border-b-gray-400">
                         <a class={classItems} href={href}>
-                            {i18n.NAV[title]}
+                            {title}
                         </a>
                     </li>
                 ))
