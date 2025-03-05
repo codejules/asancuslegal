@@ -1,11 +1,11 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const title = "Soluciones Legales";
-const paragraph =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste earum hic repudiandae! Quidem eaque, quod qui nemo ipsam illo perferendis aut sed vitae libero quia aliquid error, similique at itaque.";
-const image = "/assets/img/soluciones-asancus-legal.webp";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
+const image = "/assets/img/soluciones-asancus-legal.webp";
 import { SOLUTIONS } from "@/types/solutions";
 ---
 
@@ -15,8 +15,8 @@ import { SOLUTIONS } from "@/types/solutions";
     >
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
             <div class="flex flex-col gap-4">
-                <h2 class="badge">{title}</h2>
-                <p class="text-sm">{paragraph}</p>
+                <h2 class="badge">{i18n.SOLUTIONS_TITLE}</h2>
+                <p class="text-sm">{i18n.SOLUTIONS_PARAGRAPH}</p>
             </div>
             <div class="px-12 z-10">
                 <img
