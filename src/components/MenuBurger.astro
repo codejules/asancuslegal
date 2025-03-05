@@ -1,27 +1,40 @@
 ---
-import { NAV } from "@/types/nav";
-import NavLink from "./NavLink.astro";
-
 import LanguageSelector from "./LanguageSelector";
 
+import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
-const BURGER_LINE_CLASS =
+const classItems =
+    "hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600";
+
+type NavItems = {
+    title: keyof typeof i18n.NAV;
+    href: string;
+};
+
+const NAV_ITEMS: NavItems[] = [
+    { title: "SERVICES", href: "#areas" },
+    { title: "SOLUTIONS", href: "#soluciones" },
+    { title: "TEAM", href: "#equipo" },
+    { title: "CONTACT", href: "#contacto" },
+];
+
+const burgerLineClass =
     "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
-const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
+const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
             lg:flex-row lg:mt-0 lg:border-0`;
 ---
 
 <menu-burguer class="lg:hidden">
     <div>
-        <ul id="nav-list" class={NAV_LIST}>
+        <ul id="nav-list" class={navList}>
             {
-                NAV.map((link) => (
+                NAV_ITEMS.map(({ title, href }) => (
                     <li id="nav-item" class="border-b-[1px] border-b-gray-400">
-                        <NavLink
-                            {...link}
-                            class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600"
-                        />
+                        <a class={classItems} href={href}>
+                            {i18n.NAV[title]}
+                        </a>
                     </li>
                 ))
             }
@@ -35,7 +48,7 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
             class="block cursor-pointer"
             aria-label="Menu Burger"
         >
-            {[...Array(3)].map(() => <span class={BURGER_LINE_CLASS} />)}
+            {[...Array(3)].map(() => <span class={burgerLineClass} />)}
         </button>
     </div>
 </menu-burguer>
@@ -43,7 +56,6 @@ const NAV_LIST = `transition-top ease-in duration-500 z-50 fixed bg-white w-full
 <script>
     import "@/scripts/menuBurger";
 </script>
-
 
 <style>
     @media (max-width: 1023px) {

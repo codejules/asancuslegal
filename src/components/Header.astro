@@ -1,12 +1,25 @@
 ---
 import MenuBurger from "./MenuBurger.astro";
-import { NAV } from "@/types/nav";
-import NavLink from "./NavLink.astro";
 import LanguageSelector from "./LanguageSelector";
 
+import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
-const email = "info@asancuslegal.com";
+const classItems = 'hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
+
+type NavItems = {
+    title: keyof typeof i18n.NAV;
+    href: string;
+}
+
+const NAV_ITEMS: NavItems[] = [
+    { title: "SERVICES", href: "#areas" },
+    { title: "SOLUTIONS", href: "#soluciones" },
+    { title: "TEAM", href: "#equipo" },
+    { title: "CONTACT", href: "#contacto"},
+];
+
 ---
 
 <header>
@@ -29,12 +42,9 @@ const email = "info@asancuslegal.com";
             >
                 <ul class="flex flex-row gap-10">
                     {
-                        NAV.map((link) => (
+                        NAV_ITEMS.map(({ title, href }) => (
                             <li>
-                                <NavLink
-                                    {...link}
-                                    class="hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent"
-                                />
+                                <a class={classItems} href={href}>{i18n.NAV[title]}</a>
                             </li>
                         ))
                     }
@@ -50,7 +60,7 @@ const email = "info@asancuslegal.com";
                     type="button"
                     class="cursor-pointer rounded-lg bg-primary px-4 py-2 text-sm text-white hover:bg-white hover:border-slate-300 border-1 hover:text-primary hover:scale-105 transition duration-300 ease-in"
                 >
-                    <a href=`mailto:${email}`>{email}</a>
+                    <a href=`mailto:${i18n.HERO_EMAIL}`>{i18n.HERO_EMAIL}</a>
                 </button>
             </div>
             <MenuBurger />
