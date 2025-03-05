@@ -2,7 +2,9 @@
 import Section from "@/layouts/Section.astro";
 import EQUIPO from "@/data/equipo.json";
 
-const title = "Equipo Asancus Legal";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Section id="equipo">
@@ -13,10 +15,10 @@ const title = "Equipo Asancus Legal";
             class="flex flex-col lg:flex-row justify-between gap-4 items-start lg:items-center"
         >
             <h1 class="badge">
-                {title}
+                {i18n.TEAM_TITLE}
             </h1>
             <h2 class="text-xl lg:text-3xl font-light text-gray-600">
-                Tu problema legal, nuestra prioridad
+                {i18n.TEAM_SUBTITLE}
             </h2>
         </div>
         <div
