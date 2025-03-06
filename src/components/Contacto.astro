@@ -2,8 +2,9 @@
 import Section from "@/layouts/Section.astro";
 import Form from "./Form.js";
 
-const title = "Contacto";
-const subtitle = "Para más información, rellena el siguiente formulario:";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Section id="contacto">
@@ -13,10 +14,10 @@ const subtitle = "Para más información, rellena el siguiente formulario:";
         >
             <div class="flex flex-col justify-start gap-4 items-start">
                 <h1 class="badge">
-                    {title}
+                    {i18n.CONTACT_TITLE}
                 </h1>
                 <h2 class="text-xl lg:text-2xl font-light text-white">
-                    {subtitle}
+                    {i18n.CONTACT_SUBTITLE}
                 </h2>
             </div>
             <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">

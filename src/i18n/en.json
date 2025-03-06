@@ -44,5 +44,7 @@
     "SOLUTIONS_DESCRIPTION_4": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     "SOLUTIONS_PERCENTAGE_4": "80%",
     "TEAM_TITLE": "Asancus Legal Team",
-    "TEAM_SUBTITLE": "Your legal problem, our priority"
+    "TEAM_SUBTITLE": "Your legal problem, our priority",
+    "CONTACT_TITLE": "Contact",
+    "CONTACT_SUBTITLE": "For more information, please fill out the form below:"
 }
