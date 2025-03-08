@@ -2,7 +2,7 @@
 import EQUIPO from "@/data/equipo.json";
 ---
 
-<div class="flex justify-center my-20">
+<div class="lg:flex lg:justify-center my-20 px-4">
   <div class="splide" id="image-slider">
     <div class="splide__track">
       <ul class="splide__list">
@@ -18,7 +18,7 @@ import EQUIPO from "@/data/equipo.json";
               email,
             }) => {
               return (
-                <li class="splide__slide justify-center flex">
+                <li class="splide__slide lg:justify-center lg:flex">
                   <div
                     class={`rounded-xl group relative h-[550px] w-auto lg:w-96 bg-cover bg-center`}
                     style={`background-image: url(${background})`}

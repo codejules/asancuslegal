@@ -20,6 +20,12 @@ export function initSlider() {
             width: "70%",
             arrows: showArrows,
             pagination: false,
+            breakpoints: {
+                1024: { perPage: 2, width: "100%", gap: "1rem" },
+                769: { perPage: 2, width: "100%", gap: "1rem" },
+                425: { perPage: 1, width: "100%", gap: "1rem", arrows: true },
+                375: { perPage: 1, width: "100%", gap: "1rem", arrows: true },
+            },
         }).mount();
     }
 }
