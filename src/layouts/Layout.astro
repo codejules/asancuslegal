@@ -2,11 +2,22 @@
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
-	description: string,
-	title: string,
+	description: string;
+	title: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
+type Favicon = { url: string; media: string };
+const FAVICON: Favicon[] = [
+	{
+		url: "/favicon-dark.svg",
+		media: "(prefers-color-scheme: light)",
+	},
+	{
+		url: "/favicon.svg",
+		media: "(prefers-color-scheme: dark)",
+	},
+];
 ---
 
 <!doctype html>
@@ -15,7 +26,16 @@ const { description, title } = Astro.props
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		{
+			FAVICON.map(({ url, media }) => (
+				<link
+					rel="icon"
+					type="image/svg+xml"
+					href={url}
+					media={media}
+				/>
+			))
+		}
 		<title>{title}</title>
 		<ClientRouter />
 	</head>

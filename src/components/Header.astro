@@ -6,7 +6,18 @@ import { getNavItems, itemsHeader } from "@/types/nav";
 import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const NAV_ITEMS = getNavItems(currentLocale || 'es');
+const NAV_ITEMS = getNavItems(currentLocale || "es");
+
+const LOGO = [
+    {
+        url: "/logo-asancus-legal.svg",
+        className: "min-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+    },
+    {
+        url: "/logo-asancus-legal-mobile.svg",
+        className: "max-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+    },
+];
 ---
 
 <header>
@@ -18,11 +29,15 @@ const NAV_ITEMS = getNavItems(currentLocale || 'es');
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img
-                    src="https://flowbite.com/docs/images/logo.svg"
-                    class="h-8"
-                    alt="Flowbite Logo"
-                />
+                {
+                    LOGO.map(({ url, className }) => (
+                        <img
+                            src={url}
+                            class={className}
+                            alt="Asancus Legal Logo"
+                        />
+                    ))
+                }
             </a>
             <div
                 class="items-center justify-between hidden w-full lg:flex lg:w-auto"
