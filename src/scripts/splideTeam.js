@@ -3,15 +3,23 @@ import '@splidejs/splide/css';
 
 export function initSlider() {
     const sliderElement = document.querySelector("#image-slider");
+
     if (sliderElement && !sliderElement.splide) {
+
+        // Get the number of slides
+        const slides = sliderElement.querySelectorAll('.splide__slide');
+        const slideCount = slides.length;
+        const showArrows = slideCount > 2;
+        const showGap = slideCount <= 2 ? '3rem' : '0rem';
+
         new Splide(sliderElement, {
-            type: "loop",
             drag: "free",
-            gap: ".5rem",
             focus: "center",
+            gap: showGap,
             perPage: 2,
-            width: "100%",
-            arrows: false,
+            width: "70%",
+            arrows: showArrows,
+            pagination: false,
         }).mount();
     }
 }
