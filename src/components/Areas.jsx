@@ -10,7 +10,7 @@ export default function Servicios({ currentLocale }) {
   return (
     <div id="areas" className="bg-primary">
       <div className="py-10 lg:py-20 max-w-screen-xl mx-auto px-4">
-        <h2 className="badge">{i18n.AREAS_TITLE}</h2>
+        <h2 className="badge font-semibold">{i18n.AREAS_TITLE}</h2>
         <div className="pt-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
           <img
             src={SERVICIOS[activeIndex].image}
@@ -27,7 +27,7 @@ export default function Servicios({ currentLocale }) {
                 <div key={number} className={`flex flex-col ${activeIndex === index ? 'gap-4' : ''} border-t-1 lg:border-t-white`}>
                   <button
                     type="button"
-                    className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full font-medium"
+                    className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full"
                     onClick={() => setActiveIndex(index)}
                   >
                     <span className="text-slate-400 text-sm">{number}</span>

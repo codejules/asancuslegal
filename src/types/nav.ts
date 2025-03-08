@@ -16,9 +16,9 @@ export function getNavItems(currentLocale: string): NavItems[] {
     ];
 }
 
-export const itemsHeader = 'hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
+export const itemsHeader = 'hover:text-gray-500 transition ease-in duration-300 font-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
 export const itemsBurger =
-    "hover:text-gray-500 transition ease-in duration-300 font-normal text-base block py-2 px-3 lg:p-0 text-slate-600";
+    "hover:text-gray-500 transition ease-in duration-300 font-base block py-2 px-3 lg:p-0 text-slate-600";
 export const burgerLine =
     "nav-burguer-line bg-black block transition ease-in duration-300 w-6 h-[2px]";
 export const navList = `transition-top ease-in duration-500 z-50 fixed bg-white w-full shadow-md right-0 left-0 -top-full flex max-lg:gap-4 flex-col font-medium p-4 lg:p-0 rounded-lg lg:space-x-8 rtl:space-x-reverse
