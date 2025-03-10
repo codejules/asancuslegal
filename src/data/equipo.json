@@ -23,5 +23,18 @@
             "Master Profesional en Dirección de Negocios Internacionales impartido por la U.D.I.M.A, 2015. "
         ],
         "email": "alejandro.toledo@asancuslegal.com"
+    },
+    {
+        "background": "/assets/img/alejandro-toledo-asancus-legal.webp",
+        "position": "Área Fiscal",
+        "title": "Alejandro Toledo",
+        "titleColor": "text-black",
+        "colorDescription": "text-white",
+        "descriptions": [
+            "Es Licenciado en Derecho por la Universidad de Valencia (2001), abogado en  ejercicio perteneciente al Ilustre Colegio de Abogados de Valencia (2004).",
+            "Master en  Tributación y Asesoría Fiscal impartido por Centro de Estudios Financieros (CEF), 2005; Master de Dirección  Jurídico-Financiera de la Empresa, impartido por la Universidad Politécnica de Valencia (UPV) y el Ilustre Colegio de Abogados de Valencia (ICAV) 2011",
+            "Master Profesional en Dirección de Negocios Internacionales impartido por la U.D.I.M.A, 2015. "
+        ],
+        "email": "alejandro.toledo@asancuslegal.com"
     }
 ]

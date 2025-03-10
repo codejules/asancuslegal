@@ -9,8 +9,7 @@ export function initSlider() {
         // Get the number of slides
         const slides = sliderElement.querySelectorAll('.splide__slide');
         const slideCount = slides.length;
-        const widthScreen = window.screen.width > 468;
-        const showArrows = slideCount > 2 && widthScreen;
+        const showPagination = slideCount > 2;
         const showGap = slideCount <= 2 ? '3rem' : '0rem';
 
 
@@ -20,13 +19,13 @@ export function initSlider() {
             gap: showGap,
             perPage: 2,
             width: "70%",
-            arrows: showArrows,
-            pagination: false,
+            arrows: false,
+            pagination: showPagination,
             breakpoints: {
                 1024: { perPage: 2, width: "100%", gap: "1rem" },
                 768: { perPage: 2, width: "100%", gap: "1rem" },
-                468: { perPage: 1, width: "100%", gap: "1rem", arrows: showArrows },
-                375: { perPage: 1, width: "100%", gap: "1rem", arrows: showArrows },
+                468: { perPage: 1, width: "100%", gap: "1rem", pagination: true },
+                375: { perPage: 1, width: "100%", gap: "1rem", pagination: true },
             },
         }).mount();
     }
