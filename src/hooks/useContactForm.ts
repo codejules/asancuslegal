@@ -42,14 +42,7 @@ export const useContactForm = () => {
     }, [turnstileToken]);
 
     useEffect(() => {
-        // Lógica de integración con Turnstile
-        const script = document.createElement("script");
-        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-
-        script.onload = () => {
+        if (document.querySelector('script[src*="turnstile/v0/api.js"]')) {
             if (turnstileRef.current && window.turnstile) {
                 widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
                     sitekey: siteKeyCloudflare,
@@ -57,13 +50,18 @@ export const useContactForm = () => {
                     theme: 'light',
                     'refresh-expired': 'auto',
                     'expired-callback': () => setTurnstileToken(null),
-                    'error-callback': () => setErrors(prev => ({ ...prev, turnstile: "Error al cargar el captcha. Por favor, intenta de nuevo." }))
+                    'error-callback': () => setErrors(prev => ({
+                        ...prev,
+                        turnstile: "Error al cargar el captcha. Por favor, intenta de nuevo."
+                    }))
                 });
             }
-        };
+        }
 
         return () => {
-            document.head.removeChild(script);
+            if (widgetIdRef.current && window.turnstile) {
+                window.turnstile.reset(widgetIdRef.current);
+            }
         };
     }, []);
 
