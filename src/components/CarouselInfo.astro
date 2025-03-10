@@ -1,0 +1,61 @@
+---
+import EQUIPO from "@/data/equipo.json";
+---
+
+<ul class="splide__list">
+    {
+        EQUIPO.map(
+            ({
+                background,
+                position,
+                title,
+                titleColor,
+                descriptions,
+                colorDescription,
+                email,
+            }) => {
+                return (
+                    <li class="splide__slide lg:justify-center lg:flex">
+                        <div
+                            class={`rounded-xl group relative h-[550px] w-auto lg:w-96 bg-cover bg-center`}
+                            style={`background-image: url(${background})`}
+                            tabindex="0"
+                        >
+                            <div class="absolute inset-0 bg-black opacity-20 group-focus:opacity-50 group-hover:opacity-50 transition duration-300 ease-in rounded-xl" />
+
+                            <p class={`text-[11px] p-3 ${titleColor}`}>
+                                {position}
+                            </p>
+                            <div class="transition-height absolute bottom-0 h-36 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
+                                <h2
+                                    class={`group-hover:mb-3 group-focus:mb-3 text-3xl ${colorDescription}`}
+                                >
+                                    {title}
+                                </h2>
+                                <div
+                                    class={`mt-36 lg:mt-52 group-hover:mt-0 group-focus:mt-0 flex flex-col gap-5 ${colorDescription}`}
+                                >
+                                    {descriptions
+                                        .slice(0, 3)
+                                        .map((description) => (
+                                            <p class="text-white text-xs lg:text-sm">
+                                                {description}
+                                            </p>
+                                        ))}
+                                    <button class="w-fit cursor-pointer bg-gray-300 text-primary hover:text-white hover:scale-105 hover:bg-transparent hover:border-white hover:border-1 hover:transition hover:duration-300 hover:ease-in rounded-2xl px-2 py-1 font-light text-sm">
+                                        <a
+                                            href={`mailto:${email}`}
+                                            title={`Enviar email a: ${title}`}
+                                        >
+                                            {email}
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                );
+            },
+        )
+    }
+</ul>

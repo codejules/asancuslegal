@@ -1,0 +1,16 @@
+---
+import CarouselInfo from "./CarouselInfo.astro";
+---
+
+<div class="lg:flex lg:justify-center my-10 px-4">
+  <div class="splide" id="image-slider">
+    <div class="splide__track">
+      <CarouselInfo />
+    </div>
+  </div>
+</div>
+
+<script>
+  import { initSlider } from "@/scripts/splideTeam";
+  document.addEventListener("astro:page-load", initSlider);
+</script>
