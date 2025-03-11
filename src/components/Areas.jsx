@@ -42,7 +42,7 @@ export default function Servicios({ currentLocale }) {
                     <img
                       src={SERVICIOS[activeIndex].image}
                       alt=""
-                      className="rounded-xl w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
+                      className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
                     />
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
                       {service?.DESCRIPTION?.map((description, i) => (
