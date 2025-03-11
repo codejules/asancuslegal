@@ -5,5 +5,5 @@
   }
 
 .badge {
-  @apply w-fit text-xs bg-gray-300 px-4 py-2 rounded-full uppercase;
+  @apply w-fit text-xs bg-gray-300 px-4 py-2 rounded-sm uppercase;
 }

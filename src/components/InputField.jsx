@@ -5,7 +5,7 @@ const InputField = ({ id, type, name, placeholder, required, value, onChange, er
         <textarea
           placeholder={placeholder}
           rows={4}
-          className={`block p-2.5 w-full text-sm text-gray-300 rounded-lg border ${error ? 'border-red-500' : 'border-gray-300'} focus:ring-primary focus:border-primary`}
+          className={`block p-2.5 w-full text-sm text-gray-300 rounded-sm border ${error ? 'border-red-500' : 'border-gray-300'} focus:ring-primary focus:border-primary`}
           name={name}
           id={id}
           required={required}
@@ -16,7 +16,7 @@ const InputField = ({ id, type, name, placeholder, required, value, onChange, er
       ) : (
         <input
           placeholder={placeholder}
-          className={`border ${error ? 'border-red-500' : 'border-gray-300'} text-gray-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5`}
+          className={`border ${error ? 'border-red-500' : 'border-gray-300'} text-gray-300 text-sm rounded-sm focus:ring-primary focus:border-primary block w-full p-2.5`}
           type={type}
           name={name}
           id={id}
