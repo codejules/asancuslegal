@@ -5,12 +5,15 @@ const copyright = `©${year} Asancus Legal. Todos los derechos reservados`;
 const LINKS = [
     {
         text: "Aviso Legal",
+        url: ""
     },
     {
         text: "Política de Privacidad",
+        url: ""
     },
     {
         text: "Contacto",
+        url: "#contacto"
     },
 ];
 ---
@@ -19,10 +22,10 @@ const LINKS = [
     <div class="py-4 flex flex-col gap-4 justify-center items-center">
         <ul class="flex flex-wrap items-center mt-3 text-sm">
             {
-                LINKS.map(({ text }) => (
+                LINKS.map(({ text, url }) => (
                     <>
                         <li>
-                            <a href="#" class="hover:underline me-4 md:me-6">
+                            <a href={url} class="hover:underline me-4 md:me-6">
                                 {text}
                             </a>
                         </li>
