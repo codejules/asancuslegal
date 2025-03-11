@@ -9,10 +9,10 @@ export function getNavItems(currentLocale: string): NavItems[] {
     const i18n = getI18N({ currentLocale });
     
     return [
-        { title: i18n.NAV_SERVICES, href: "#areas" },
-        { title: i18n.NAV_SOLUTIONS, href: "#soluciones" },
-        { title: i18n.NAV_TEAM, href: "#equipo" },
-        { title: i18n.NAV_CONTACT, href: "#contacto" },
+        { title: i18n.NAV_SERVICES, href: "/#areas" },
+        { title: i18n.NAV_SOLUTIONS, href: "/#soluciones" },
+        { title: i18n.NAV_TEAM, href: "/#equipo" },
+        { title: i18n.NAV_CONTACT, href: "/#contacto" },
     ];
 }
 
