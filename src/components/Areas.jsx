@@ -15,7 +15,7 @@ export default function Servicios({ currentLocale }) {
           <img
             src={SERVICIOS[activeIndex].image}
             alt=""
-            className="hidden lg:block rounded-sm object-cover object-center transition-opacity duration-300 ease-in"
+            className="hidden lg:block rounded-sm h-96 object-cover object-center transition-opacity duration-300 ease-in"
           />
           <div className="flex flex-col gap-4">
             {SERVICIOS.map(({ number, title }, index) => {
