@@ -7,32 +7,37 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <Section>
-    <div class="relative flex min-h-150 xl:min-h-180 bg-primary">
+    <div
+        class="h-full w-full bg-[url(/src/assets/img/asancuslegal-hero.webp)] bg-cover bg-center"
+    >
         <div
-            class="relative max-lg:z-10 flex flex-col justify-center gap-8 max-lg:p-4 text-white md:w-2/3 lg:w-1/2 lg:bg-navy-900 lg:items-end lg:flex-wrap"
+            class="py-36 lg:py-72 text-center flex flex-col gap-4 justify-center items-center opacity-0 transform translate-y-10 transition-all duration-3000 ease-in"
+            id="hero-content"
         >
-            <div class="flex flex-col gap-6 md:gap-10 min-xl:max-w-screen-sm lg:px-12">
-                <h1 class="text-2xl md:text-4xl">
-                    {i18n.HERO_TITLE}
-                </h1>
-                <p>
-                    {i18n.HERO_PARAGRAPH}
-                </p>
-                <button
-                    type="button"
-                    class="w-fit cursor-pointer rounded-sm border px-8 py-3 md:w-fit hover:bg-white hover:text-primary hover:scale-105 transition duration-300 ease-in"
-                >
-                    {i18n.HERO_EMAIL}
-                </button>
-            </div>
-        </div>
-
-        <div class="absolute inset-0 lg:relative lg:w-1/2">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div
-                class="h-full bg-[url(/src/assets/img/asancuslegal-hero.webp)] bg-cover bg-center"
+            <h1 class="text-2xl md:text-4xl text-white">
+                {i18n.HERO_TITLE}
+            </h1>
+            <p class="text-white">
+                {i18n.HERO_PARAGRAPH}
+            </p>
+            <button
+                type="button"
+                class="w-fit cursor-pointer rounded-sm border px-6 py-2 md:w-fit bg-white hover:bg-primary hover:text-white hover:scale-105 transition duration-300 ease-in"
             >
-            </div>
+                {i18n.HERO_EMAIL}
+            </button>
         </div>
     </div>
 </Section>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        setTimeout(() => {
+            const heroContent = document.getElementById("hero-content");
+            if (heroContent) {
+                heroContent.classList.remove("opacity-0", "translate-y-10");
+                heroContent.classList.add("opacity-100", "translate-y-0");
+            }
+        }, 1000);
+    });
+</script>
