@@ -1,5 +1,9 @@
 ---
-import EQUIPO from "@/data/equipo.json";
+import EQUIPO_ES from "@/data/equipo.json";
+import EQUIPO_EN from "@/data/equipo_en.json";
+
+const { currentLocale } = Astro;
+const EQUIPO = currentLocale === 'en' ? EQUIPO_EN : EQUIPO_ES;
 ---
 
 <ul class="splide__list">
