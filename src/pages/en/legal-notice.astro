@@ -1,0 +1,37 @@
+---
+import Section from "@/layouts/Section.astro";
+import AVISOLEGAL from "@/data/avisoLegal-en.json";
+
+import "@/styles/global.css";
+import "@fontsource-variable/raleway";
+import Layout from "@/layouts/Layout.astro";
+
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title={i18n.LEGAL_SEO_TITLE} description={i18n.LEGAL_SEO_DESCRIPTION}>
+    <Header />
+    <main>
+        <Section>
+            <div class="px-4 py-12 lg:py-28 max-w-screen-md mx-auto">
+                <h2 class="text-2xl py-5">Legal Notice</h2>
+                {
+                    AVISOLEGAL.map(({ title, description }) => (
+                        <article>
+                            <h2 class="py-2 font-semibold">{title}</h2>
+                            {Array.isArray(description)
+                                ? description.map((paragraph) => paragraph && <p class="py-2">{paragraph}</p>)
+                                : description && <p class="py-2">{description}</p>}
+                        </article>
+                    ))
+                }
+                
+            </div>
+        </Section>
+    </main>
+    <Footer />
+</Layout>
