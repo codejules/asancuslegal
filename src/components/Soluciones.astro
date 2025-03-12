@@ -5,7 +5,7 @@ import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-const image = "/assets/img/soluciones-asancus-legal.webp";
+const image = "/assets/img/asancuslegal-soluciones.webp";
 
 type Solutions = {
     percentage: string;
@@ -28,9 +28,9 @@ const SOLUTIONS: Solutions[] = [
                 <h2 class="badge font-semibold">{i18n.SOLUTIONS_TITLE}</h2>
                 <p class="text-sm">{i18n.SOLUTIONS_PARAGRAPH}</p>
             </div>
-            <div class="px-12 z-10">
+            <div class="px-4 md:px-8 z-10">
                 <img
-                    class="rounded-sm md:w-96 md:mx-auto"
+                    class="rounded-sm w-full md:mx-auto"
                     src={image}
                     alt=""
                     title=""

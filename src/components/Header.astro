@@ -11,11 +11,13 @@ const NAV_ITEMS = getNavItems(currentLocale || "es");
 const LOGO = [
     {
         url: "/logo-asancus-legal.svg",
-        className: "min-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+        className:
+            "min-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
     },
     {
         url: "/logo-asancus-legal-mobile.svg",
-        className: "max-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+        className:
+            "max-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
     },
 ];
 ---
@@ -55,10 +57,6 @@ const LOGO = [
                 </ul>
             </div>
 
-            <div class="hidden lg:block">
-                <LanguageSelector currentLocale={currentLocale} client:load />
-            </div>
-
             <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button
                     type="button"
@@ -67,6 +65,11 @@ const LOGO = [
                     <a href=`mailto:${i18n.HERO_EMAIL}`>{i18n.HERO_EMAIL}</a>
                 </button>
             </div>
+
+            <div class="hidden lg:block">
+                <LanguageSelector currentLocale={currentLocale} client:load />
+            </div>
+
             <MenuBurger />
         </div>
     </nav>
