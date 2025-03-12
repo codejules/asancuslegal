@@ -28,7 +28,9 @@
         },
         "LABORAL": {
             "TITLE": "Laboral",
-            "DESCRIPTION": ["Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."]
+            "DESCRIPTION": [
+                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
+            ]
         }
     },
     "SOLUTIONS_TITLE": "Soluciones Legales",
@@ -46,5 +48,7 @@
     "CONTACT_TITLE": "Contacto",
     "CONTACT_SUBTITLE": "Para más información, rellena el siguiente formulario:",
     "LEGAL_SEO_TITLE": "Aviso Legal - Asancus Legal, Bufete de Abogados Mercantil y Fiscal",
-    "LEGAL_SEO_DESCRIPTION": "En este apartado, encontrarás toda la información legal y de privacidad necesaria para navegar por nuestra web. Asegúrate de leerla detenidamente antes de continuar."
+    "LEGAL_SEO_DESCRIPTION": "En este apartado, encontrarás toda la información legal y de privacidad necesaria para navegar por nuestra web. Asegúrate de leerla detenidamente antes de continuar.",
+    "FOOTER_1": "Aviso Legal",
+    "FOOTER_2": "Política de Privacidad"
 }

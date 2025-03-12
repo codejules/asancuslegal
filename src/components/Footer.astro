@@ -2,20 +2,29 @@
 const year = new Date().getFullYear();
 const copyright = `©${year} Asancus Legal. Todos los derechos reservados`;
 
-const LINKS = [
+
+const getLinks = (locale: string) => [
     {
-        text: "Aviso Legal",
-        url: "/aviso-legal"
+        text: i18n.FOOTER_1,
+        url: locale === "es" ? "/aviso-legal" : "/en/legal-notice"
     },
     {
-        text: "Política de Privacidad",
-        url: ""
+        text: i18n.FOOTER_2,
+        url: locale === "es" ? "/politica-privacidad" : "/en/privacy-policy"
     },
     {
-        text: "Contacto",
-        url: "#contacto"
+        text: i18n.CONTACT_TITLE,
+        url: locale === "es" ? "#contacto" : "#contacto"
     },
 ];
+
+
+const { currentLocale } = Astro;
+const locale = currentLocale || 'es';
+import { getI18N } from "@/i18n";
+const i18n = getI18N({ currentLocale });
+
+const LINKS = getLinks(locale);
 ---
 
 <footer class="border-t-1 border-slate-300 mx-4">

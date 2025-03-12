@@ -6,9 +6,9 @@ import "@/styles/global.css";
 import "@fontsource-variable/raleway";
 import Layout from "@/layouts/Layout.astro";
 
-import { getI18N } from "@/i18n";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
