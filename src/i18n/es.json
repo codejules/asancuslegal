@@ -1,8 +1,8 @@
 {
     "SEO_TITLE": "Asancus Legal - Despacho Abogados Fiscal Mercantil",
     "SEO_DESCRIPTION": "Asesoramiento Legal personalizado y confiable en Fiscal y Mercantil. Nuestro despacho se distingue por su cercanía y capacidad para resolver casos complejos de manera eficiente.",
-    "HERO_TITLE": "En la mitología, Sancus, dios de la lealtad y la justicia, protegía la integridad de los pactos y el cumplimiento de las leyes. En Asancus Legal, seguimos su legado con un compromiso inquebrantable: defender sus intereses con estrategia, ética y precisión jurídica.",
-    "HERO_PARAGRAPH": "ASANCUS LEGAL: JUSTICIA QUE PROTEGE, LEALTAD QUE PERDURA.",
+    "HERO_TITLE": "Porque cada caso merece atención personalizada",
+    "HERO_PARAGRAPH": "Garantizamos transparencia y comunicación constante durante todo el proceso legal.",
     "HERO_EMAIL": "info@asancuslegal.com",
     "NAV_SERVICES": {
         "title": "Servicios",
@@ -20,8 +20,11 @@
         "title": "Contacto",
         "url": "/#contacto"
     },
-    "INFO_TITLE": "En <span class='text-primary font-semibold'>Asancus Legal</span>, entendemos que cada caso es único.",
-    "INFO_SUBTITLE": "Por eso, nuestros abogados especializados trabajan de cerca contigo para desarrollar soluciones legales que se adapten a tus objetivos.",
+    "INFO_TITLE": {
+        "title": "En la mitología, Sancus, <span class='text-primary font-semibold'>dios de la lealtad y la justicia</span>, protegía la integridad de los pactos y el cumplimiento de las leyes.",
+        "subtitle": "En <span class='text-primary font-semibold'>Asancus Legal</span>, seguimos su legado con un compromiso inquebrantable: defender sus intereses con estrategia, ética y precisión jurídica."
+    },
+    "INFO_SUBTITLE": "Asancus Legal: Justicia que protege, Lealtad que perdura",
     "AREAS_TITLE": "Nuestras principales Áreas",
     "SERVICES": {
         "FISCAL": {
