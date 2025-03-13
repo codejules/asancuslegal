@@ -5,7 +5,9 @@ import Checkbox from './Checkbox';
 import { INPUTS } from "@/types/form.js";
 import SubmitButton from "./ButtonSubmit";
 
-const ContactForm = () => {
+const ContactForm = (currentLocale: any) => {
+    const dataLocale = currentLocale.currentLocale;
+
     const {
         formRef,
         isSubmitting,
@@ -76,7 +78,7 @@ const ContactForm = () => {
             <div ref={turnstileRef} className="flex justify-start mt-8"></div>
             {errors.turnstile && <p className="text-red-500 text-xs text-left">{errors.turnstile}</p>}
 
-            <SubmitButton isSubmitting={isSubmitting} isSent={isSent} />
+            <SubmitButton isSubmitting={isSubmitting} isSent={isSent} dataLocale={dataLocale} />
         </form>
     );
 };

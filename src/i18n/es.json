@@ -50,5 +50,8 @@
     "LEGAL_SEO_TITLE": "Aviso Legal - Asancus Legal, Bufete de Abogados Mercantil y Fiscal",
     "LEGAL_SEO_DESCRIPTION": "En este apartado, encontrarás toda la información legal y de privacidad necesaria para navegar por nuestra web. Asegúrate de leerla detenidamente antes de continuar.",
     "FOOTER_1": "Aviso Legal",
-    "FOOTER_2": "Política de Privacidad"
+    "FOOTER_2": "Política de Privacidad",
+    "SENDING_MESSAGE": "Enviando mail...",
+    "SENT_MESSAGE": "Mensaje enviado correctamente ✅",
+    "SEND_MESSAGE": "Enviar mensaje"
 }

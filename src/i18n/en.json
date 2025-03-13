@@ -50,6 +50,8 @@
     "LEGAL_SEO_TITLE": "Legal Notice - Asancus Legal, Mercantile and Tax Law Firm",
     "LEGAL_SEO_DESCRIPTION": "In this section, you will find all the legal and privacy information necessary to browse our website. Be sure to read it carefully before continuing.",
     "FOOTER_1": "Legal Notice",
-    "FOOTER_2": "Privacy Policy"
-
+    "FOOTER_2": "Privacy Policy",
+    "SENDING_MESSAGE": "Sending email...",
+    "SENT_MESSAGE": "Message sent successfully ✅",
+    "SEND_MESSAGE": "Send message"
 }
