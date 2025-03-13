@@ -7,21 +7,55 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Section id={currentLocale === 'es' ? 'contacto' : 'contact'}>
+<Section id={currentLocale === "es" ? "contacto" : "contact"}>
     <div class="bg-primary">
         <div
-            class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
+            class="max-w-screen-xl mx-auto flex flex-col gap-8 py-10 lg:py-20 px-5"
         >
             <div class="flex flex-col justify-start gap-4 items-start">
                 <h1 class="badge font-semibold">
                     {i18n.CONTACT_TITLE}
                 </h1>
-                <h2 class="text-xl lg:text-2xl font-light text-white">
-                    {i18n.CONTACT_SUBTITLE}
-                </h2>
             </div>
-            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
-                <Form client:load currentLocale={currentLocale} />
+            <div
+                class="flex flex-col-reverse lg:flex-row lg:justify-evenly gap-8 lg:gap-14"
+            >
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl lg:text-2xl font-semibold text-white">
+                        {i18n.CONTACT_SUBTITLE}
+                    </h2>
+                    <Form client:load currentLocale={currentLocale} />
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h2 class="text-xl lg:text-2xl font-semibold text-white">
+                        Encuéntranos en:
+                    </h2>
+                    <p class="text-white">
+                        <span class="font-semibold">Email:</span>
+                        <a
+                            class="hover:text-gray-500 transition duration-300 ease-in"
+                            href="mailto:info@asancuslegal.com"
+                            >info@asancuslegal.com</a
+                        >.
+                    </p>
+                    <p class="text-white">
+                        <span class="font-semibold">Teléfono:</span>
+                        <a
+                            class="hover:text-gray-500 transition duration-300 ease-in"
+                            href="tel:659377251">+34 659 37 72 51</a
+                        >.
+                    </p>
+                    <p class="text-white">
+                        <span class="font-semibold">Dirección:</span>
+                        <a
+                            class="hover:text-gray-500 transition duration-300 ease-in"
+                            href="https://maps.app.goo.gl/w21qqoP5AZBDQqJ5A"
+                            target="_blank"
+                            >C/ Conde Salvatierra 21, planta 3, pta 5. 46004
+                            Valencia</a
+                        >.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

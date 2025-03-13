@@ -29,7 +29,7 @@ const ContactForm = (currentLocale: any) => {
     } = useContactForm(dataLocale);
 
     return (
-        <form ref={formRef} className="flex flex-col gap-2 md:gap-3" onSubmit={handleSubmit}
+        <form ref={formRef} className="flex flex-col gap-2 md:gap-3 lg:border-1 lg:border-gray-300 lg:rounded-xl lg:p-5" onSubmit={handleSubmit}
             noValidate>
             <div aria-hidden="true" class="hidden">
                 <label for="bot-trap" htmlFor="bot-trap"></label>
