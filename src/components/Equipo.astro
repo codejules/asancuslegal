@@ -7,7 +7,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Section id="equipo">
+<Section id={currentLocale === 'es' ? 'equipo' : 'team'}>
     <div
         class="max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
     >

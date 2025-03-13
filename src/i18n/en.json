@@ -4,10 +4,22 @@
     "HERO_TITLE": "Because every case deserves personalized attention",
     "HERO_PARAGRAPH": "We guarantee transparency and constant communication throughout the entire legal process.",
     "HERO_EMAIL": "info@asancuslegal.com",
-    "NAV_SERVICES": "Services",
-    "NAV_SOLUTIONS": "Solutions",
-    "NAV_TEAM": "Team",
-    "NAV_CONTACT": "Contact",
+    "NAV_SERVICES": {
+        "title": "Services",
+        "url": "/en/#areas"
+    },
+    "NAV_SOLUTIONS": {
+        "title": "Solutions",
+        "url": "/en/#solutions"
+    },
+    "NAV_TEAM": {
+        "title": "Team",
+        "url": "/en/#team"
+    },
+    "NAV_CONTACT": {
+        "title": "Contact",
+        "url": "/en/#contact"
+    },
     "INFO_TITLE": "At <span class='text-primary font-semibold'>Asancus Legal</span>, we understand that every case is unique.",
     "INFO_SUBTITLE": "That's why our specialized attorneys work closely with you to develop legal solutions that align with your objectives.",
     "AREAS_TITLE": "Our Main Areas",
