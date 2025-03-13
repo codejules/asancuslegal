@@ -28,7 +28,6 @@ export async function sendEmail(options: SendEmailOptions): Promise<Transporter>
                 reject(err);
             }
             // Log the message ID and preview URL if available.
-            console.log("Message sent:", info.messageId);
             resolve(info);
         });
     });
