@@ -9,7 +9,6 @@ export type Inputs = {
 };
 
 
-// export const INPUTS: Inputs[] = [
 export function getInputs(currentLocale: any): Inputs[] {
     const i18n = getI18N({ currentLocale });
 

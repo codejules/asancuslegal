@@ -1,6 +1,7 @@
 ---
 import Section from "@/layouts/Section.astro";
 import Form from "./Form.js";
+import { FIND_US } from "@/types/contact";
 
 import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
@@ -30,31 +31,19 @@ const i18n = getI18N({ currentLocale });
                     <h2 class="text-xl lg:text-2xl font-semibold text-white">
                         {i18n.CONTACT_FIND}
                     </h2>
-                    <p class="text-white">
-                        <span class="font-semibold">{i18n.CONTACT_EMAIL}</span>
-                        <a
-                            class="hover:text-gray-500 transition duration-300 ease-in"
-                            href="mailto:info@asancuslegal.com"
-                            >info@asancuslegal.com</a
-                        >.
-                    </p>
-                    <p class="text-white">
-                        <span class="font-semibold">{i18n.CONTACT_PHONE}</span>
-                        <a
-                            class="hover:text-gray-500 transition duration-300 ease-in"
-                            href="tel:659377251">+34 659 37 72 51</a
-                        >.
-                    </p>
-                    <p class="text-white">
-                        <span class="font-semibold">{i18n.CONTACT_ADDRESS}</span>
-                        <a
-                            class="hover:text-gray-500 transition duration-300 ease-in"
-                            href="https://maps.app.goo.gl/w21qqoP5AZBDQqJ5A"
-                            target="_blank"
-                            >C/ Conde Salvatierra 21, {i18n.CONTACT_FLOOR} 3, {i18n.CONTACT_DOOR} 5. 46004
-                            Valencia</a
-                        >.
-                    </p>
+                    {
+                        FIND_US(currentLocale).map(({ label, href, text, target }) => (
+                            <p class="text-white">
+                                <span class="font-semibold">{label}</span>
+                                <a
+                                    class="hover:text-gray-500 transition duration-300 ease-in"
+                                    href={href}
+                                    target={target}
+                                >
+                                    {text}</a>.
+                            </p>
+                        ))
+                    }
                 </div>
             </div>
         </div>

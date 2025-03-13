@@ -2,7 +2,7 @@ import { useContactForm } from "@/hooks/useContactForm";
 import InputField from './InputField';
 import ErrorMessage from './ErrorMessage';
 import Checkbox from './Checkbox';
-import { getInputs } from "@/types/form.js";
+import { getInputs } from "@/types/form";
 import { getI18N } from "@/i18n";
 
 import SubmitButton from "./ButtonSubmit";
