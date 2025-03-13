@@ -28,10 +28,10 @@ const i18n = getI18N({ currentLocale });
                 </div>
                 <div class="flex flex-col gap-3">
                     <h2 class="text-xl lg:text-2xl font-semibold text-white">
-                        Encuéntranos en:
+                        {i18n.CONTACT_FIND}
                     </h2>
                     <p class="text-white">
-                        <span class="font-semibold">Email:</span>
+                        <span class="font-semibold">{i18n.CONTACT_EMAIL}</span>
                         <a
                             class="hover:text-gray-500 transition duration-300 ease-in"
                             href="mailto:info@asancuslegal.com"
@@ -39,19 +39,19 @@ const i18n = getI18N({ currentLocale });
                         >.
                     </p>
                     <p class="text-white">
-                        <span class="font-semibold">Teléfono:</span>
+                        <span class="font-semibold">{i18n.CONTACT_PHONE}</span>
                         <a
                             class="hover:text-gray-500 transition duration-300 ease-in"
                             href="tel:659377251">+34 659 37 72 51</a
                         >.
                     </p>
                     <p class="text-white">
-                        <span class="font-semibold">Dirección:</span>
+                        <span class="font-semibold">{i18n.CONTACT_ADDRESS}</span>
                         <a
                             class="hover:text-gray-500 transition duration-300 ease-in"
                             href="https://maps.app.goo.gl/w21qqoP5AZBDQqJ5A"
                             target="_blank"
-                            >C/ Conde Salvatierra 21, planta 3, pta 5. 46004
+                            >C/ Conde Salvatierra 21, {i18n.CONTACT_FLOOR} 3, {i18n.CONTACT_DOOR} 5. 46004
                             Valencia</a
                         >.
                     </p>
