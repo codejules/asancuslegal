@@ -1,9 +1,18 @@
 ---
+const { currentLocale } = Astro;
+const locale = currentLocale || 'es';
+import { getI18N } from "@/i18n";
+const i18n = getI18N({ currentLocale });
+
 const year = new Date().getFullYear();
-const copyright = `©${year} Asancus Legal. Todos los derechos reservados`;
+const copyright = currentLocale === 'es' ? `© ${year} ${i18n.FOOTER_COPYRIGHT}` : `©${year} ${i18n.FOOTER_COPYRIGHT}`;
 
+type Getlinks = {
+    text: string;
+    url: string;
+}
 
-const getLinks = (locale: string) => [
+const GETLINKS = (locale: string): Getlinks[] => [
     {
         text: i18n.FOOTER_1,
         url: locale === "es" ? "/aviso-legal" : "/en/legal-notice"
@@ -14,17 +23,14 @@ const getLinks = (locale: string) => [
     },
     {
         text: i18n.CONTACT_TITLE,
-        url: locale === "es" ? "#contacto" : "#contacto"
+        url: locale === "es" ? "#contacto" : "/en/#contact"
     },
 ];
 
 
-const { currentLocale } = Astro;
-const locale = currentLocale || 'es';
-import { getI18N } from "@/i18n";
-const i18n = getI18N({ currentLocale });
 
-const LINKS = getLinks(locale);
+
+const LINKS = GETLINKS(locale);
 ---
 
 <footer class="border-t-1 border-slate-300 mx-4">
