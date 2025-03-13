@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "preact/hooks";
-import { INPUTS } from "@/types/form.js";
+import { getInputs } from "@/types/form.js";
+import { getI18N } from "@/i18n";
+
 import { DANGEROUS_PATTERNS, EMAIL_REGEX, NAME_REGEX } from "@/utils/validators";
 
 // Definir la interfaz para las propiedades de window.turnstile
@@ -16,7 +18,8 @@ type ValidationErrors = {
     [key: string]: string;
 };
 
-export const useContactForm = () => {
+export const useContactForm = (dataLocale: any) => {
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSent, setIsSent] = useState(false);
     const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
@@ -42,6 +45,8 @@ export const useContactForm = () => {
     }, [turnstileToken]);
 
     useEffect(() => {
+        const i18n = getI18N({ currentLocale: dataLocale });
+
         if (document.querySelector('script[src*="turnstile/v0/api.js"]')) {
             if (turnstileRef.current && window.turnstile) {
                 widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
@@ -52,7 +57,7 @@ export const useContactForm = () => {
                     'expired-callback': () => setTurnstileToken(null),
                     'error-callback': () => setErrors(prev => ({
                         ...prev,
-                        turnstile: "Error al cargar el captcha. Por favor, intenta de nuevo."
+                        turnstile: `${i18n.ERROR_CAPTCHA_TURNSTILE}`
                     }))
                 });
             }
@@ -66,25 +71,26 @@ export const useContactForm = () => {
     }, []);
 
     const validateField = (name: string, value: string): string => {
+        const i18n = getI18N({ currentLocale: dataLocale });
         if (!value.trim()) {
-            return "Este campo es obligatorio";
+            return `${i18n.ERROR_VALUE_EMPTY}`
         }
 
         switch (name) {
             case "name":
-                if (!NAME_REGEX.test(value)) return "Introduce un nombre válido";
-                if (value.length > 50) return "El nombre es demasiado largo (máximo 50 caracteres)";
+                if (!NAME_REGEX.test(value)) return `${i18n.ERROR_ADD_VALID_NAME}`
+                if (value.length > 30) return `${i18n.ERROR_LONG_NAME}`;
                 break;
             case "recipient":
-                if (!EMAIL_REGEX.test(value)) return "Introduce un email válido";
+                if (!EMAIL_REGEX.test(value)) return `${i18n.ERROR_ADD_VALID_EMAIL}`;
                 break;
             case "subject":
-                if (value.length > 50) return "El asunto es demasiado largo (máximo 50 caracteres)";
+                if (value.length > 30) return `${i18n.ERROR_LONG_SUBJECT}`;
                 break;
             case "message":
-                if (value.length > 500) return "El mensaje es demasiado largo (máximo 500 caracteres)";
+                if (value.length > 500) return `${i18n.ERROR_LONG_MESSAGE}`;
                 for (const pattern of DANGEROUS_PATTERNS) {
-                    if (pattern.test(value)) return "El mensaje contiene caracteres no permitidos";
+                    if (pattern.test(value)) return `${i18n.ERROR_PATTERN_MESSAGE}`;
                 }
                 break;
         }
@@ -104,7 +110,10 @@ export const useContactForm = () => {
         }
     };
 
-    const validateForm = (): boolean => {
+    const validateForm = (currentLocale: string): boolean => {
+        const INPUTS = getInputs(currentLocale || "es");
+        const i18n = getI18N({ currentLocale: dataLocale });
+
         const newErrors: ValidationErrors = {};
         let isValid = true;
 
@@ -116,20 +125,21 @@ export const useContactForm = () => {
             }
         });
 
-        INPUTS.forEach(({ name, required }) => {
+        INPUTS.forEach(({ name, required }: { name: string; required: boolean }) => {
+
             if (required && !formValues[name]) {
-                newErrors[name] = "Este campo es obligatorio";
+                newErrors[name] = `${i18n.ERROR_VALUE_EMPTY}`
                 isValid = false;
             }
         });
 
         if (!privacyChecked) {
-            newErrors.privacy = "Debes aceptar la política de privacidad";
+            newErrors.privacy = `${i18n.ERROR_VALUE_PRIVACY}`;
             isValid = false;
         }
 
         if (!turnstileToken) {
-            newErrors.turnstile = "Por favor, completa el captcha";
+            newErrors.turnstile = `${i18n.ERROR_VALUE_CAPTCHA}`
             isValid = false;
         }
 
@@ -138,27 +148,29 @@ export const useContactForm = () => {
     };
 
     const handleSubmit = async (e: Event) => {
+        const i18n = getI18N({ currentLocale: dataLocale });
+
         e.preventDefault();
         setSubmitAttempted(true);
         setSubmitAttempts(prev => prev + 1);
 
         const elapsedTime = Date.now() - formLoadTime.current;
         if (elapsedTime < 3000) {
-            setGeneralError("Por favor, espera un momento antes de enviar el formulario");
+            setGeneralError(`${i18n.ERROR_TIME_SUBMIT}`);
             return;
         }
 
         if (honeypotValue) {
-            setGeneralError("Posible bot detectado por honeypot");
+            setGeneralError(`${i18n.ERROR_HONEYPOT_BOT}`);
             return;
         }
 
         if (submitAttempts >= MAX_SUBMIT_ATTEMPTS) {
-            setGeneralError("Has excedido el número máximo de intentos. Por favor, inténtalo más tarde.");
+            setGeneralError(`${i18n.ERROR_NUMBER_ATTEMPTS}`);
             return;
         }
 
-        if (!validateForm()) return;
+        if (!validateForm("es")) return;
 
         setIsSubmitting(true);
 
@@ -182,10 +194,10 @@ export const useContactForm = () => {
                 setTimeout(() => setIsSent(false), 4000);
             } else {
                 const data = await response.json().catch(() => null);
-                setGeneralError(data?.message || "Error al enviar el mensaje.");
+                setGeneralError(data?.message || `${i18n.ERROR_SEND_MESSAGE}`);
             }
         } catch (error) {
-            setGeneralError("Error de conexión. Por favor, inténtalo de nuevo.");
+            setGeneralError(`${i18n.ERROR_CONNECTION}`);
         } finally {
             setIsSubmitting(false);
         }

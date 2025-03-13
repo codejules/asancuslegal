@@ -2,11 +2,13 @@ import { useContactForm } from "@/hooks/useContactForm";
 import InputField from './InputField';
 import ErrorMessage from './ErrorMessage';
 import Checkbox from './Checkbox';
-import { INPUTS } from "@/types/form.js";
+import { getInputs } from "@/types/form.js";
+
 import SubmitButton from "./ButtonSubmit";
 
 const ContactForm = (currentLocale: any) => {
     const dataLocale = currentLocale.currentLocale;
+    const INPUTS = getInputs(dataLocale || "es");
 
     const {
         formRef,
@@ -22,10 +24,11 @@ const ContactForm = (currentLocale: any) => {
         setPrivacyChecked,
         setHoneypotValue,
         turnstileRef,
-    } = useContactForm();
+    } = useContactForm(dataLocale);
 
     return (
-        <form ref={formRef} className="flex flex-col gap-2 md:gap-3" onSubmit={handleSubmit} noValidate>
+        <form ref={formRef} className="flex flex-col gap-2 md:gap-3" onSubmit={handleSubmit}
+            noValidate>
             <div aria-hidden="true" class="hidden">
                 <label for="bot-trap" htmlFor="bot-trap"></label>
                 <input
