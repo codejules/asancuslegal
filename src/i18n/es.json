@@ -28,32 +28,33 @@
     "AREAS_TITLE": "Nuestras principales Áreas",
     "SERVICES": {
         "FISCAL": {
-            "TITLE": "Fiscal",
-            "DESCRIPTION": [
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
+            "title": "Fiscal",
+            "description": [
+                "En el ámbito fiscal, la lealtad y la justicia no son solo valores, sino principios fundamentales para garantizar el cumplimiento normativo sin comprometer el crecimiento empresarial. En Asancus Legal, creemos que una estrategia fiscal bien estructurada es la clave para brindar estabilidad, minimizar riesgos y optimizar recursos.",
+                "Nuestro equipo de expertos ofrece un enfoque integral en planificación tributaria, auditoría fiscal, defensa ante procedimientos administrativos y litigios fiscales. Nos aseguramos de que cada decisión esté alineada con la normativa vigente, anticipándonos a cambios regulatorios y evitando contingencias que puedan afectar su negocio."
             ]
         },
         "MERCANTIL": {
-            "TITLE": "Mercantil",
-            "DESCRIPTION": [
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
+            "title": "Mercantil",
+            "description": [
+                "En el mundo empresarial, la seguridad jurídica es la base de un crecimiento sostenible. En Asancus Legal, entendemos que el derecho mercantil no solo regula las transacciones comerciales, sino que protege los intereses de las empresas y fortalece su estructura legal para enfrentar cualquier desafío con confianza.",
+                "El entorno corporativo es dinámico y exige respuestas rápidas y eficientes. Por eso, trabajamos con una visión proactiva, anticipándonos a riesgos y asegurando que su empresa opere bajo un marco legal sólido que impulse su crecimiento y competitividad. Su éxito es nuestra prioridad."
             ]
         }
     },
     "SOLUTIONS_TITLE": "Soluciones Legales",
-    "SOLUTIONS_PARAGRAPH": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste earum hic repudiandae! Quidem eaque, quod qui nemo ipsam illo perferendis aut sed vitae libero quia aliquid error, similique at itaque.",
-    "SOLUTIONS_DESCRIPTION_1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "SOLUTIONS_PARAGRAPH": {
+        "title": "Brindamos <span class='font-semibold'>soluciones legales estratégicas y personalizadas</span> para empresas y particulares. Nuestro equipo de expertos está comprometido en <span class='font-semibold'>defender sus derechos</span> con profesionalismo y ética.",
+        "subtitle": "Nos especializamos en <span class='font-semibold'>derecho mercantil y fiscal</span>, ofreciendo un enfoque integral para garantizar la mejor defensa y <span class='font-semibold'>asesoría jurídica</span>."
+    },
     "SOLUTIONS_PERCENTAGE_1": "25%",
-    "SOLUTIONS_DESCRIPTION_2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "SOLUTIONS_DESCRIPTION_1": "Confianza y cercanía en cada consulta legal.",
     "SOLUTIONS_PERCENTAGE_2": "40%",
-    "SOLUTIONS_DESCRIPTION_3": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "SOLUTIONS_DESCRIPTION_2": "Estrategias diseñadas a medida para cada cliente.",
     "SOLUTIONS_PERCENTAGE_3": "65%",
-    "SOLUTIONS_DESCRIPTION_4": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "SOLUTIONS_DESCRIPTION_3": "Innovación y actualización constante en normativa legal.",
     "SOLUTIONS_PERCENTAGE_4": "80%",
+    "SOLUTIONS_DESCRIPTION_4": "Transparencia y comunicación efectiva en cada proceso.",
     "TEAM_TITLE": "Equipo Asancus Legal",
     "TEAM_SUBTITLE": "Tu problema legal, nuestra prioridad",
     "CONTACT_TITLE": "Contacto",

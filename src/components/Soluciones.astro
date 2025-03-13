@@ -8,55 +8,66 @@ const i18n = getI18N({ currentLocale });
 const image = "/assets/img/asancuslegal-soluciones.webp";
 
 type Solutions = {
-    percentage: string;
-    description: string;
-}
+  percentage: string;
+  description: string;
+};
 const SOLUTIONS: Solutions[] = [
-  { percentage: i18n.SOLUTIONS_PERCENTAGE_1, description: i18n.SOLUTIONS_DESCRIPTION_1 },
-  { percentage: i18n.SOLUTIONS_PERCENTAGE_2, description: i18n.SOLUTIONS_DESCRIPTION_2 },
-  { percentage: i18n.SOLUTIONS_PERCENTAGE_3, description: i18n.SOLUTIONS_DESCRIPTION_3 },
-  { percentage: i18n.SOLUTIONS_PERCENTAGE_4, description: i18n.SOLUTIONS_DESCRIPTION_4 }
+  {
+    percentage: i18n.SOLUTIONS_PERCENTAGE_1,
+    description: i18n.SOLUTIONS_DESCRIPTION_1,
+  },
+  {
+    percentage: i18n.SOLUTIONS_PERCENTAGE_2,
+    description: i18n.SOLUTIONS_DESCRIPTION_2,
+  },
+  {
+    percentage: i18n.SOLUTIONS_PERCENTAGE_3,
+    description: i18n.SOLUTIONS_DESCRIPTION_3,
+  },
+  {
+    percentage: i18n.SOLUTIONS_PERCENTAGE_4,
+    description: i18n.SOLUTIONS_DESCRIPTION_4,
+  },
 ];
 ---
 
-<Section id={currentLocale === 'es' ? 'soluciones' : 'solutions'}>
-    <div
-        class="py-10 lg:py-20 flex flex-col gap-6 md:gap-12 px-4 lg:max-w-screen-xl mx-auto"
-    >
-        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
-            <div class="flex flex-col gap-4">
-                <h2 class="badge font-semibold">{i18n.SOLUTIONS_TITLE}</h2>
-                <p class="text-sm">{i18n.SOLUTIONS_PARAGRAPH}</p>
-            </div>
-            <div class="px-4 md:px-8 z-10">
-                <img
-                    class="rounded-sm w-full md:mx-auto"
-                    src={image}
-                    alt=""
-                    title=""
-                />
-            </div>
-            <div
-                class="block border-b-1 border-slate-300 bottom-6 absolute w-full"
-            >
-            </div>
-        </div>
-
-        <div class="flex flex-col md:grid md:grid-cols-4 gap-4 lg:gap-12">
-            {SOLUTIONS.map((solution) => (
-              <div class="flex flex-row items-center md:items-start md:flex-col gap-4">
-                <div class="flex flex-col items-start justify-center">
-                  <span class="text-primary text-base md:text-2xl">
-                    {solution.percentage}
-                  </span>
-                </div>
-                <div>
-                  <p class="text-primary text-xs">
-                    {solution.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+<Section id={currentLocale === "es" ? "soluciones" : "solutions"}>
+  <div
+    class="py-10 lg:py-20 flex flex-col gap-6 md:gap-12 px-4 lg:max-w-screen-xl mx-auto"
+  >
+    <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
+      <div class="flex flex-col gap-4">
+        <h2 class="badge font-semibold">{i18n.SOLUTIONS_TITLE}</h2>
+        <p class="text-sm" set:html={i18n.SOLUTIONS_PARAGRAPH.title} />
+        <p class="text-sm" set:html={i18n.SOLUTIONS_PARAGRAPH.subtitle} />
+      </div>
+      <div class="px-4 md:px-8 z-10">
+        <img
+          class="rounded-sm w-full md:mx-auto"
+          src={image}
+          alt="soluciones legales Asancus Legal"
+          title="soluciones legales Asancus Legal"
+        />
+      </div>
+      <div class="block border-b-1 border-slate-300 bottom-6 absolute w-full">
+      </div>
     </div>
+
+    <div class="flex flex-col md:grid md:grid-cols-4 gap-4 lg:gap-12">
+      {
+        SOLUTIONS.map((solution) => (
+          <div class="flex flex-row items-center md:items-start md:flex-col gap-4">
+            <div class="flex flex-col items-start justify-center">
+              <span class="text-primary text-base md:text-2xl">
+                {solution.percentage}
+              </span>
+            </div>
+            <div>
+              <p class="text-primary text-xs">{solution.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </Section>

@@ -32,7 +32,7 @@ export default function Servicios({ currentLocale }) {
                   >
                     <span className="text-slate-400 text-sm">{number}</span>
                     <h2 class="text-white text-xl lg:text-2xl">
-                      {service?.TITLE || title}
+                      {service?.title || title}
                     </h2>
                   </button>
                   <div
@@ -45,7 +45,7 @@ export default function Servicios({ currentLocale }) {
                       className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
                     />
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
-                      {service?.DESCRIPTION?.map((description, i) => (
+                      {service?.description?.map((description, i) => (
                         <p key={i} className="text-white text-xs md:text-sm">{description}</p>
                       ))}
                     </div>
