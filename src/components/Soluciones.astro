@@ -1,40 +1,32 @@
 ---
 import Section from "@/layouts/Section.astro";
+import Percentage_25 from "@/icons/Percentage_25.astro";
+import Percentage_50 from "@/icons/Percentage_50.astro";
+import Percentage_75 from "@/icons/Percentage_75.astro";
+import Percentage_100 from "@/icons/Percentage_100.astro";
 
 import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-const image = "/assets/img/asancuslegal-soluciones.webp";
-
-type Solutions = {
-  percentage: string;
-  description: string;
+const ICONS = {
+  "25": Percentage_25,
+  "50": Percentage_50,
+  "75": Percentage_75,
+  "100": Percentage_100,
 };
-const SOLUTIONS: Solutions[] = [
-  {
-    percentage: i18n.SOLUTIONS_PERCENTAGE_1,
-    description: i18n.SOLUTIONS_DESCRIPTION_1,
-  },
-  {
-    percentage: i18n.SOLUTIONS_PERCENTAGE_2,
-    description: i18n.SOLUTIONS_DESCRIPTION_2,
-  },
-  {
-    percentage: i18n.SOLUTIONS_PERCENTAGE_3,
-    description: i18n.SOLUTIONS_DESCRIPTION_3,
-  },
-  {
-    percentage: i18n.SOLUTIONS_PERCENTAGE_4,
-    description: i18n.SOLUTIONS_DESCRIPTION_4,
-  },
+
+const SOLUTIONS = [
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_1, description: i18n.SOLUTIONS_DESCRIPTION_1 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_2, description: i18n.SOLUTIONS_DESCRIPTION_2 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_3, description: i18n.SOLUTIONS_DESCRIPTION_3 },
+  { percentage: i18n.SOLUTIONS_PERCENTAGE_4, description: i18n.SOLUTIONS_DESCRIPTION_4 },
 ];
 ---
 
 <Section id={currentLocale === "es" ? "soluciones" : "solutions"}>
-  <div
-    class="py-10 lg:py-20 flex flex-col gap-6 md:gap-12 px-4 lg:max-w-screen-xl mx-auto"
-  >
+  <div class="py-10 lg:py-20 flex flex-col gap-6 md:gap-12 px-4 lg:max-w-screen-xl mx-auto">
+    
     <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
       <div class="flex flex-col gap-4">
         <h2 class="badge font-semibold">{i18n.SOLUTIONS_TITLE}</h2>
@@ -42,32 +34,33 @@ const SOLUTIONS: Solutions[] = [
         <p class="text-sm" set:html={i18n.SOLUTIONS_PARAGRAPH.subtitle} />
       </div>
       <div class="px-4 md:px-8 z-10">
-        <img
+        <img 
           class="rounded-sm w-full md:mx-auto"
-          src={image}
+          src="/assets/img/asancuslegal-soluciones.webp"
           alt="soluciones legales Asancus Legal"
           title="soluciones legales Asancus Legal"
         />
       </div>
-      <div class="block border-b-1 border-slate-300 bottom-6 absolute w-full">
-      </div>
+      <div class="block border-b-1 border-slate-300 bottom-6 absolute w-full"></div>
     </div>
 
     <div class="flex flex-col md:grid md:grid-cols-4 gap-4 lg:gap-12">
-      {
-        SOLUTIONS.map((solution) => (
+      {SOLUTIONS.map(({ percentage, description }, index) => {
+        const Icon = ICONS[percentage as keyof typeof ICONS] || null;
+        return (
           <div class="flex flex-row items-center md:items-start md:flex-col gap-4">
             <div class="flex flex-col items-start justify-center">
               <span class="text-primary text-base md:text-2xl">
-                {solution.percentage}
+                {Icon && <Icon />}
               </span>
             </div>
             <div>
-              <p class="text-primary text-xs">{solution.description}</p>
+              <p class="text-primary text-xs">{description}</p>
             </div>
           </div>
-        ))
-      }
+        );
+      })}
     </div>
+
   </div>
 </Section>
