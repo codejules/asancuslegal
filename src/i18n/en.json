@@ -28,19 +28,15 @@
             "TITLE": "Tax",
             "DESCRIPTION": [
                 "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
-                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
-            ]
-        },
-        "MERCANTIL": {
-            "TITLE": "Commercial",
-            "DESCRIPTION": [
                 "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
                 "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
             ]
         },
-        "LABORAL": {
-            "TITLE": "Labor",
+        "MERCANTIL": {
+            "TITLE": "Corporate",
             "DESCRIPTION": [
+                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
+                "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS.",
                 "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and start developing websites even faster with components on top of Tailwind CSS."
             ]
         }

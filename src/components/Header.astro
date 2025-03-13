@@ -30,7 +30,7 @@ const LOGO = [
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
-            <a href="/" class="flex items-center">
+            <a href={currentLocale === 'es' ? '/' : '/en'} class="flex items-center">
                 {
                     LOGO.map(({ url, className }) => (
                         <img
