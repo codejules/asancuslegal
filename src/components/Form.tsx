@@ -3,12 +3,14 @@ import InputField from './InputField';
 import ErrorMessage from './ErrorMessage';
 import Checkbox from './Checkbox';
 import { getInputs } from "@/types/form.js";
+import { getI18N } from "@/i18n";
 
 import SubmitButton from "./ButtonSubmit";
 
 const ContactForm = (currentLocale: any) => {
     const dataLocale = currentLocale.currentLocale;
     const INPUTS = getInputs(dataLocale || "es");
+    const i18n = getI18N({ currentLocale: dataLocale });
 
     const {
         formRef,
@@ -72,9 +74,10 @@ const ContactForm = (currentLocale: any) => {
                     if (target.checked) {
                         setErrors(prev => ({ ...prev, privacy: "" }));
                     } else {
-                        setErrors(prev => ({ ...prev, privacy: "Debes aceptar la política de privacidad" }));
+                        setErrors(prev => ({ ...prev, privacy: `${i18n.ERROR_VALUE_PRIVACY}` }));
                     }
                 }}
+                dataLocale={dataLocale}
                 error={errors.privacy}
             />
 

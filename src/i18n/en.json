@@ -71,5 +71,10 @@
     "ERROR_LONG_MESSAGE": "Message is too long (max. 500 characters)",
     "ERROR_PATTERN_MESSAGE": "Message contains impermissible characters",
     "ERROR_SEND_MESSAGE": "Error sending message",
-    "ERROR_CONNECTION": "Connection error. Please, try again"
+    "ERROR_CONNECTION": "Connection error. Please, try again",
+    "ACCEPT_PRIVACY_POLICY": {
+        "title": "I have read and accept the",
+        "url": "/en/privacy-policy",
+        "subtitle": "Privacy Policy"
+    }
 }

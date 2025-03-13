@@ -71,5 +71,10 @@
     "ERROR_LONG_MESSAGE": "El mensaje es demasiado largo (máximo 500 caracteres)",
     "ERROR_PATTERN_MESSAGE": "El mensaje contiene caracteres no permitidos",
     "ERROR_SEND_MESSAGE": "Error al enviar el mensaje.",
-    "ERROR_CONNECTION": "Error de conexión. Por favor, inténtalo de nuevo."
+    "ERROR_CONNECTION": "Error de conexión. Por favor, inténtalo de nuevo.",
+    "ACCEPT_PRIVACY_POLICY": {
+        "title": "He leído y acepto la",
+        "url": "/politica-privacidad",
+        "subtitle": "Política de Privacidad"
+    }
 }
