@@ -3,9 +3,7 @@ import MenuBurger from "./MenuBurger.astro";
 import LanguageSelector from "./LanguageSelector";
 import { getNavItems, itemsHeader } from "@/types/nav";
 
-import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 const NAV_ITEMS = getNavItems(currentLocale || "es");
 
 const LOGO = [
@@ -30,13 +28,14 @@ const LOGO = [
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
-            <a href={currentLocale === 'es' ? '/' : '/en'} class="flex items-center">
+            <a href={currentLocale === 'es' ? '/#' : '/en/#'} class="flex items-center">
                 {
                     LOGO.map(({ url, className }) => (
                         <img
                             src={url}
                             class={className}
                             alt="Asancus Legal Logo"
+                            title="Logo Asancus Legal"
                         />
                     ))
                 }
@@ -55,15 +54,6 @@ const LOGO = [
                         ))
                     }
                 </ul>
-            </div>
-
-            <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button
-                    type="button"
-                    class="cursor-pointer rounded-sm bg-primary px-4 py-2 text-sm text-white hover:bg-white hover:border-slate-300 border-1 hover:text-primary hover:scale-105 transition duration-300 ease-in"
-                >
-                    <a href=`mailto:${i18n.HERO_EMAIL}`>{i18n.HERO_EMAIL}</a>
-                </button>
             </div>
 
             <div class="hidden lg:block">
