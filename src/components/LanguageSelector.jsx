@@ -46,7 +46,7 @@ const LanguageSwitcher = ({ currentLocale }) => {
       ref={dropdownRef}
       className="relative inline-block text-left"
     >
-      <div className="group text-white rounded-md text-xs font-semibold bg-black/30 hover:bg-black/70 transition-all">
+      <div className="group text-gray-900 rounded-md text-xs font-semibold bg-black/30 hover:bg-black/20 transition-all">
         <button
           type="button"
           className="cursor-pointer grid grid-cols-3 items-center gap-2 p-2"
@@ -67,7 +67,7 @@ const LanguageSwitcher = ({ currentLocale }) => {
               <li key={locale.code} className="py-[2px]">
                 <a
                   href={locale.link}
-                  className="rounded-md bg-black/30 hover:bg-black/70 grid grid-cols-3 items-center gap-2 p-2"
+                  className="rounded-md bg-white hover:bg-gray-300 grid grid-cols-3 items-center gap-2 p-2"
                 >
                   <locale.icon className="w-4 h-4 mr-2" />
                   {locale.name}
