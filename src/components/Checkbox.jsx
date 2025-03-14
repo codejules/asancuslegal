@@ -15,8 +15,8 @@ const Checkbox = ({ dataLocale: currentLocale, id, checked, onChange, error }) =
           checked={checked}
           onChange={onChange}
         />
-        <label for={id} htmlFor={id} className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-        {i18n.ACCEPT_PRIVACY_POLICY.title} <a href={i18n.ACCEPT_PRIVACY_POLICY.url} className="text-blue-400 hover:underline" rel="noopener noreferrer">{i18n.ACCEPT_PRIVACY_POLICY.subtitle}</a>
+        <label for={id} htmlFor={id} className="ms-2 text-sm font-medium text-gray-300">
+        {i18n.ACCEPT_PRIVACY_POLICY.title} <a href={i18n.ACCEPT_PRIVACY_POLICY.url} className="text-blue-200 hover:underline" rel="noopener noreferrer">{i18n.ACCEPT_PRIVACY_POLICY.subtitle}</a>
         </label>
       </div>
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}

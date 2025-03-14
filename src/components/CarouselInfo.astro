@@ -3,7 +3,7 @@ import EQUIPO_ES from "@/data/equipo.json";
 import EQUIPO_EN from "@/data/equipo_en.json";
 
 const { currentLocale } = Astro;
-const EQUIPO = currentLocale === 'en' ? EQUIPO_EN : EQUIPO_ES;
+const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
 ---
 
 <ul class="splide__list">
@@ -19,7 +19,10 @@ const EQUIPO = currentLocale === 'en' ? EQUIPO_EN : EQUIPO_ES;
                 email,
             }) => {
                 return (
-                    <li class="splide__slide lg:justify-center lg:flex">
+                    <li
+                        aria-hidden="true"
+                        class="splide__slide lg:justify-center lg:flex"
+                    >
                         <div
                             class={`rounded-sm group relative h-[550px] w-auto lg:w-96 bg-cover bg-center`}
                             style={`background-image: url(${background})`}

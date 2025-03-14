@@ -27,7 +27,7 @@ const NAV_ITEMS = getNavItems(currentLocale || 'es');
         <button
             id="nav-burguer"
             class="block cursor-pointer"
-            aria-label="Menu Burger"
+            role="menu"
         >
             {[...Array(3)].map(() => <span class={burgerLine} />)}
         </button>
