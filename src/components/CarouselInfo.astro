@@ -19,12 +19,8 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
                 email,
             }) => {
                 return (
-                    <li
-                        aria-hidden="true"
-                        class="splide__slide lg:justify-center lg:flex"
-                    >
+                    <li class="splide__slide lg:justify-center lg:flex">
                         <div
-                            aria-hidden="false"
                             class={`rounded-sm group relative h-[550px] w-auto lg:w-96 bg-cover bg-center`}
                             style={`background-image: url(${background})`}
                             tabindex="0"
@@ -50,14 +46,13 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
                                                 {description}
                                             </p>
                                         ))}
-                                    <button class="w-fit cursor-pointer bg-gray-300 text-primary hover:text-white hover:scale-105 hover:bg-transparent hover:border-white hover:border-1 hover:transition hover:duration-300 hover:ease-in rounded-2xl px-2 py-1 font-light text-sm">
-                                        <a
-                                            href={`mailto:${email}`}
-                                            title={`Enviar email a: ${title}`}
-                                        >
-                                            {email}
-                                        </a>
-                                    </button>
+                                    <a
+                                        class="w-fit cursor-pointer bg-gray-300 text-primary hover:text-white hover:scale-105 hover:bg-transparent hover:border-white hover:border-1 hover:transition hover:duration-300 hover:ease-in rounded-sm px-2 py-1 font-light text-sm"
+                                        href={`mailto:${email}`}
+                                        title={`Enviar email a: ${title}`}
+                                    >
+                                        {email}
+                                    </a>
                                 </div>
                             </div>
                         </div>
