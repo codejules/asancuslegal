@@ -19,15 +19,16 @@ const NAV_ITEMS = getNavItems(currentLocale || 'es');
                     </li>
                 ))
             }
-            <div>
+            <li>
                 <LanguageSelector currentLocale={currentLocale} client:load />
-            </div>
+            </li>
         </ul>
 
         <button
             id="nav-burguer"
             class="block cursor-pointer"
-            role="menu"
+            role="button"
+            aria-label="menubutton"
         >
             {[...Array(3)].map(() => <span class={burgerLine} />)}
         </button>
