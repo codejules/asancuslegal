@@ -21,6 +21,7 @@ const FAVICON: Favicon[] = [
 
 const flowbite = "../../assets/js/flowbite.min.js";
 const turnstile = "../../turnstile/v0/api.js";
+const ogImage = "https://opengraph.b-cdn.net/production/images/3c20d197-6b3f-4b3f-a682-e556daff4d4f.jpg?token=VqUlxm4fAqgA6n9H-DgqP01R_L7_dr_mumoOypGHbv8&height=514&width=1200&expires=33278546694";
 ---
 
 <!doctype html>
@@ -40,7 +41,7 @@ const turnstile = "../../turnstile/v0/api.js";
 				/>
 			))
 		}
-		<script is:inline src={flowbite}></script>
+		<script is:inline src={flowbite} async defer></script>
 		<script is:inline src={turnstile} async defer></script>
 
 		<!-- Facebook Meta Tags -->
@@ -54,7 +55,7 @@ const turnstile = "../../turnstile/v0/api.js";
 			property="og:description"
 			content="Nuestro despacho se distingue por su cercanía y capacidad para resolver casos complejos de manera eficiente."
 		/>
-		<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/3c20d197-6b3f-4b3f-a682-e556daff4d4f.jpg" />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -68,7 +69,7 @@ const turnstile = "../../turnstile/v0/api.js";
 			name="twitter:description"
 			content="Nuestro despacho se distingue por su cercanía y capacidad para resolver casos complejos de manera eficiente."
 		/>
-		<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/3c20d197-6b3f-4b3f-a682-e556daff4d4f.jpg" />
+		<meta name="twitter:image" content={ogImage} />
 
 		<ClientRouter />
 	</head>
