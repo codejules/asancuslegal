@@ -13,19 +13,13 @@ const i18n = getI18N({ currentLocale });
             {
                 typeof i18n.INFO_TITLE === "object" && (
                     <>
-                        <p
-                            class="text-balance"
-                            set:html={i18n.INFO_TITLE.title}
-                        />
-                        <p
-                            class="text-balance"
-                            set:html={i18n.INFO_TITLE.subtitle}
-                        />
+                        <p set:html={i18n.INFO_TITLE.title} />
+                        <p set:html={i18n.INFO_TITLE.subtitle} />
                     </>
                 )
             }
             <blockquote class="italic font-semibold">
-                <h2>"{i18n.INFO_SUBTITLE}"</h3>
+                <h2>"{i18n.INFO_SUBTITLE}"</h2>
             </blockquote>
         </div>
     </div>

@@ -28,15 +28,20 @@ const LOGO = [
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
-            <a href={currentLocale === 'es' ? '/#' : '/en/#'} class="flex items-center">
+            <a
+                href={currentLocale === "es" ? "/#" : "/en/#"}
+                class="flex items-center"
+            >
                 {
                     LOGO.map(({ url, className }) => (
-                        <img
-                            src={url}
-                            class={className}
-                            alt="Asancus Legal Logo"
-                            title="Logo Asancus Legal"
-                        />
+                        <figure>
+                            <img
+                                src={url}
+                                class={className}
+                                alt="Asancus Legal Logo"
+                                title="Logo Asancus Legal"
+                            />
+                        </figure>
                     ))
                 }
             </a>

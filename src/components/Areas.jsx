@@ -12,15 +12,18 @@ export default function Servicios({ currentLocale }) {
       <div className="py-10 lg:py-20 max-w-screen-xl mx-auto px-4">
         <h2 className="badge font-semibold">{i18n.AREAS_TITLE}</h2>
         <div className="pt-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
-          <img
-            src={SERVICIOS[activeIndex].image}
-            alt=""
-            className="hidden lg:block rounded-sm h-96 object-cover object-center transition-opacity duration-300 ease-in"
-          />
+          <figure>
+            <img
+              src={SERVICIOS[activeIndex].image}
+              alt="servicios Asancus Legal"
+              decoding="async"
+              className="hidden lg:block rounded-sm h-96 object-cover object-center transition-opacity duration-300 ease-in"
+            />
+          </figure>
           <div className="flex flex-col gap-4">
             {SERVICIOS.map(({ number, title }, index) => {
 
-              const serviceKey = title.split(".")[1]; 
+              const serviceKey = title.split(".")[1];
               const service = i18n.SERVICES[serviceKey];
 
               return (
@@ -39,11 +42,14 @@ export default function Servicios({ currentLocale }) {
                     className={`transition duration-500 ease-in overflow-hidden ${activeIndex === index ? 'opacity-100 translate-y-0 h-auto' : 'opacity-0 -translate-y-4 h-0'
                       }`}
                   >
-                    <img
-                      src={SERVICIOS[activeIndex].image}
-                      alt=""
-                      className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
-                    />
+                    <figure>
+                      <img
+                        src={SERVICIOS[activeIndex].image}
+                        alt="servicios Asancus Legal"
+                        decoding="async"
+                        className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
+                      />
+                    </figure>
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
                       {service?.description?.map((description, i) => (
                         <p key={i} className="text-white text-xs md:text-sm">{description}</p>
