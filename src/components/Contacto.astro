@@ -3,9 +3,8 @@ import Section from "@/layouts/Section.astro";
 import Form from "./Form.js";
 import { FIND_US } from "@/types/contact";
 
-import { getI18N } from "@/i18n";
+const { i18n } = Astro.props;
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 ---
 
 <Section id={currentLocale === "es" ? "contacto" : "contact"}>

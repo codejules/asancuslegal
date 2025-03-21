@@ -10,25 +10,22 @@ import Soluciones from "@/components/Soluciones.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 
-import '@fontsource-variable/raleway';
+import "@fontsource-variable/raleway";
 
 import { getI18N } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout
-	title={i18n.SEO_TITLE}
-	description={i18n.SEO_DESCRIPTION}
->
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
 	<Header />
 	<main>
-		<Hero />
-		<Info />
+		<Hero i18n={i18n} />
+		<Info i18n={i18n} />
 		<Areas client:visible currentLocale={currentLocale} />
-		<Soluciones />
-		<Equipo />
-		<Contacto />
+		<Soluciones i18n={i18n} />
+		<Equipo i18n={i18n} />
+		<Contacto i18n={i18n} />
 	</main>
 	<Footer />
 </Layout>

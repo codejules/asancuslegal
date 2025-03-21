@@ -7,9 +7,8 @@ import Percentage_100 from "@/icons/Percentage_100.astro";
 
 import { SOLUTIONS } from "@/types/solutions";
 
-import { getI18N } from "@/i18n";
+const { i18n } = Astro.props;
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 
 const ICONS = {
   "25": Percentage_25,
