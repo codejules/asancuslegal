@@ -18,6 +18,9 @@ const FAVICON: Favicon[] = [
 		media: "(prefers-color-scheme: dark)",
 	},
 ];
+
+const flowbite = "../../public/assets/js/flowbite.min.js";
+const turnstile = "../../public/turnstile/v0/api.js";
 ---
 
 <!doctype html>
@@ -25,6 +28,7 @@ const FAVICON: Favicon[] = [
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
 		<meta name="description" content={description} />
 		{
 			FAVICON.map(({ url, media }) => (
@@ -36,16 +40,40 @@ const FAVICON: Favicon[] = [
 				/>
 			))
 		}
-		<title>{title}</title>
+		<script is:inline src={flowbite}></script>
+		<script is:inline src={turnstile} async defer></script>
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://www.asancuslegal.com" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="Asancus Legal - Despacho Abogados Fiscal Mercantil"
+		/>
+		<meta
+			property="og:description"
+			content="Asesoramiento Legal personalizado y confiable en Fiscal y Mercantil. Nuestro despacho se distingue por su cercanía y capacidad para resolver casos complejos de manera eficiente."
+		/>
+		<meta property="og:image" content="../../assets/img/opengraph-img.jpg" />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="www.asancuslegal.com" />
+		<meta property="twitter:url" content="https://www.asancuslegal.com" />
+		<meta
+			name="twitter:title"
+			content="Asancus Legal - Despacho Abogados Fiscal Mercantil"
+		/>
+		<meta
+			name="twitter:description"
+			content="Asesoramiento Legal personalizado y confiable en Fiscal y Mercantil. Nuestro despacho se distingue por su cercanía y capacidad para resolver casos complejos de manera eficiente."
+		/>
+		<meta name="twitter:image" content="../../assets/img/opengraph-img.jpg" />
+
 		<ClientRouter />
 	</head>
 	<body>
 		<slot />
-		<script
-			is:inline
-			src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
-		></script>
-		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 	</body>
 </html>
 

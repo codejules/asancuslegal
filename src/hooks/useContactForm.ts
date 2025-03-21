@@ -46,8 +46,9 @@ export const useContactForm = (dataLocale: any) => {
 
     useEffect(() => {
         const i18n = getI18N({ currentLocale: dataLocale });
+        const turnstileSelector = document.querySelector('script[src*="../../public/turnstile/v0/api.js"]');
 
-        if (document.querySelector('script[src*="turnstile/v0/api.js"]')) {
+        if (turnstileSelector) {
             if (turnstileRef.current && window.turnstile) {
                 widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
                     sitekey: siteKeyCloudflare,
