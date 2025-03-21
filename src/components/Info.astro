@@ -1,6 +1,6 @@
 ---
 import Section from "@/layouts/Section.astro";
-const { info, title, subtitle, quote } = Astro.props;
+const { info, quote } = Astro.props;
 ---
 
 <Section>
@@ -11,8 +11,8 @@ const { info, title, subtitle, quote } = Astro.props;
             {
                 typeof info === "object" && (
                     <>
-                        <p set:html={title} />
-                        <p set:html={subtitle} />
+                        <p set:html={info.title} />
+                        <p set:html={info.subtitle} />
                     </>
                 )
             }

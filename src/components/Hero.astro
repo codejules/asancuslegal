@@ -1,7 +1,7 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const { title, paragraph, email } = Astro.props;
+const { title, subtitle, email } = Astro.props;
 ---
 
 <Section>
@@ -26,7 +26,7 @@ const { title, paragraph, email } = Astro.props;
                     {title}
                 </h2>
                 <p class="text-white">
-                    {paragraph}
+                    {subtitle}
                 </p>
                 <button
                     type="button"

@@ -3,7 +3,7 @@ import Section from "@/layouts/Section.astro";
 import Form from "./Form.js";
 import { FINDUS } from "@/types/contact";
 
-const { title, subtitle, find, currentLocale } = Astro.props;
+const { title, subtitle, description, currentLocale } = Astro.props;
 ---
 
 <Section id={currentLocale === "es" ? "contacto" : "contact"}>
@@ -27,7 +27,7 @@ const { title, subtitle, find, currentLocale } = Astro.props;
                 </div>
                 <div class="flex flex-col gap-3">
                     <h2 class="text-xl lg:text-2xl font-semibold text-white">
-                        {find}
+                        {description}
                     </h2>
                     {
                         FINDUS(currentLocale).map(({ label, href, text, target }) => (
