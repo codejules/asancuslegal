@@ -1,13 +1,13 @@
 import { getI18N } from "@/i18n";
 
-export type Find_us = {
+export type Findus = {
     label: string;
     href: string;
     text: string;
     target?: string;
 };
 
-export function FIND_US(currentLocale: any): Find_us[] {
+export function FINDUS(currentLocale: any): Findus[] {
     const i18n = getI18N({ currentLocale });
 
     return [

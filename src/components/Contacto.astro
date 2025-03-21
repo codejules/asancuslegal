@@ -1,10 +1,9 @@
 ---
 import Section from "@/layouts/Section.astro";
 import Form from "./Form.js";
-import { FIND_US } from "@/types/contact";
+import { FINDUS } from "@/types/contact";
 
-const { i18n } = Astro.props;
-const { currentLocale } = Astro;
+const { title, subtitle, find, currentLocale } = Astro.props;
 ---
 
 <Section id={currentLocale === "es" ? "contacto" : "contact"}>
@@ -14,7 +13,7 @@ const { currentLocale } = Astro;
         >
             <div class="flex flex-col justify-start gap-4 items-start">
                 <h1 class="badge font-semibold">
-                    {i18n.CONTACT_TITLE}
+                    {title}
                 </h1>
             </div>
             <div
@@ -22,16 +21,16 @@ const { currentLocale } = Astro;
             >
                 <div class="flex flex-col gap-4">
                     <h2 class="text-xl lg:text-2xl font-semibold text-white">
-                        {i18n.CONTACT_SUBTITLE}
+                        {subtitle}
                     </h2>
                     <Form client:load currentLocale={currentLocale} />
                 </div>
                 <div class="flex flex-col gap-3">
                     <h2 class="text-xl lg:text-2xl font-semibold text-white">
-                        {i18n.CONTACT_FIND}
+                        {find}
                     </h2>
                     {
-                        FIND_US(currentLocale).map(({ label, href, text, target }) => (
+                        FINDUS(currentLocale).map(({ label, href, text, target }) => (
                             <p class="text-white">
                                 <span class="font-semibold">{label}</span>
                                 <a
