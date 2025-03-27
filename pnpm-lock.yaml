@@ -17,6 +17,9 @@ importers:
       '@fontsource-variable/raleway':
         specifier: ^5.2.5
         version: 5.2.5
+      '@midudev/tailwind-animations':
+        specifier: ^0.2.0
+        version: 0.2.0(tailwindcss@4.0.7)
       '@splidejs/splide':
         specifier: ^4.1.4
         version: 4.1.4
@@ -459,6 +462,11 @@ packages:
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
     engines: {node: '>=18'}
     hasBin: true
+
+  '@midudev/tailwind-animations@0.2.0':
+    resolution: {integrity: sha512-4mktb060dA7SZz0LjMfhBT30HWPmQENwF4AJC7/etESWohe4pukST0ohC2yAePS5GNinhY3MXmZZ8//2ywafOQ==}
+    peerDependencies:
+      tailwindcss: ^3.0.0 || ^4.0.0
 
   '@netlify/blobs@8.1.1':
     resolution: {integrity: sha512-7Dg3PzArvQ0Owq4wpkLECC9iaDBOxuWUN2uwbQtUF6tZssyez2QN+eO0CjuIhhZUivbw+X9bwsyiEjWkdJnv/A==}
@@ -2533,6 +2541,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@midudev/tailwind-animations@0.2.0(tailwindcss@4.0.7)':
+    dependencies:
+      tailwindcss: 4.0.7
 
   '@netlify/blobs@8.1.1': {}
 
