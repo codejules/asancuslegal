@@ -5,17 +5,7 @@ const { title, subtitle, email } = Astro.props;
 ---
 
 <Section>
-    <div class="h-full w-full relative">
-        <figure>
-            <img
-                src="/assets/img/asancuslegal-hero.webp"
-                alt="Asancus Legal bufete abogados"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="eager"
-                fetchpriority="high"
-            />
-        </figure>
+    <div class="h-full w-full relative bg-[url('/images/hero.avif')] bg-cover bg-center">
         <div
             class="py-36 lg:py-72 animate-fade-in animate-delay-1000 animate-duration-1000"
             id="hero-content"
