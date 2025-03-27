@@ -30,6 +30,15 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
+
+		<link
+			rel="preload"
+			href="/assets/img/asancuslegal-hero.webp"
+			as="image"
+			type="image/webp"
+			crossorigin="anonymous"
+		/>
+
 		<meta name="description" content={description} />
 		{
 			FAVICON.map(({ url, media }) => (
