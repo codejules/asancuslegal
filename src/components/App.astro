@@ -17,7 +17,12 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+<Layout
+	currentLocale={currentLocale ?? "en"}
+	title={i18n.SEO_TITLE}
+	description={i18n.SEO_DESCRIPTION}
+	ogDescription={i18n.OG_DESCRIPTION}
+>
 	<Header />
 	<main>
 		<Hero
@@ -25,10 +30,7 @@ const i18n = getI18N({ currentLocale });
 			subtitle={i18n.HERO_PARAGRAPH}
 			email={i18n.HERO_EMAIL}
 		/>
-		<Info
-			info={i18n.INFO_TITLE}
-			quote={i18n.INFO_SUBTITLE}
-		/>
+		<Info info={i18n.INFO_TITLE} quote={i18n.INFO_SUBTITLE} />
 		<Areas client:visible currentLocale={currentLocale} />
 		<Soluciones
 			solutions={i18n.SOLUTIONS_TITLE}
