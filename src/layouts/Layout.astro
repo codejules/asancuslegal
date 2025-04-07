@@ -23,7 +23,6 @@ const FAVICON: Favicon[] = [
 
 const flowbite = "../../assets/js/flowbite.min.js";
 const turnstile = "../../turnstile/v0/api.js";
-const hcaptcha = "../../hcaptcha/api.js";
 const ogImage = "https://test.asancuslegal.com/og.jpg";
 ---
 
@@ -35,8 +34,8 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 		<title>{title}</title>
 
 		<script is:inline src={flowbite} async defer></script>
-<!-- 		<script is:inline src={turnstile} async defer></script>
- -->		<script is:inline src={hcaptcha} async defer
+		<script is:inline src={turnstile} async defer></script>
+		<script is:inline src="https://js.hcaptcha.com/1/api.js?hl=es" async defer
 		></script>
 
 		<link

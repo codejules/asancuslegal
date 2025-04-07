@@ -191,8 +191,8 @@ export const useContactForm = (dataLocale: any) => {
                 setFormValues({});
                 setPrivacyChecked(false);
                 if (formRef.current) formRef.current.reset();
-                if (window.turnstile && widgetIdRef.current) window.turnstile.reset(widgetIdRef.current);
-                setTimeout(() => setIsSent(false), 4000);
+/*                 if (window.turnstile && widgetIdRef.current) window.turnstile.reset(widgetIdRef.current);
+ */                setTimeout(() => setIsSent(false), 4000);
             } else {
                 const data = await response.json().catch(() => null);
                 setGeneralError(data?.message || `${i18n.ERROR_SEND_MESSAGE}`);
