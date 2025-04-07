@@ -35,6 +35,8 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 
 		<script is:inline src={flowbite} async defer></script>
 		<script is:inline src={turnstile} async defer></script>
+		<script is:inline src="https://js.hcaptcha.com/1/api.js?hl=es" async defer
+		></script>
 
 		<link
 			rel="prefetch"
@@ -46,10 +48,10 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 		{
 			FAVICON.map(({ url, media }) => (
 				<link
-				rel="icon"
-				type="image/svg+xml"
-				href={url}
-				media={media}
+					rel="icon"
+					type="image/svg+xml"
+					href={url}
+					media={media}
 				/>
 			))
 		}
@@ -57,27 +59,15 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 
 		<meta property="og:url" content="https://www.asancuslegal.com" />
 		<meta property="og:type" content="website" />
-		<meta
-			property="og:title"
-			content={title}
-		/>
-		<meta
-			property="og:description"
-			content={ogDescription}
-		/>
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={ogDescription} />
 		<meta property="og:image" content={ogImage} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="twitter:domain" content="www.asancuslegal.com" />
 		<meta property="twitter:url" content="https://www.asancuslegal.com" />
-		<meta
-			name="twitter:title"
-			content={title}
-		/>
-		<meta
-			name="twitter:description"
-			content={ogDescription}
-		/>
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={ogDescription} />
 		<meta name="twitter:image" content={ogImage} />
 		<ClientRouter />
 	</head>
