@@ -87,7 +87,6 @@ const ContactForm = (currentLocale: any) => {
                 class="h-captcha"
                 data-sitekey="0ac4df2c-07ca-456e-a156-b8a00dee5d26"
                 data-theme="dark"
-                data-error-callback="onError"
             ></div>
             <SubmitButton isSubmitting={isSubmitting} isSent={isSent} dataLocale={dataLocale} />
         </form>
