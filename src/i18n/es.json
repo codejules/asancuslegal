@@ -79,7 +79,6 @@
     "PLACEHOLDER_SUBJECT": "Asunto*",
     "PLACEHOLDER_MESSAGE": "Escribe tu mensaje*",
     "ERROR_TIME_SUBMIT": "Por favor, espera un momento antes de enviar el formulario",
-    "ERROR_CAPTCHA_TURNSTILE": "Error al cargar el captcha. Por favor, intenta de nuevo.",
     "ERROR_VALUE_EMPTY": "Este campo es obligatorio",
     "ERROR_VALUE_PRIVACY": "Debes aceptar la política de privacidad",
     "ERROR_VALUE_CAPTCHA": "Por favor, completa el captcha",

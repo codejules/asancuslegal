@@ -79,7 +79,6 @@
     "PLACEHOLDER_SUBJECT": "Subject*",
     "PLACEHOLDER_MESSAGE": "Write your message*",
     "ERROR_TIME_SUBMIT": "Please, wait a moment before submitting the form.",
-    "ERROR_CAPTCHA_TURNSTILE": "Error loading captcha. Please try again.",
     "ERROR_VALUE_EMPTY": "This field is required",
     "ERROR_VALUE_PRIVACY": "You must accept the privacy policy",
     "ERROR_VALUE_CAPTCHA": "Please, complete the captcha",
