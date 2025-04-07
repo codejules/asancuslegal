@@ -4,16 +4,6 @@ import { getI18N } from "@/i18n";
 
 import { DANGEROUS_PATTERNS, EMAIL_REGEX, NAME_REGEX } from "@/utils/validators";
 
-// Definir la interfaz para las propiedades de window.turnstile
-/* declare global {
-    interface Window {
-        turnstile: {
-            render: (container: string | HTMLElement, options: any) => string;
-            reset: (widgetId: string) => void;
-        };
-    }
-} */
-
 type ValidationErrors = {
     [key: string]: string;
 };
@@ -22,7 +12,6 @@ export const useContactForm = (dataLocale: any) => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSent, setIsSent] = useState(false);
-    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const [formValues, setFormValues] = useState<{ [key: string]: string }>({});
     const [errors, setErrors] = useState<ValidationErrors>({});
     const [submitAttempted, setSubmitAttempted] = useState(false);
@@ -32,44 +21,7 @@ export const useContactForm = (dataLocale: any) => {
     const [generalError, setGeneralError] = useState<string | null>(null);
     const MAX_SUBMIT_ATTEMPTS = 5;
     const formLoadTime = useRef(Date.now());
-/*     const turnstileRef = useRef<HTMLDivElement>(null);
- */    const widgetIdRef = useRef<string | null>(null);
     const formRef = useRef<HTMLFormElement>(null);
-/*     const siteKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SITE_KEY;
- */
-    // Ocultar texto error cuando está checked el captcha
-/*     useEffect(() => {
-        if (turnstileToken) {
-            setErrors(prev => ({ ...prev, turnstile: "" }));
-        }
-    }, [turnstileToken]);
-
-    useEffect(() => {
-        const i18n = getI18N({ currentLocale: dataLocale });
-        const turnstileSelector = document.querySelector('script[src*="../../turnstile/v0/api.js"]');
-
-        if (turnstileSelector) {
-            if (turnstileRef.current && window.turnstile) {
-                widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-                    sitekey: siteKeyCloudflare,
-                    callback: (token: string) => setTurnstileToken(token),
-                    theme: 'light',
-                    'refresh-expired': 'auto',
-                    'expired-callback': () => setTurnstileToken(null),
-                    'error-callback': () => setErrors(prev => ({
-                        ...prev,
-                        turnstile: `${i18n.ERROR_CAPTCHA_TURNSTILE}`
-                    }))
-                });
-            }
-        }
-
-        return () => {
-            if (widgetIdRef.current && window.turnstile) {
-                window.turnstile.reset(widgetIdRef.current);
-            }
-        };
-    }, []); */
 
     const validateField = (name: string, value: string): string => {
         const i18n = getI18N({ currentLocale: dataLocale });
@@ -139,11 +91,6 @@ export const useContactForm = (dataLocale: any) => {
             isValid = false;
         }
 
-        if (!turnstileToken) {
-            newErrors.turnstile = `${i18n.ERROR_VALUE_CAPTCHA}`
-            isValid = false;
-        }
-
         setErrors(newErrors);
         return isValid;
     };
@@ -176,7 +123,6 @@ export const useContactForm = (dataLocale: any) => {
         setIsSubmitting(true);
 
         const formData = new FormData(e.target as HTMLFormElement);
-        if (turnstileToken) formData.append("cf-turnstile-response", turnstileToken);
         formData.append("form-timestamp", formLoadTime.current.toString());
 
         try {
@@ -191,8 +137,7 @@ export const useContactForm = (dataLocale: any) => {
                 setFormValues({});
                 setPrivacyChecked(false);
                 if (formRef.current) formRef.current.reset();
-/*                 if (window.turnstile && widgetIdRef.current) window.turnstile.reset(widgetIdRef.current);
- */                setTimeout(() => setIsSent(false), 4000);
+                setTimeout(() => setIsSent(false), 4000);
             } else {
                 const data = await response.json().catch(() => null);
                 setGeneralError(data?.message || `${i18n.ERROR_SEND_MESSAGE}`);
@@ -216,7 +161,6 @@ export const useContactForm = (dataLocale: any) => {
         privacyChecked,
         setPrivacyChecked,
         setHoneypotValue,
-/*         turnstileRef,
- */        setErrors
+        setErrors
     };
 };
