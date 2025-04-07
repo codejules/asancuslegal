@@ -5,14 +5,14 @@ import { getI18N } from "@/i18n";
 import { DANGEROUS_PATTERNS, EMAIL_REGEX, NAME_REGEX } from "@/utils/validators";
 
 // Definir la interfaz para las propiedades de window.turnstile
-declare global {
+/* declare global {
     interface Window {
         turnstile: {
             render: (container: string | HTMLElement, options: any) => string;
             reset: (widgetId: string) => void;
         };
     }
-}
+} */
 
 type ValidationErrors = {
     [key: string]: string;
@@ -32,13 +32,13 @@ export const useContactForm = (dataLocale: any) => {
     const [generalError, setGeneralError] = useState<string | null>(null);
     const MAX_SUBMIT_ATTEMPTS = 5;
     const formLoadTime = useRef(Date.now());
-    const turnstileRef = useRef<HTMLDivElement>(null);
-    const widgetIdRef = useRef<string | null>(null);
+/*     const turnstileRef = useRef<HTMLDivElement>(null);
+ */    const widgetIdRef = useRef<string | null>(null);
     const formRef = useRef<HTMLFormElement>(null);
-    const siteKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SITE_KEY;
-
+/*     const siteKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SITE_KEY;
+ */
     // Ocultar texto error cuando está checked el captcha
-    useEffect(() => {
+/*     useEffect(() => {
         if (turnstileToken) {
             setErrors(prev => ({ ...prev, turnstile: "" }));
         }
@@ -69,7 +69,7 @@ export const useContactForm = (dataLocale: any) => {
                 window.turnstile.reset(widgetIdRef.current);
             }
         };
-    }, []);
+    }, []); */
 
     const validateField = (name: string, value: string): string => {
         const i18n = getI18N({ currentLocale: dataLocale });
@@ -216,7 +216,7 @@ export const useContactForm = (dataLocale: any) => {
         privacyChecked,
         setPrivacyChecked,
         setHoneypotValue,
-        turnstileRef,
-        setErrors
+/*         turnstileRef,
+ */        setErrors
     };
 };
