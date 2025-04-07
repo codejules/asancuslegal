@@ -57,7 +57,7 @@ const LanguageSwitcher = ({ currentLocale }) => {
           <currentLocaleData.icon className="w-4 h-4 mr-2" />
           {currentLocaleData.name}
           <Arrow
-            className={`-mr-1 h-5 w-5 text-white transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+            className={`-mr-1 h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           />
         </button>
 
