@@ -79,15 +79,7 @@ const ContactForm = (currentLocale: any) => {
                 dataLocale={dataLocale}
                 error={errors.privacy}
             />
-
-            {/*             <div ref={turnstileRef} className="flex justify-start mt-8"></div>
-            {errors.turnstile && <p className="text-red-500 text-xs text-left">{errors.turnstile}</p>} */}
-            <div
-                class="h-captcha"
-                data-sitekey="0ac4df2c-07ca-456e-a156-b8a00dee5d26"
-                data-theme="dark"
-                data-error-callback="onError"
-            ></div>
+            
             <SubmitButton isSubmitting={isSubmitting} isSent={isSent} dataLocale={dataLocale} />
         </form>
     );
