@@ -30,35 +30,6 @@ function sanitizeInput(text: string): string {
     .trim();
 }
 
-// Función para verificar el token de Turnstile
-async function verifyTurnstileToken(token: string, ip: string | null) {
-  const secretKeyCloudflare = import.meta.env.PUBLIC_CLOUDFLARE_SECRET_KEY;
-
-  const formData = new FormData();
-  formData.append('secret', secretKeyCloudflare); // Reemplaza con tu secret key de Cloudflare Turnstile
-  formData.append('response', token);
-  
-  // Añadir la IP del cliente si está disponible
-  if (ip) {
-    formData.append('remoteip', ip);
-  }
-
-  const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-  
-  try {
-    const result = await fetch(url, {
-      body: formData,
-      method: 'POST',
-    });
-
-    const outcome = await result.json();
-    return outcome.success;
-  } catch (error) {
-    console.error('Error al verificar el token de Turnstile:', error);
-    return false;
-  }
-}
-
 // Verificar si un texto contiene patrones peligrosos
 function containsDangerousPatterns(text: string): boolean {
   return DANGEROUS_PATTERNS.some(pattern => pattern.test(text));
@@ -127,7 +98,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     const to = sanitizeInput(formData.get("recipient") as string | null || "");
     const subject = sanitizeInput(formData.get("subject") as string | null || "");
     const message = sanitizeInput(formData.get("message") as string | null || "");
-    const turnstileToken = formData.get("cf-turnstile-response") as string | null;
 
     // Validación de campos requeridos
     if (!name || !to || !subject || !message) {
@@ -182,29 +152,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
         message: "Uno o más campos exceden el tamaño permitido"
       }), { 
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
-    if (!turnstileToken) {
-      return new Response(JSON.stringify({
-        success: false,
-        message: "Verificación de captcha requerida"
-      }), { 
-        status: 400,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
-    // Verificar el token de Turnstile
-    const isTokenValid = await verifyTurnstileToken(turnstileToken, ip);
-    
-    if (!isTokenValid) {
-      return new Response(JSON.stringify({
-        success: false,
-        message: "Verificación de captcha fallida"
-      }), { 
-        status: 403,
         headers: { 'Content-Type': 'application/json' }
       });
     }
