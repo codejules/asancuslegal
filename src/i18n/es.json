@@ -6,12 +6,12 @@
     "HERO_PARAGRAPH": "Garantizamos transparencia y comunicación constante durante todo el proceso legal.",
     "HERO_EMAIL": "info@asancuslegal.com",
     "NAV_SERVICES": {
-        "title": "Servicios",
+        "title": "Áreas",
         "url": "/#areas"
     },
     "NAV_SOLUTIONS": {
-        "title": "Soluciones",
-        "url": "/#soluciones"
+        "title": "Servicios",
+        "url": "/#servicios"
     },
     "NAV_TEAM": {
         "title": "Equipo",
@@ -35,6 +35,13 @@
                 "Nuestro equipo de expertos ofrece un enfoque integral en planificación tributaria, auditoría fiscal, defensa ante procedimientos administrativos y litigios fiscales. Nos aseguramos de que cada decisión esté alineada con la normativa vigente, anticipándonos a cambios regulatorios y evitando contingencias que puedan afectar su negocio."
             ]
         },
+        "CIVIL": {
+            "title": "Civil",
+            "description": [
+                "Nos encargamos de una amplia variedad de asuntos civiles, desde reclamaciones de cantidad, incumplimientos contractuales, hasta conflictos de propiedad o responsabilidad civil. Con un enfoque cercano y profesional, analizamos cada caso de forma individual para ofrecer la solución más adecuada y eficaz.",
+                "Nuestro objetivo es facilitar procesos legales complejos y brindar tranquilidad a nuestros clientes. Contamos con una amplia experiencia en la redacción de contratos, demandas y recursos civiles."
+            ]
+        },
         "MERCANTIL": {
             "title": "Mercantil",
             "description": [
@@ -43,7 +50,7 @@
             ]
         }
     },
-    "SOLUTIONS_TITLE": "Soluciones Legales",
+    "SOLUTIONS_TITLE": "Servicios Legales",
     "SOLUTIONS_PARAGRAPH": {
         "title": "Brindamos <span class='font-semibold'>soluciones legales estratégicas y personalizadas</span> para empresas y particulares. Nuestro equipo de expertos está comprometido en <span class='font-semibold'>defender sus derechos</span> con profesionalismo y ética.",
         "subtitle": "Nos especializamos en <span class='font-semibold'>derecho mercantil y fiscal</span>, ofreciendo un enfoque integral para garantizar la mejor defensa y <span class='font-semibold'>asesoría jurídica</span>."

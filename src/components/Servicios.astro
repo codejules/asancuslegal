@@ -7,7 +7,7 @@ import Percentage_100 from "@/icons/Percentage_100.astro";
 
 import { SOLUTIONS } from "@/types/solutions";
 
-const { solutions, paragraph, currentLocale } = Astro.props;
+const { services, paragraph, currentLocale } = Astro.props;
 
 const ICONS = {
   "25": Percentage_25,
@@ -17,13 +17,13 @@ const ICONS = {
 };
 ---
 
-<Section id={currentLocale === "es" ? "soluciones" : "solutions"}>
+<Section id={currentLocale === "es" ? "servicios" : "services"}>
   <div
     class="py-10 lg:py-20 flex flex-col gap-6 md:gap-12 px-4 lg:max-w-screen-xl mx-auto"
   >
     <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
       <div class="flex flex-col gap-4">
-        <h2 class="badge font-semibold">{solutions}</h2>
+        <h2 class="badge font-semibold">{services}</h2>
         <p class="text-sm" set:html={paragraph.title} />
         <p class="text-sm" set:html={paragraph.subtitle} />
       </div>

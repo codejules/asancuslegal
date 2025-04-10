@@ -15,8 +15,9 @@ export default function Servicios({ currentLocale }) {
           <figure>
             <img
               src={SERVICIOS[activeIndex].image}
-              alt="servicios Asancus Legal"
+              alt="areas Asancus Legal"
               decoding="async"
+              loading="lazy"
               className="hidden lg:block rounded-sm h-96 object-cover object-center transition-opacity duration-300 ease-in"
             />
           </figure>
@@ -45,8 +46,9 @@ export default function Servicios({ currentLocale }) {
                     <figure>
                       <img
                         src={SERVICIOS[activeIndex].image}
-                        alt="servicios Asancus Legal"
+                        alt="areas Asancus Legal"
                         decoding="async"
+                        loading="lazy"
                         className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
                       />
                     </figure>

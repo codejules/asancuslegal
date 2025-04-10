@@ -16,7 +16,7 @@ export function getNavItems(currentLocale: string): NavItems[] {
     ];
 }
 
-export const itemsHeader = 'hover:text-gray-700 hover:font-semibold transform ease-in duration-300 font-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
+export const itemsHeader = 'text-primary hover:font-semibold transform ease-in duration-300 font-base block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
 export const itemsBurger =
     "hover:text-gray-500 transform ease-in duration-300 font-base block py-2 px-3 lg:p-0 text-slate-600";
 export const burgerLine =

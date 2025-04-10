@@ -6,6 +6,11 @@
   },
   {
     "number": "02",
+    "title": "SERVICES.CIVIL",
+    "image": "/assets/img/asancuslegal-civil.webp"
+  },
+  {
+    "number": "03",
     "title": "SERVICES.MERCANTIL",
     "image": "/assets/img/asancuslegal-mercantil.webp"
   }
