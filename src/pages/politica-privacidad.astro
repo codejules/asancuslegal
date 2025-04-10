@@ -13,7 +13,11 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.PRIVACY_SEO_TITLE} description={i18n.PRIVACY_SEO_DESCRIPTION}>
+<Layout
+currentLocale="es"
+title={i18n.PRIVACY_SEO_TITLE} 
+description={i18n.PRIVACY_SEO_DESCRIPTION}
+ogDescription={i18n.PRIVACY_SEO_DESCRIPTION}>
     <Header />
     <main>
         <Section>
