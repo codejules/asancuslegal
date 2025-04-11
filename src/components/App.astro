@@ -7,6 +7,7 @@ import Header from "@/components/Header.astro";
 import Hero from "@/components/Hero.astro";
 import Info from "@/components/Info.astro";
 import Servicios from "@/components/Servicios.astro";
+import Asesoramiento from "@/components/Asesoramiento.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
 
@@ -36,6 +37,11 @@ const i18n = getI18N({ currentLocale });
 			services={i18n.SOLUTIONS_TITLE}
 			paragraph={i18n.SOLUTIONS_PARAGRAPH}
 			currentLocale={currentLocale}
+		/>
+		<Asesoramiento
+			currentLocale={currentLocale}
+			title="Asesoramiento"
+			subtitle="Internacional"
 		/>
 		<Equipo
 			title={i18n.TEAM_TITLE}
