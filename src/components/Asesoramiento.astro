@@ -2,9 +2,35 @@
 import Section from "@/layouts/Section.astro";
 
 const { title, subtitle, currentLocale } = Astro.props;
+const imgAsesoramiento =
+    "/assets/img/asancuslegal-asesoramiento-internacional.webp";
+const imgAsesoramientoAlt = "Asancus Legal Asesoramiento Internacional";
+
+type Info = {
+    description: string;
+    title: string;
+};
+
+const INFO: Info[] = [
+    {
+        description:
+            "En Asancus Legal prestamos asesoramiento legal internacional desde nuestro despacho en Valencia. Ayudamos tanto a clientes extranjeros con intereses en España como a ciudadanos españoles con actividades en el extranjero.",
+        title: "Herencias internacionales y conflictos de jurisdicción",
+    },
+    {
+        description:
+            "Nuestro equipo está especializado en Derecho Fiscal, Civil y Mercantil con enfoque internacional. Realizamos la gestión completa de los procedimientos legales, incluso a distancia, de forma eficaz y segura.",
+        title: "Compraventa de propiedades en España desde el extranjero",
+    },
+    {
+        description:
+            "Contamos con amplia experiencia en asesoramiento legal internacional. Ayudamos en herencias con bienes en distintos países, compraventas de inmuebles desde el extranjero y asuntos fiscales que involucran residencia fiscal o convenios de doble imposición. Te guiamos en cada paso del proceso con total transparencia.",
+        title: "Fiscalidad internacional y doble imposición",
+    },
+];
 ---
 
-<Section id={currentLocale === "es" ? "equipo" : "team"}>
+<Section id={currentLocale === "es" ? "asesoramiento" : "advice"}>
     <div class="bg-primary">
         <div
             class="bg-primary max-w-screen-xl mx-auto flex flex-col gap-12 py-10 lg:py-20 px-5"
@@ -15,66 +41,35 @@ const { title, subtitle, currentLocale } = Astro.props;
                     {subtitle}
                 </h1>
             </div>
-            <div class="text-white flex flex-col md:flex-row gap-5">
-                <div class="flex flex-col gap-5">
-                    <p class="text-sm">
-                        En <strong>Asancus Legal</strong> prestamos <strong
-                            >asesoramiento legal internacional</strong
-                        > desde nuestro despacho en Valencia. Ayudamos tanto a <strong
-                            >clientes extranjeros con intereses en España</strong
-                        > como a ciudadanos españoles con actividades en el extranjero.
-                    </p>
-                    <p class="text-sm">
-                        Nuestro equipo está especializado en <strong
-                            >Derecho Fiscal, Civil y Mercantil</strong
-                        > con enfoque internacional. Realizamos la gestión completa
-                        de los procedimientos legales, incluso a distancia, de forma
-                        eficaz y segura.
-                    </p>
-                    <p class="text-sm">
-                        Contamos con amplia experiencia en <strong
-                            >asesoramiento legal internacional</strong
-                        >. Ayudamos en herencias con bienes en distintos países,
-                        compraventas de inmuebles desde el extranjero y asuntos
-                        fiscales que involucran <strong
-                            >residencia fiscal</strong
-                        > o convenios de doble imposición. Te guiamos en cada paso
-                        del proceso con total transparencia.
-                    </p>
+            <div class="text-white grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div>
+                    <picture>
+                        <img
+                            src={imgAsesoramiento}
+                            alt={imgAsesoramientoAlt}
+                            class="mx-auto h-fit md:h-72 rounded"
+                            loading="lazy"
+                        />
+                    </picture>
                 </div>
-                <ul class="flex flex-col gap-8">
-                    <li class="border-l-1 border-white pl-5">
-                        <h1 class="text-gray-300">
-                            Herencias internacionales y conflictos de
-                            jurisdicción
-                        </h1>
-                        <span class="text-sm"
-                            >Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Tempora dolorum amet delectus.</span
-                        >
-                    </li>
-                    <li class="border-l-1 border-white pl-5">
-                        <h1 class="text-gray-300">
-                            Compraventa de propiedades en España desde el
-                            extranjero
-                        </h1>
-                        <span class="text-sm"
-                            >Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Tempora dolorum amet delectus.</span
-                        >
-                    </li>
-
-                    <li class="border-l-1 border-white pl-5">
-                        <h1 class="text-gray-300">
-                            Fiscalidad internacional y doble imposición
-                        </h1>
-                        <span class="text-sm"
-                            >Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Tempora dolorum amet delectus.</span
-                        >
-                    </li>
-                </ul>
+                <div class="flex flex-col gap-5">
+                    {
+                        INFO.map(({ description }) => (
+                            <p class="text-sm">{description}</p>
+                        ))
+                    }
+                </div>
             </div>
+
+            <ul class="flex flex-col md:flex-row gap-8">
+                {
+                    INFO.map(({ title }) => (
+                        <li class="border-l-1 border-white pl-5">
+                            <h1 class="text-gray-300 text-balance">{title}</h1>
+                        </li>
+                    ))
+                }
+            </ul>
         </div>
     </div>
 </Section>
