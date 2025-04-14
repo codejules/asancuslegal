@@ -49,7 +49,7 @@ export default function Servicios({ currentLocale }) {
                         alt="areas Asancus Legal"
                         decoding="async"
                         loading="lazy"
-                        className="aspect-[2/1] rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
+                        className="aspect-auto rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
                       />
                     </figure>
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
