@@ -21,39 +21,44 @@ const FAVICON: Favicon[] = [
 	},
 ];
 
+type Hero = { url: string; media: string };
+const HERO: Hero[] = [
+	{
+		url: "/assets/img/asancuslegal-hero.webp",
+		media: "(min-width: 768px)",
+	},
+	{
+		url: "/assets/img/asancuslegal-hero-mobile.webp",
+		media: "(max-width: 767px)",
+	},
+];
+
 const ogImage = "https://test.asancuslegal.com/og.jpg";
-const fontWoff2 =
-	"/node_modules/@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2";
 ---
 
 <!doctype html>
 <html lang={currentLocale === "es" ? "es" : "en"}>
 	<head>
+		<!-- high priority -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
 
-		<link
-			rel="preload"
-			fetchpriority="high"
-			as="image"
-			href="/assets/img/asancuslegal-hero.webp"
-			type="image/webp"
-		/>
-		<link
-		rel="preload"
-		fetchpriority="high"
-		as="image"
-		href="/assets/img/asancuslegal-hero-mobile.webp"
-		type="image/webp"
-	/>
-		<link
-			rel="preload"
-			href={fontWoff2}
-			as="font"
-			type="font/woff2"
-			crossorigin="anonymous"
-		/>
+		<!-- first preload -->
+		{
+			HERO.map(({ url, media }) => (
+				<link
+					rel="preload"
+					fetchpriority="high"
+					as="image"
+					href={url}
+					type="image/webp"
+					media={media}
+				/>
+			))
+		}
+
+		<!-- meta data -->
+		<title>{title}</title>
 
 		{
 			FAVICON.map(({ url, media }) => (
