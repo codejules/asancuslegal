@@ -22,6 +22,8 @@ const FAVICON: Favicon[] = [
 ];
 
 const ogImage = "https://test.asancuslegal.com/og.jpg";
+const fontWoff2 =
+	"/node_modules/@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2";
 ---
 
 <!doctype html>
@@ -40,7 +42,7 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 		/>
 		<link
 			rel="preload"
-			href="/node_modules/@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2"
+			href={fontWoff2}
 			as="font"
 			type="font/woff2"
 			crossorigin="anonymous"

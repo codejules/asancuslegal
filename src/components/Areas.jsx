@@ -18,7 +18,7 @@ export default function Servicios({ currentLocale }) {
               alt="areas Asancus Legal"
               decoding="async"
               loading="lazy"
-              className="hidden lg:block rounded-sm h-96 object-cover object-center transition-opacity duration-300 ease-in"
+              className="aspect-[3/4] w-full h-96 hidden lg:block rounded-sm object-cover object-center transition-opacity duration-300 ease-in"
             />
           </figure>
           <div className="flex flex-col gap-4">
@@ -49,7 +49,7 @@ export default function Servicios({ currentLocale }) {
                         alt="areas Asancus Legal"
                         decoding="async"
                         loading="lazy"
-                        className="rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
+                        className="aspect-[2/1] rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
                       />
                     </figure>
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">

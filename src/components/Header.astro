@@ -10,7 +10,7 @@ const LOGO = [
     {
         url: "/logo-asancus-legal.svg",
         className:
-            "min-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+            "aspect-[4/1] w-auto h-8 min-sm:block hidden hover:scale-105 transition duration-300 ease-in",
     },
     {
         url: "/logo-asancus-legal-mobile.svg",
@@ -40,13 +40,14 @@ const LOGO = [
                                 class={className}
                                 alt="Asancus Legal Logo"
                                 title="Logo Asancus Legal"
+                                fetchpriority="high"
                             />
                         </figure>
                     ))
                 }
             </a>
             <div
-                class="items-center justify-between hidden w-full lg:flex lg:w-auto"
+                class="items-center justify-between hidden w-full lg:flex lg:w-auto min-h-[34px]"
             >
                 <ul class="flex flex-row gap-10">
                     {
