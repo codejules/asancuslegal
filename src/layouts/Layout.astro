@@ -22,7 +22,6 @@ const FAVICON: Favicon[] = [
 ];
 
 const ogImage = "https://test.asancuslegal.com/og.jpg";
-const flowbite = "/assets/flowbite.min.js";
 ---
 
 <!doctype html>
@@ -32,13 +31,12 @@ const flowbite = "/assets/flowbite.min.js";
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
 
-		<script is:inline src={flowbite}></script>
 		<link
-			rel="prefetch"
-			href="/assets/img/asancuslegal-hero.webp"
+			rel="preload"
+			fetchpriority="high"
 			as="image"
+			href="/assets/img/asancuslegal-hero.webp"
 			type="image/webp"
-			crossorigin="anonymous"
 		/>
 		{
 			FAVICON.map(({ url, media }) => (
