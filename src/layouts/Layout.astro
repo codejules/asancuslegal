@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { FAVICON, HERO, TEAM_IMG } from "@/types/layout";
 
 interface Props {
 	description: string;
@@ -9,31 +10,7 @@ interface Props {
 }
 
 const { description, title, currentLocale, ogDescription } = Astro.props;
-type Favicon = { url: string; media: string };
-const FAVICON: Favicon[] = [
-	{
-		url: "/favicon-dark.svg",
-		media: "(prefers-color-scheme: light)",
-	},
-	{
-		url: "/favicon.svg",
-		media: "(prefers-color-scheme: dark)",
-	},
-];
-
-type Hero = { url: string; media: string };
-const HERO: Hero[] = [
-	{
-		url: "/assets/img/asancuslegal-hero.webp",
-		media: "(min-width: 768px)",
-	},
-	{
-		url: "/assets/img/asancuslegal-hero-mobile.webp",
-		media: "(max-width: 767px)",
-	},
-];
-
-const ogImage = "https://test.asancuslegal.com/og.jpg";
+export const ogImage = "https://test.asancuslegal.com/og.jpg";
 ---
 
 <!doctype html>
@@ -53,6 +30,17 @@ const ogImage = "https://test.asancuslegal.com/og.jpg";
 					href={url}
 					type="image/webp"
 					media={media}
+				/>
+			))
+		}
+		{
+			TEAM_IMG.map(({ url }) => (
+				<link
+					rel="preload"
+					fetchpriority="low"
+					as="image"
+					href={url}
+					type="image/webp"
 				/>
 			))
 		}
