@@ -5,9 +5,22 @@ const { title, subtitle, email } = Astro.props;
 ---
 
 <Section>
-    <div
-        class="h-full w-full relative bg-[url('/assets/img/asancuslegal-hero-mobile.webp')] md:bg-[url('/assets/img/asancuslegal-hero.webp')] bg-cover bg-center"
-    >
+    <div class="relative w-full h-full">
+        <picture>
+            <source
+                srcset="/assets/img/asancuslegal-hero.webp"
+                media="(min-width: 768px)"
+                type="image/webp"
+            />
+            <img
+                src="/assets/img/asancuslegal-hero-mobile.webp"
+                alt="Asancus Legal Hero Background"
+                class="absolute inset-0 w-full h-full object-cover -z-10"
+                loading="eager"
+                fetchpriority="high"
+            />
+        </picture>
+
         <div
             class="py-36 lg:py-72 animate-fade-in animate-delay-1000 animate-duration-1000"
             id="hero-content"
@@ -21,13 +34,15 @@ const { title, subtitle, email } = Astro.props;
                 <p class="text-white">
                     {subtitle}
                 </p>
-                <a href=`mailto:${email}` aria-label="Click to send email"></a>
-                <button
-                    type="button"
-                    class="cursor-pointer rounded-sm border px-6 py-3 min-h-[48px] min-w-[48px] bg-white hover:bg-primary hover:text-white hover:scale-105 transition duration-300 ease-in flex items-center justify-center text-base md:text-lg"
-                >
-                    {email}
-                </button>
+
+                <a href={`mailto:${email}`} aria-label="Click to send email">
+                    <button
+                        type="button"
+                        class="cursor-pointer rounded-sm border px-6 py-3 min-h-[48px] min-w-[48px] bg-white hover:bg-primary hover:text-white hover:scale-105 transition duration-300 ease-in flex items-center justify-center text-base md:text-lg"
+                    >
+                        {email}
+                    </button>
+                </a>
             </div>
         </div>
     </div>
