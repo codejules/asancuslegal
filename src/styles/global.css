@@ -23,7 +23,7 @@ body {
 
 p {
   font-weight: 300;
-  max-width: 70ch;
+  max-width: 80ch;
 }
 
 @media (reduced-motion: reduce) {
