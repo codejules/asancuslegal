@@ -1,7 +1,7 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const { title, subtitle, currentLocale } = Astro.props;
+const { title, currentLocale } = Astro.props;
 const imgAsesoramiento =
     "/assets/img/asancuslegal-asesoramiento-internacional.webp";
 const imgAsesoramientoAlt = "Asancus Legal Asesoramiento Internacional";
@@ -41,7 +41,6 @@ const INFO: Info[] = [
             <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 relative">
                 <h1 class="badge font-semibold">
                     {title}
-                    {subtitle}
                 </h1>
             </div>
             <div class="text-white grid grid-cols-1 lg:grid-cols-2 gap-5">
