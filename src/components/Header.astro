@@ -11,11 +11,15 @@ const LOGO = [
         url: "/logo-asancus-legal.svg",
         className:
             "aspect-[4/1] w-auto h-8 min-sm:block hidden hover:scale-105 transition duration-300 ease-in",
+        width: "128",
+        height: "32",
     },
     {
         url: "/logo-asancus-legal-mobile.svg",
         className:
             "max-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
+        width: "27",
+        height: "32",
     },
 ];
 ---
@@ -33,7 +37,7 @@ const LOGO = [
                 class="flex items-center"
             >
                 {
-                    LOGO.map(({ url, className }) => (
+                    LOGO.map(({ url, className, width, height }) => (
                         <figure>
                             <img
                                 src={url}
@@ -41,6 +45,8 @@ const LOGO = [
                                 alt="Asancus Legal Logo"
                                 title="Logo Asancus Legal"
                                 fetchpriority="high"
+                                width={width}
+                                height={height}
                             />
                         </figure>
                     ))

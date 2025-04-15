@@ -19,6 +19,8 @@ export default function Servicios({ currentLocale }) {
               decoding="async"
               loading="lazy"
               className="aspect-[3/4] w-full h-96 hidden lg:block rounded-sm object-cover object-center transition-opacity duration-300 ease-in"
+              width="484"
+              height="384"
             />
           </figure>
           <div className="flex flex-col gap-4">
@@ -50,7 +52,8 @@ export default function Servicios({ currentLocale }) {
                         decoding="async"
                         loading="lazy"
                         className="aspect-auto rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
-                      />
+                        width="343"
+                        height="147" />
                     </figure>
                     <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
                       {service?.description?.map((description, i) => (
