@@ -2,7 +2,6 @@
 import Section from "@/layouts/Section.astro";
 
 const { title, subtitle, email } = Astro.props;
-import { cdn } from "@/utils/cdn.ts";
 ---
 
 <Section>
@@ -14,7 +13,7 @@ import { cdn } from "@/utils/cdn.ts";
                 type="image/webp"
             />
             <img
-                src="https://cdn-asancus.asancuslegal.com/assets/assets/img/asancuslegal-hero-mobile.webp"
+                src="https://cdn-asancus.asancuslegal.com/assets/img/asancuslegal-hero-mobile.webp"
                 alt="Asancus Legal Hero Background"
                 class="absolute inset-0 w-full h-full object-cover -z-10"
                 loading="eager"
