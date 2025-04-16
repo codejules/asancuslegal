@@ -18,7 +18,7 @@ export default function Servicios({ currentLocale }) {
               alt="areas Asancus Legal"
               decoding="async"
               loading="lazy"
-              className="aspect-[3/4] w-full h-96 hidden lg:block rounded-sm object-cover object-center transition-opacity duration-300 ease-in"
+              className="aspect-auto w-full h-96 hidden lg:block rounded-sm object-cover object-center transition-opacity duration-300 ease-in"
               width="484"
               height="384"
             />
