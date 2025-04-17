@@ -2,19 +2,19 @@
 import Section from "@/layouts/Section.astro";
 
 const { title, subtitle, email } = Astro.props;
-import { cdn } from '@/utils/cdn.ts';
+import { CDN_IMAGES } from '@/utils/cdn.ts';
 ---
 
 <Section>
     <div class="relative w-full h-full">
         <picture>
             <source
-                srcset="/assets/img/asancuslegal-hero.webp"
+                srcset={`${CDN_IMAGES}/assets/img/asancuslegal-hero.webp`}
                 media="(min-width: 768px)"
                 type="image/webp"
             />
             <img
-                src={`${cdn}/assets/img/asancuslegal-hero-mobile.webp`}
+                src={`${CDN_IMAGES}/assets/img/asancuslegal-hero-mobile.webp`}
                 alt="Asancus Legal Hero Background"
                 class="absolute inset-0 w-full h-full object-cover -z-10"
                 loading="eager"
