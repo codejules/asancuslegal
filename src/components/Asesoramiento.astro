@@ -1,9 +1,10 @@
 ---
 import Section from "@/layouts/Section.astro";
+import { CDN_IMAGES } from '@/utils/cdn.ts';
 
 const { title, currentLocale } = Astro.props;
 const imgAsesoramiento =
-    "/assets/img/asancuslegal-asesoramiento-internacional.webp";
+    `${CDN_IMAGES}/assets/img/asancuslegal-asesoramiento-internacional.webp`;
 const imgAsesoramientoAlt = "Asancus Legal Asesoramiento Internacional";
 
 type Info = {

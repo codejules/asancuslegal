@@ -2,16 +2,16 @@
   {
     "number": "01",
     "title": "SERVICES.FISCAL",
-    "image": "/assets/img/asancuslegal-fiscal.webp"
+    "image": "https://cdn-images.asancuslegal.com/assets/img/asancuslegal-fiscal.webp"
   },
   {
     "number": "02",
     "title": "SERVICES.CIVIL",
-    "image": "/assets/img/asancuslegal-civil.webp"
+    "image": "https://cdn-images.asancuslegal.com/assets/img/asancuslegal-civil.webp"
   },
   {
     "number": "03",
     "title": "SERVICES.MERCANTIL",
-    "image": "/assets/img/asancuslegal-mercantil.webp"
+    "image": "https://cdn-images.asancuslegal.com/assets/img/asancuslegal-mercantil.webp"
   }
 ]

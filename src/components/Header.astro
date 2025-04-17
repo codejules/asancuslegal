@@ -2,20 +2,21 @@
 import MenuBurger from "./MenuBurger.astro";
 import LanguageSelector from "./LanguageSelector";
 import { getNavItems, itemsHeader } from "@/types/nav";
+import { CDN_IMAGES } from '@/utils/cdn.ts';
 
 const { currentLocale } = Astro;
 const NAV_ITEMS = getNavItems(currentLocale || "es");
 
 const LOGO = [
     {
-        url: "/logo-asancus-legal.svg",
+        url: `${CDN_IMAGES}/logo-asancus-legal.svg`,
         className:
             "aspect-[4/1] w-auto h-8 min-sm:block hidden hover:scale-105 transition duration-300 ease-in",
         width: "128",
         height: "32",
     },
     {
-        url: "/logo-asancus-legal-mobile.svg",
+        url: `${CDN_IMAGES}/logo-asancus-legal-mobile.svg`,
         className:
             "max-sm:block hidden h-8 hover:scale-105 transition duration-300 ease-in",
         width: "27",

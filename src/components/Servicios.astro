@@ -6,6 +6,7 @@ import Percentage_75 from "@/icons/Percentage_75.astro";
 import Percentage_100 from "@/icons/Percentage_100.astro";
 
 import { SOLUTIONS } from "@/types/solutions";
+import { CDN_IMAGES } from '@/utils/cdn.ts';
 
 const { services, paragraph, currentLocale } = Astro.props;
 
@@ -31,7 +32,7 @@ const ICONS = {
         <figure>
           <img
             class="aspect-auto rounded-sm w-full md:mx-auto"
-            src="/assets/img/asancuslegal-soluciones.webp"
+            src=`${CDN_IMAGES}/assets/img/asancuslegal-soluciones.webp`
             alt="soluciones legales Asancus Legal"
             title="soluciones legales Asancus Legal"
             decoding="async"

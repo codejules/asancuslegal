@@ -1,6 +1,6 @@
 [
     {
-        "background": "/assets/img/sandra-serra-asancus-legal.webp",
+        "background": "https://cdn-images.asancuslegal.com/assets/img/sandra-serra-asancus-legal.webp",
         "position": "Corporate law",
         "title": "Sandra Serra",
         "titleColor": "text-black",
@@ -12,7 +12,7 @@
         "email": "sandra.serra@asancuslegal.com"
     },
     {
-        "background": "/assets/img/alejandro-toledo-asancus-legal.webp",
+        "background": "https://cdn-images.asancuslegal.com/assets/img/alejandro-toledo-asancus-legal.webp",
         "position": "Tax Area",
         "title": "Alejandro Toledo",
         "titleColor": "text-black",
