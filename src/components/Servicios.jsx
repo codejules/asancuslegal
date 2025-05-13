@@ -8,7 +8,7 @@ export default function Servicios({ currentLocale }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div id="areas" className="bg-primary">
+    <div id="servicios" className="bg-primary">
       <div className="py-10 lg:py-20 max-w-screen-xl mx-auto px-4">
         <h2 className="badge font-semibold">{i18n.AREAS_TITLE}</h2>
         <div className="pt-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
