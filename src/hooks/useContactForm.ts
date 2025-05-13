@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "preact/hooks";
 import { getInputs } from "@/types/form.js";
 import { getI18N } from "@/i18n";
-
-import { DANGEROUS_PATTERNS, EMAIL_REGEX, NAME_REGEX } from "@/utils/validators";
+import { validateField } from "@/hooks/validateField";
 
 type ValidationErrors = {
     [key: string]: string;
@@ -23,34 +22,6 @@ export const useContactForm = (dataLocale: any) => {
     const formLoadTime = useRef(Date.now());
     const formRef = useRef<HTMLFormElement>(null);
 
-    const validateField = (name: string, value: string): string => {
-        const i18n = getI18N({ currentLocale: dataLocale });
-        if (!value.trim()) {
-            return `${i18n.ERROR_VALUE_EMPTY}`
-        }
-
-        switch (name) {
-            case "name":
-                if (!NAME_REGEX.test(value)) return `${i18n.ERROR_ADD_VALID_NAME}`
-                if (value.length > 30) return `${i18n.ERROR_LONG_NAME}`;
-                break;
-            case "recipient":
-                if (!EMAIL_REGEX.test(value)) return `${i18n.ERROR_ADD_VALID_EMAIL}`;
-                break;
-            case "subject":
-                if (value.length > 30) return `${i18n.ERROR_LONG_SUBJECT}`;
-                break;
-            case "message":
-                if (value.length > 500) return `${i18n.ERROR_LONG_MESSAGE}`;
-                for (const pattern of DANGEROUS_PATTERNS) {
-                    if (pattern.test(value)) return `${i18n.ERROR_PATTERN_MESSAGE}`;
-                }
-                break;
-        }
-
-        return "";
-    };
-
     const handleInputChange = (e: Event) => {
         const target = e.target as HTMLInputElement | HTMLTextAreaElement;
         const { name, value } = target;
@@ -58,7 +29,7 @@ export const useContactForm = (dataLocale: any) => {
         setFormValues(prev => ({ ...prev, [name]: value }));
 
         if (submitAttempted) {
-            const error = validateField(name, value);
+            const error = validateField(name, value, dataLocale);
             setErrors(prev => ({ ...prev, [name]: error }));
         }
     };
@@ -71,7 +42,7 @@ export const useContactForm = (dataLocale: any) => {
         let isValid = true;
 
         Object.entries(formValues).forEach(([name, value]) => {
-            const error = validateField(name, value);
+            const error = validateField(name, value, dataLocale);
             if (error) {
                 newErrors[name] = error;
                 isValid = false;
