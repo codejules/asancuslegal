@@ -1,4 +1,4 @@
-import Spinner from "./Spinner";
+import Spinner from "@/icons/Spinner";
 import { getI18N } from "@/i18n";
 
 const SubmitButton = ({ dataLocale:currentLocale, isSubmitting, isSent }) => {
