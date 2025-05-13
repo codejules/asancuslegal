@@ -6,16 +6,8 @@
     "HERO_PARAGRAPH": "Garantizamos transparencia y comunicación constante durante todo el proceso legal.",
     "HERO_EMAIL": "info@asancuslegal.com",
     "NAV_SERVICES": {
-        "title": "Áreas",
-        "url": "/#areas"
-    },
-    "NAV_SOLUTIONS": {
         "title": "Servicios",
         "url": "/#servicios"
-    },
-    "NAV_ADVICE": {
-        "title": "Asesoramiento Internacional",
-        "url": "/#asesoramiento"
     },
     "NAV_TEAM": {
         "title": "Equipo",
