@@ -10,8 +10,6 @@ export function getNavItems(currentLocale: string): NavItems[] {
     
     return [
         { title: i18n.NAV_SERVICES.title, href: i18n.NAV_SERVICES.url },
-        { title: i18n.NAV_SOLUTIONS.title, href: i18n.NAV_SOLUTIONS.url },
-        { title: i18n.NAV_ADVICE.title, href: i18n.NAV_ADVICE.url },
         { title: i18n.NAV_TEAM.title, href: i18n.NAV_TEAM.url },
         { title: i18n.NAV_CONTACT.title, href: i18n.NAV_CONTACT.url },
     ];
