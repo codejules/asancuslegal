@@ -3,6 +3,12 @@
 
 @theme {
   --color-primary: #164070;
+  --animate-spin: spin 1s linear infinite;
+  @keyframes spin {
+    to {
+    transform: rotate(360deg);
+  }
+  }
 }
 
 .badge {
