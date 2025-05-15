@@ -24,27 +24,20 @@
     "INFO_SUBTITLE": "Asancus Legal: Justice that protects, Loyalty that endures.",
     "AREAS_TITLE": "Our Main Areas",
     "SERVICES": {
-        "FISCAL": {
-            "title": "Fiscal",
-            "description": [
-                "En el ámbito fiscal, la lealtad y la justicia no son solo valores, sino principios fundamentales para garantizar el cumplimiento normativo sin comprometer el crecimiento empresarial. En Asancus Legal, creemos que una estrategia fiscal bien estructurada es la clave para brindar estabilidad, minimizar riesgos y optimizar recursos.",
-                "Nuestro equipo de expertos ofrece un enfoque integral en planificación tributaria, auditoría fiscal, defensa ante procedimientos administrativos y litigios fiscales. Nos aseguramos de que cada decisión esté alineada con la normativa vigente, anticipándonos a cambios regulatorios y evitando contingencias que puedan afectar su negocio."
-            ]
-        },
-        "CIVIL": {
-            "title": "Civil",
-            "description": [
-                "We handle a wide variety of civil matters, ranging from claims of quantity, breach of contract, to property disputes or civil liability. With a close and professional approach, we analyze each case individually to offer the most appropriate and effective solution.",
-                "Our goal is to facilitate complex legal processes and provide peace of mind to our clients. We have extensive experience in the drafting of contracts, lawsuits and civil appeals."
-            ]
-        },
-        "MERCANTIL": {
-            "title": "Mercantil",
-            "description": [
-                "En el mundo empresarial, la seguridad jurídica es la base de un crecimiento sostenible. En Asancus Legal, entendemos que el derecho mercantil no solo regula las transacciones comerciales, sino que protege los intereses de las empresas y fortalece su estructura legal para enfrentar cualquier desafío con confianza.",
-                "El entorno corporativo es dinámico y exige respuestas rápidas y eficientes. Por eso, trabajamos con una visión proactiva, anticipándonos a riesgos y asegurando que su empresa opere bajo un marco legal sólido que impulse su crecimiento y competitividad. Su éxito es nuestra prioridad."
-            ]
-        }
+        "title": [
+            "Fiscal",
+            "Civil",
+            "Mercantil",
+            "Internacional",
+            "Protección de Datos"
+        ],
+        "number": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05"
+        ]
     },
     "SOLUTIONS_TITLE": "Legal Services",
     "SOLUTIONS_PARAGRAPH": {
