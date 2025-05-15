@@ -1,11 +1,15 @@
-import { useState } from "preact/hooks";
-import SERVICIOS from "@/data/servicios.json";
-
 import { getI18N } from "@/i18n";
 
 export default function Servicios({ currentLocale }) {
   const i18n = getI18N({ currentLocale });
-  const [activeIndex, setActiveIndex] = useState(0);
+  const services = i18n.SERVICES;
+  
+  const IMAGE_AREAS = "https://cdn-images.asancuslegal.com/assets/img/asancuslegal-mercantil.webp"
+
+const SERVICIOS = services.title.map((title, i) => ({
+  title,
+  number: services.number[i],
+}));
 
   return (
     <div id="servicios" className="bg-primary">
@@ -14,7 +18,7 @@ export default function Servicios({ currentLocale }) {
         <div className="pt-10 flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
           <figure>
             <img
-              src={SERVICIOS[activeIndex].image}
+              src={IMAGE_AREAS}
               alt="areas Asancus Legal"
               decoding="async"
               loading="lazy"
@@ -24,43 +28,18 @@ export default function Servicios({ currentLocale }) {
             />
           </figure>
           <div className="flex flex-col gap-4">
-            {SERVICIOS.map(({ number, title }, index) => {
-
-              const serviceKey = title.split(".")[1];
-              const service = i18n.SERVICES[serviceKey];
-
+            {SERVICIOS.map(({ number, title }) => {
               return (
-                <div key={number} className={`flex flex-col ${activeIndex === index ? 'gap-4' : ''} border-t-1 lg:border-t-white`}>
+                <div className={`flex flex-col border-t-1 lg:border-t-white`}>
                   <button
                     type="button"
                     className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full"
-                    onClick={() => setActiveIndex(index)}
                   >
                     <span className="text-slate-300 text-sm">{number}</span>
                     <h2 class="text-white text-xl lg:text-2xl">
-                      {service?.title || title}
+                      {title}
                     </h2>
                   </button>
-                  <div
-                    className={`transition duration-500 ease-in overflow-hidden ${activeIndex === index ? 'opacity-100 translate-y-0 h-auto' : 'opacity-0 -translate-y-4 h-0'
-                      }`}
-                  >
-                    <figure>
-                      <img
-                        src={SERVICIOS[activeIndex].image}
-                        alt="areas Asancus Legal"
-                        decoding="async"
-                        loading="lazy"
-                        className="aspect-auto rounded-sm w-full md:mx-auto md:w-2xs lg:hidden transition-opacity duration-500 ease-in"
-                        width="343"
-                        height="147" />
-                    </figure>
-                    <div className="flex flex-col gap-3 px-4 lg:px-7 max-lg:mt-4">
-                      {service?.description?.map((description, i) => (
-                        <p key={i} className="text-white text-xs md:text-sm">{description}</p>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               );
             })}
