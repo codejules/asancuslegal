@@ -20,7 +20,7 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
             }) => {
                 return (
                     <li class="splide__slide lg:justify-center lg:flex">
-                        <div tabindex="0" class="relative rounded-sm h-[550px] w-auto lg:w-96 overflow-hidden group">
+                        <div tabindex="0" class="relative rounded-sm h-[450px] w-auto lg:w-96 overflow-hidden group">
                             <picture class="absolute inset-0 w-full h-full object-cover">
                                 <source srcset={background} type="image/webp" />
                                 <img
@@ -34,11 +34,11 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
 
                             <div class="absolute inset-0 bg-black opacity-20 group-focus:opacity-50 group-hover:opacity-50 transition duration-300 ease-in rounded-sm" />
 
-                            <p class={`text-[11px] p-3 ${titleColor}`}>
+                            <p class={`absolute text-[11px] p-3 ${titleColor}`}>
                                 {position}
                             </p>
 
-                            <div class="transition-height absolute bottom-0 h-36 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-96 group-focus:h-96">
+                            <div class="transition-height absolute bottom-0 h-20 w-full overflow-hidden px-5 my-6 text-white duration-500 ease-in group-hover:h-80 group-focus:h-80">
                                 <h2
                                     class={`group-hover:mb-3 group-focus:mb-3 text-3xl ${colorDescription}`}
                                 >
@@ -46,7 +46,7 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
                                 </h2>
 
                                 <div
-                                    class={`mt-36 lg:mt-52 group-hover:mt-0 group-focus:mt-0 flex flex-col gap-5 ${colorDescription}`}
+                                    class={`mt-36 group-hover:mt-10 group-focus:mt-0 flex flex-col gap-5 ${colorDescription}`}
                                 >
                                     {descriptions
                                         .slice(0, 3)
