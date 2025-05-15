@@ -19,8 +19,11 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
                 email,
             }) => {
                 return (
-                    <li class="splide__slide lg:justify-center lg:flex">
-                        <div tabindex="0" class="relative rounded-sm h-[450px] w-auto lg:w-96 overflow-hidden group">
+                    <li
+                        tabindex="0"
+                        class="splide__slide lg:justify-center lg:flex"
+                    >
+                        <div class="relative rounded-sm h-[450px] w-auto lg:w-96 overflow-hidden group">
                             <picture class="absolute inset-0 w-full h-full object-cover">
                                 <source srcset={background} type="image/webp" />
                                 <img
@@ -48,13 +51,14 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
                                 <div
                                     class={`mt-36 group-hover:mt-10 group-focus:mt-0 flex flex-col gap-5 ${colorDescription}`}
                                 >
-                                    {descriptions
-                                        .slice(0, 3)
-                                        .map((description) => (
-                                            <p class="text-white text-xs">
-                                                {description}
-                                            </p>
-                                        ))}
+                                    {descriptions &&
+                                        descriptions
+                                            .slice(0, 3)
+                                            .map((description) => (
+                                                <p class="text-white text-xs">
+                                                    {description}
+                                                </p>
+                                            ))}
 
                                     <a
                                         class="w-fit cursor-pointer bg-gray-300 text-primary hover:text-white hover:scale-105 hover:bg-transparent hover:border-white hover:border-1 hover:transition hover:duration-300 hover:ease-in rounded-sm px-2 py-1 font-light text-sm"
@@ -72,3 +76,4 @@ const EQUIPO = currentLocale === "en" ? EQUIPO_EN : EQUIPO_ES;
         )
     }
 </ul>
+
