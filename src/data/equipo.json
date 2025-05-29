@@ -26,23 +26,16 @@
     },
     {
         "background": "https://cdn-images.asancuslegal.com/assets/img/alejandra-asancus-legal.webp",
-        "position": "Legal",
+        "position": "Área Fiscal",
         "title": "Alejandra Caballero",
         "titleColor": "text-black",
         "email": "alejandra.caballero@asancuslegal.com"
     },
     {
-        "background": "https://cdn-images.asancuslegal.com/assets/img/alejandro-toledo-asancus-legal.webp",
-        "position": "Área Penal",
-        "title": "Julio Serra",
+        "background": "https://cdn-images.asancuslegal.com/assets/img/carla-asancus-legal.webp",
+        "position": "Área Legal",
+        "title": "Carla Martínez",
         "titleColor": "text-black",
-        "email": "alejandro.toledo@asancuslegal.com"
-    },
-    {
-        "background": "https://cdn-images.asancuslegal.com/assets/img/alejandro-toledo-asancus-legal.webp",
-        "position": "Área Penal",
-        "title": "Julio Serra",
-        "titleColor": "text-black",
-        "email": "alejandro.toledo@asancuslegal.com"
+        "email": "carla.martinez@asancuslegal.com"
     }
 ]
