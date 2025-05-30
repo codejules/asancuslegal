@@ -1,0 +1,64 @@
+---
+import Section from "@/layouts/Section.astro";
+
+import "@/styles/global.css";
+import "@fontsource-variable/raleway";
+import Layout from "@/layouts/Layout.astro";
+
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const heroImg = '../assets/img/asancuslegal-fiscal.webp';
+
+const fiscalServices = i18n.SERVICIOS_FISCALES;
+
+const SERVICIOS_FISCALES = fiscalServices.title.map((title, i) => ({
+    title,
+    description: fiscalServices.description[i],
+}));
+---
+
+<Layout
+    currentLocale="es"
+    title={i18n.PRIVACY_SEO_TITLE}
+    description={i18n.PRIVACY_SEO_DESCRIPTION}
+    ogDescription={i18n.PRIVACY_SEO_DESCRIPTION}
+>
+    <Header />
+    <main>
+        <Section>
+            <div
+                class={`grayscale-50 bg-[url('${heroImg}')] bg-cover bg-center h-72 lg:h-[500px]`}
+            >
+                <div class="max-w-screen-xl mx-auto">
+                    <h2 class="px-4 text-2xl py-5 absolute bottom-0 text-white">
+                        Servicios Fiscales
+                    </h2>
+                </div>
+            </div>
+            <div class="px-4 py-12 lg:py-8 max-w-screen-md mx-auto">
+                {
+                    SERVICIOS_FISCALES.map(({ title, description }) => (
+                        <article>
+                            <h2 class="py-2 font-semibold">{title}</h2>
+                            {Array.isArray(description)
+                                ? description.map(
+                                      (paragraph) =>
+                                          paragraph && (
+                                              <p class="py-2 whitespace-pre-line">{paragraph}</p>
+                                          ),
+                                  )
+                                : description && (
+                                      <p class="py-2 whitespace-pre-line">{description}</p>
+                                  )}
+                        </article>
+                    ))
+                }
+            </div>
+        </Section>
+    </main>
+    <Footer />
+</Layout>
