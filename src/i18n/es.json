@@ -103,5 +103,17 @@
             "Dedicados a la protección de los derechos de marca, patentes y modelos de utilidad enfocados a la empresa, así como negociación y firma de acuerdos para la protección y licencia de derechos, a nivel nacional, comunitario e internacional.",
             "Asesorando en procesos de insolvencia actual o inminente, y acuerdos extrajudiciales, así como reclamaciones de deuda y ejecuciones."
         ]
+    },
+    "SERVICIOS_FISCALES": {
+        "title": [
+            ".- Conflicto tributario",
+            ".- Operaciones de M&A",
+            ".- Empresa familiar"
+        ],
+        "description": [
+            "Destinado a resolver disputas o desacuerdos entre el contribuyente y la administración tributaria en relación con la interpretación, aplicación o cumplimiento de las normas fiscales o tributarias.\n\nDestinado principalmente en:\n\n.- Inspecciones tributarias.\n.- Reclamaciones Económico Administrativos.\n.- Recursos contenciosos.\n.- Derivaciones de responsabilidad.",
+            "Asesoramiento especializado en ayudar a las empresas a llevar a cabo transacciones estratégicas como fusiones, adquisiciones, ventas o inversiones, con el fin de definir una estrategia de M&A que se ajuste a sus objetivos y necesidades. Experiencia con empresas nacionales e internacionales.",
+            "Asesoramiento jurídico y fiscal en todas las etapas de la empresa familiar, consistente en:\n\n.- Planificación. \n.- Asesoramiento Fiscal. \n.- Protocolos familiares. \n.- Sucesión empresarial."
+        ]
     }
 }
