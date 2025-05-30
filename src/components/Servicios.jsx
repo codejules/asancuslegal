@@ -3,13 +3,14 @@ import { getI18N } from "@/i18n";
 export default function Servicios({ currentLocale }) {
   const i18n = getI18N({ currentLocale });
   const services = i18n.SERVICES;
-  
+
   const IMAGE_AREAS = "https://cdn-images.asancuslegal.com/assets/img/asancuslegal-mercantil.webp"
 
-const SERVICIOS = services.title.map((title, i) => ({
-  title,
-  number: services.number[i],
-}));
+  const SERVICIOS = services.title.map((title, i) => ({
+    title,
+    number: services.number[i],
+    url: services.url[i]
+  }));
 
   return (
     <div id="servicios" className="bg-primary">
@@ -28,18 +29,20 @@ const SERVICIOS = services.title.map((title, i) => ({
             />
           </figure>
           <div className="flex flex-col gap-4">
-            {SERVICIOS.map(({ number, title }) => {
+            {SERVICIOS.map(({ number, title, url }) => {
               return (
                 <div className={`flex flex-col border-t-1 lg:border-t-white`}>
-                  <button
-                    type="button"
-                    className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full"
-                  >
-                    <span className="text-slate-300 text-sm">{number}</span>
-                    <h2 class="text-white text-xl lg:text-2xl">
-                      {title}
-                    </h2>
-                  </button>
+                  <a href={url} rel="noopener noreferrer">
+                    <button
+                      type="button"
+                      className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full"
+                    >
+                      <span className="text-slate-300 text-sm">{number}</span>
+                      <h2 class="text-white text-xl lg:text-2xl">
+                        {title}
+                      </h2>
+                    </button>
+                  </a>
                 </div>
               );
             })}
