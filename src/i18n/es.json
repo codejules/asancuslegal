@@ -25,18 +25,16 @@
     "AREAS_TITLE": "Nuestras principales Áreas",
     "SERVICES": {
         "title": [
-            "Fiscal",
-            "Civil",
-            "Mercantil",
-            "Internacional",
-            "Protección de Datos"
+            "Legal",
+            "Fiscal"
         ],
         "number": [
             "01",
-            "02",
-            "03",
-            "04",
-            "05"
+            "02"
+        ],
+        "url": [
+            "/servicio-legal",
+            "/servicio-fiscal"
         ]
     },
     "SOLUTIONS_TITLE": "Servicios Legales",
@@ -93,5 +91,17 @@
         "url": "/politica-privacidad",
         "subtitle": "Política de Privacidad"
     },
-    "FOOTER_COPYRIGHT": "Asancus Legal. Todos los derechos reservados"
+    "FOOTER_COPYRIGHT": "Asancus Legal. Todos los derechos reservados",
+    "SERVICIOS_LEGALES": {
+        "title": [
+            ".- Conflictos societarios",
+            ".- Protección de la propiedad industrial",
+            ".- Reestructuraciones empresariales"
+        ],
+        "description": [
+            "Enfocados a prestar asesoramiento legal al empresario, socio, administrador de la empresa en la toma de decisiones, tanto en el Consejo de Administración como en la Junta General, así como en el día a día para la elaboración y firma de acuerdos parasociales o entre terceros. Defensa de acuerdos de impugnación de acuerdos sociales, negociando y resolviendo disputas entre los socios y administradores.",
+            "Dedicados a la protección de los derechos de marca, patentes y modelos de utilidad enfocados a la empresa, así como negociación y firma de acuerdos para la protección y licencia de derechos, a nivel nacional, comunitario e internacional.",
+            "Asesorando en procesos de insolvencia actual o inminente, y acuerdos extrajudiciales, así como reclamaciones de deuda y ejecuciones."
+        ]
+    }
 }
