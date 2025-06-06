@@ -96,7 +96,8 @@
         "title": [
             ".- Conflictos societarios",
             ".- Protección de la propiedad industrial",
-            ".- Reestructuraciones empresariales"
+            ".- Reestructuraciones empresariales",
+            ".- Asistencia legal en la redacción de contratos y acuerdos mercantiles, tanto desde el punto de vista nacional como internacional."
         ],
         "description": [
             "Enfocados a prestar asesoramiento legal al empresario, socio, administrador de la empresa en la toma de decisiones, tanto en el Consejo de Administración como en la Junta General, así como en el día a día para la elaboración y firma de acuerdos parasociales o entre terceros. Defensa de acuerdos de impugnación de acuerdos sociales, negociando y resolviendo disputas entre los socios y administradores.",
@@ -104,6 +105,10 @@
             "Asesorando en procesos de insolvencia actual o inminente, y acuerdos extrajudiciales, así como reclamaciones de deuda y ejecuciones."
         ]
     },
+    "SEO_SERVICIOS_LEGALES_TITLE": "Servicios Legales | Asesoramiento Jurídico Especializado | Asancus Legal",
+    "SEO_SERVICIOS_LEGALES_DESCRIPTION": "Descubre nuestros servicios legales especializados en derecho civil y mercantil. En Asesoramiento Legal e Internacional te ofrecemos soluciones jurídicas personalizadas para particulares y empresas.",
+    "SEO_SERVICIOS_FISCALES_TITLE": "Servicios Fiscales | Defensa Tributaria y Planificación Fiscal Estratégica | Asancus Legal",
+    "SEO_SERVICIOS_FISCALES_DESCRIPTION": "Expertos en asesoría y defensa fiscal. Representamos a particulares y empresas en inspecciones tributarias, recursos contenciosos y planificación fiscal eficiente a nivel nacional e internacional.",
     "SERVICIOS_FISCALES": {
         "title": [
             ".- Conflicto tributario",
