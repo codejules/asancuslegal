@@ -44,10 +44,6 @@ export const ogImage = "https://asancuslegal.com/og.jpg";
 				/>
 			))
 		}
-
-		<!-- meta data -->
-		<title>{title}</title>
-
 		{
 			FAVICON.map(({ url, media }) => (
 				<link
@@ -58,13 +54,19 @@ export const ogImage = "https://asancuslegal.com/og.jpg";
 				/>
 			))
 		}
+		<link rel="sitemap" href="/sitemap.xml" />
+
+		<!-- meta data -->
+		<title>{title}</title>
+
 		<meta name="description" content={description} />
 
-		<meta property="og:url" content="https://www.asancuslegal.com" />
-		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={ogDescription} />
-		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content="https://www.asancuslegal.com" />
+		<meta property="og:site_name" content="Restaurante La Trilogía" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:type" content="website" />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="twitter:domain" content="www.asancuslegal.com" />
