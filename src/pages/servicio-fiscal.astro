@@ -17,6 +17,10 @@ const SERVICIOS_FISCALES = fiscalServices.title.map((title, i) => ({
     title,
     description: fiscalServices.description[i],
 }));
+
+const faviconUrl = "/favicon.ico";
+const faviconAltText = "asancus legal icon";
+const faviconClass = "inline-block w-6 h-6 mr-2";
 ---
 
 <Layout
@@ -37,20 +41,35 @@ const SERVICIOS_FISCALES = fiscalServices.title.map((title, i) => ({
                     </h2>
                 </div>
             </div>
-            <div class="px-4 py-12 lg:py-8 max-w-screen-md mx-auto">
+            <div
+                class="px-4 py-12 lg:py-8 max-w-screen-md mx-auto flex flex-col gap-12"
+            >
                 {
                     SERVICIOS_FISCALES.map(({ title, description }) => (
                         <article>
-                            <h2 class="py-2 font-semibold">{title}</h2>
+                            <div class="flex gap-2 items-center">
+                                <img
+                                    src={faviconUrl}
+                                    alt={faviconAltText}
+                                    class={faviconClass}
+                                />
+                                <h2 class="py-2 font-semibold uppercase">
+                                    {title}
+                                </h2>
+                            </div>
                             {Array.isArray(description)
                                 ? description.map(
                                       (paragraph) =>
                                           paragraph && (
-                                              <p class="py-2 whitespace-pre-line">{paragraph}</p>
+                                              <p class="py-2 whitespace-pre-line">
+                                                  {paragraph}
+                                              </p>
                                           ),
                                   )
                                 : description && (
-                                      <p class="py-2 whitespace-pre-line">{description}</p>
+                                      <p class="py-2 whitespace-pre-line">
+                                          {description}
+                                      </p>
                                   )}
                         </article>
                     ))
