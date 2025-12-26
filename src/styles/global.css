@@ -13,7 +13,7 @@
 }
 
 .badge {
-  @apply w-fit text-base bg-gray-300 px-4 py-2 rounded-sm uppercase;
+  @apply w-fit text-sm lg:text-base bg-gray-300 px-4 py-2 rounded-sm uppercase;
 }
 
 html {
@@ -42,6 +42,7 @@ body {
 p {
   font-weight: 300;
   max-width: 80ch;
+  text-align: justify;
 }
 
 @media (reduced-motion: reduce) {
