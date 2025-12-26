@@ -1,11 +1,10 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const { title, subtitle, email } = Astro.props;
+const { title, subtitle, email, currentLocale } = Astro.props;
 import { CDN_IMAGES } from '@/utils/cdn.ts';
 ---
-
-<Section>
+<Section id={currentLocale === 'es' ? 'inicio' : 'index'}>
     <div class="relative w-full h-full">
         <picture>
             <source

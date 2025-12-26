@@ -5,6 +5,10 @@
     "HERO_TITLE": "Because every case deserves personalized attention",
     "HERO_PARAGRAPH": "We guarantee transparency and constant communication throughout the entire legal process.",
     "HERO_EMAIL": "info@asancuslegal.com",
+    "NAV_INDEX": {
+        "title": "Home",
+        "url": "/en/#index"
+    },
     "NAV_SERVICES": {
         "title": "Services",
         "url": "/en/#services"

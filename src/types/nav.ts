@@ -9,13 +9,14 @@ export function getNavItems(currentLocale: string): NavItems[] {
     const i18n = getI18N({ currentLocale });
     
     return [
+        { title: i18n.NAV_INDEX.title, href: i18n.NAV_INDEX.url },
         { title: i18n.NAV_SERVICES.title, href: i18n.NAV_SERVICES.url },
         { title: i18n.NAV_TEAM.title, href: i18n.NAV_TEAM.url },
         { title: i18n.NAV_CONTACT.title, href: i18n.NAV_CONTACT.url },
     ];
 }
 
-export const itemsHeader = 'text-primary font-light hover:font-medium transform ease-in duration-300 block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
+export const itemsHeader = 'uppercase text-primary font-bold hover:font-medium transform ease-in duration-300 block py-2 px-3 lg:p-0 lg:hover:bg-transparent';
 export const itemsBurger =
     "hover:text-gray-500 transform ease-in duration-300 font-base block py-2 px-3 lg:p-0 text-slate-600";
 export const burgerLine =
