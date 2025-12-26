@@ -33,8 +33,8 @@
             "Fiscal"
         ],
         "number": [
-            "01",
-            "02"
+            "+",
+            "+"
         ],
         "url": [
             "/servicio-legal",
@@ -98,9 +98,9 @@
     "FOOTER_COPYRIGHT": "Asancus Legal. All rights reserved",
     "SERVICIOS_LEGALES": {
         "title": [
-            ".- Conflictos societarios",
-            ".- Protección de la propiedad industrial",
-            ".- Reestructuraciones empresariales"
+            "Conflictos societarios",
+            "Protección de la propiedad industrial",
+            "Reestructuraciones empresariales"
         ],
         "description": [
             "Enfocados a prestar asesoramiento legal al empresario, socio, administrador de la empresa en la toma de decisiones, tanto en el Consejo de Administración como en la Junta General, así como en el día a día para la elaboración y firma de acuerdos parasociales o entre terceros. Defensa de acuerdos de impugnación de acuerdos sociales, negociando y resolviendo disputas entre los socios y administradores.",
@@ -114,9 +114,9 @@
     "SEO_SERVICIOS_FISCALES_DESCRIPTION": "Expertos en asesoría y defensa fiscal. Representamos a particulares y empresas en inspecciones tributarias, recursos contenciosos y planificación fiscal eficiente a nivel nacional e internacional.",
     "SERVICIOS_FISCALES": {
         "title": [
-            ".- Conflicto tributario",
-            ".- Operaciones de M&A",
-            ".- Empresa familiar"
+            "Conflicto tributario",
+            "Operaciones de M&A",
+            "Empresa familiar"
         ],
         "description": [
             "Destinado a resolver disputas o desacuerdos entre el contribuyente y la administración tributaria en relación con la interpretación, aplicación o cumplimiento de las normas fiscales o tributarias.\n\nDestinado principalmente en:\n\n.- Inspecciones tributarias.\n.- Reclamaciones Económico Administrativos.\n.- Recursos contenciosos.\n.- Derivaciones de responsabilidad.",
