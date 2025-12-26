@@ -37,7 +37,7 @@ export default function Servicios({ currentLocale }) {
                       type="button"
                       className="hover:scale-95 transition duration-300 ease-in cursor-pointer dark:bg-primary pt-5 flex items-center gap-3 justify-start w-full"
                     >
-                      <span className="text-slate-300 text-sm">{number}</span>
+                      <span className="text-slate-300 text-2xl">{number}</span>
                       <h2 class="text-white text-xl lg:text-2xl">
                         {title}
                       </h2>
