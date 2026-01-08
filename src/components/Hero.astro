@@ -1,10 +1,11 @@
 ---
 import Section from "@/layouts/Section.astro";
 
-const { title, subtitle, email, currentLocale } = Astro.props;
-import { CDN_IMAGES } from '@/utils/cdn.ts';
+const { title, subtitle, paragraph, currentLocale } = Astro.props;
+import { CDN_IMAGES } from "@/utils/cdn.ts";
 ---
-<Section id={currentLocale === 'es' ? 'inicio' : 'index'}>
+
+<Section id={currentLocale === "es" ? "inicio" : "index"}>
     <div class="relative w-full h-full">
         <picture>
             <source
@@ -28,23 +29,17 @@ import { CDN_IMAGES } from '@/utils/cdn.ts';
             id="hero-content"
         >
             <div
-                class="max-w-screen-md mx-auto text-center flex flex-col gap-4 justify-center items-center"
+                class="px-6 max-w-screen-md mx-auto flex flex-col gap-4 justify-center items-center"
             >
-                <h2 class="text-2xl md:text-4xl text-white">
+                <h2 class="text-xl md:text-2xl text-white">
                     {title}
                 </h2>
                 <p class="text-white">
                     {subtitle}
                 </p>
-
-                <a href={`mailto:${email}`} aria-label="Click to send email">
-                    <button
-                        type="button"
-                        class="cursor-pointer rounded-sm border px-6 py-3 min-h-[48px] min-w-[48px] bg-white hover:bg-primary hover:text-white hover:scale-105 transition duration-300 ease-in flex items-center justify-center text-base md:text-lg"
-                    >
-                        {email}
-                    </button>
-                </a>
+                <p class="text-white">
+                    {paragraph}
+                </p>
             </div>
         </div>
     </div>
