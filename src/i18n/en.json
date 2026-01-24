@@ -30,8 +30,8 @@
     "SERVICES": {
         "title": [
             "Civil",
-            "Mercantil",
-            "Tributario"
+            "Legal",
+            "Tax"
         ],
         "number": [
             "+",
@@ -39,9 +39,9 @@
             "+"
         ],
         "url": [
-            "/servicio-civil",
-            "/servicio-legal",
-            "/servicio-tributario"
+            "/en/civil-service",
+            "/en/legal-service",
+            "/en/tax-service"
         ]
     },
     "SOLUTIONS_TITLE": "Legal Services",
@@ -125,20 +125,20 @@
     },
     "SEO_SERVICIOS_CIVILES_TITLE": "Legal Advice in Civil Law | Asancus Legal",
     "SEO_SERVICIOS_CIVILES_DESCRIPTION": "Lawyers specializing in civil law. We help you resolve legal disputes with confidence, clarity, and professional support.",
-    "SEO_SERVICIOS_LEGALES_TITLE": "Servicios Legales | Asesoramiento Jurídico Especializado | Asancus Legal",
-    "SEO_SERVICIOS_LEGALES_DESCRIPTION": "Descubre nuestros servicios legales especializados en derecho civil y mercantil. En Asesoramiento Legal e Internacional te ofrecemos soluciones jurídicas personalizadas para particulares y empresas.",
-    "SEO_SERVICIOS_FISCALES_TITLE": "Servicios Tributarios | Defensa Tributaria y Planificación Fiscal Estratégica | Asancus Legal",
-    "SEO_SERVICIOS_FISCALES_DESCRIPTION": "Expertos en asesoría y defensa fiscal. Representamos a particulares y empresas en inspecciones tributarias, recursos contenciosos y planificación fiscal eficiente a nivel nacional e internacional.",
+    "SEO_SERVICIOS_LEGALES_TITLE": "Legal Services | Specialized Legal Advice | Asancus Legal",
+    "SEO_SERVICIOS_LEGALES_DESCRIPTION": "Discover our legal services specializing in civil and commercial law. At Legal and International Advice, we offer personalized legal solutions for individuals and companies.",
+    "SEO_SERVICIOS_FISCALES_TITLE": "Tax Services | Tax Defense and Strategic Tax Planning | Asancus Legal",
+    "SEO_SERVICIOS_FISCALES_DESCRIPTION": "Experts in tax advice and defense. We represent individuals and companies in tax inspections, contentious appeals, and efficient tax planning at the national and international level.",
     "SERVICIOS_FISCALES": {
         "title": [
-            "Conflicto tributario",
-            "Operaciones de M&A",
-            "Empresa familiar"
+            "Tax dispute",
+            "M&A transactions",
+            "Family business"
         ],
         "description": [
-            "Destinado a resolver disputas o desacuerdos entre el contribuyente y la administración tributaria en relación con la interpretación, aplicación o cumplimiento de las normas fiscales o tributarias.\n\nDestinado principalmente en:\n\n.- Inspecciones tributarias.\n.- Reclamaciones Económico Administrativos.\n.- Recursos contenciosos.\n.- Derivaciones de responsabilidad.",
-            "Asesoramiento especializado en ayudar a las empresas a llevar a cabo transacciones estratégicas como fusiones, adquisiciones, ventas o inversiones, con el fin de definir una estrategia de M&A que se ajuste a sus objetivos y necesidades. Experiencia con empresas nacionales e internacionales.",
-            "Asesoramiento jurídico y fiscal en todas las etapas de la empresa familiar, consistente en:\n\n.- Planificación. \n.- Asesoramiento Fiscal. \n.- Protocolos familiares. \n.- Sucesión empresarial."
+            "Designed to resolve disputes or disagreements between taxpayers and the tax authorities regarding the interpretation, application, or enforcement of tax regulations.\n\nMainly intended for:\n\n.- Tax inspections.\n.- Economic-administrative claims.\n. - Contentious appeals.\n.- Liability referrals.",
+            "Specialized advice to help companies carry out strategic transactions such as mergers, acquisitions, sales, or investments, in order to define an M&A strategy that fits their objectives and needs. Experience with national and international companies.",
+            "Legal and tax advice at all stages of the family business, consisting of:\n\n.- Planning. \n.- Tax advice. \n.- Family protocols. \n.- Business succession."
         ]
     }
 }
