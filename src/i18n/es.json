@@ -29,14 +29,17 @@
     "AREAS_TITLE": "Nuestras principales Áreas",
     "SERVICES": {
         "title": [
+            "Civil",
             "Mercantil",
             "Tributario"
         ],
         "number": [
             "+",
+            "+",
             "+"
         ],
         "url": [
+            "/servicio-civil",
             "/servicio-legal",
             "/servicio-tributario"
         ]
@@ -96,6 +99,16 @@
         "subtitle": "Política de Privacidad"
     },
     "FOOTER_COPYRIGHT": "Asancus Legal. Todos los derechos reservados",
+    "SERVICIOS_CIVILES": {
+        "title": [
+            "ASISTENCIA LEGAL EN LA REDACCIÓN DE CONTRATOS CIVILES",
+            "CONFLICTOS civiles"
+        ],
+        "description": [
+            "Asesoramiento legal en la redacción de todo tipo de contratos y acuerdos civiles. Enfocados al arrendamiento de locales, contratos de compraventa, préstamos y depósitos.",
+            "Enfocados al asesoramiento y asistencia en sede judicial de los conflictos civiles de reclamaciones de cantidad, de daños y perjuicios, así como incumplimientos contractuales y extracontractuales."
+        ]
+    },
     "SERVICIOS_LEGALES": {
         "title": [
             "ASISTENCIA LEGAL EN LA REDACCIÓN DE CONTRATOS MERCANTILES",
@@ -110,6 +123,8 @@
             "Enfocados a prestar asesoramiento legal al empresario, socio, administrador de la empresa en la toma de decisiones, tanto en el Consejo de Administración como en la Junta General, así como en el día a día para la elaboración y firma de acuerdos parasociales o entre terceros. Defensa en la impugnación de acuerdos sociales, protección de marcas, diseños, actos de competencia desleal, negociando y resolviendo disputas entre los socios y administradores."
         ]
     },
+    "SEO_SERVICIOS_CIVILES_TITLE": "Asesoramiento Legal en Derecho Civil | Asancus Legal",
+    "SEO_SERVICIOS_CIVILES_DESCRIPTION": "Abogados especializados en derecho civil. Te ayudamos a resolver conflictos legales con seguridad, claridad y respaldo profesional.",
     "SEO_SERVICIOS_LEGALES_TITLE": "Servicios Legales | Asesoramiento Jurídico Especializado | Asancus Legal",
     "SEO_SERVICIOS_LEGALES_DESCRIPTION": "Descubre nuestros servicios legales especializados en derecho civil y mercantil. En Asesoramiento Legal e Internacional te ofrecemos soluciones jurídicas personalizadas para particulares y empresas.",
     "SEO_SERVICIOS_FISCALES_TITLE": "Servicios Tributarios | Defensa Tributaria y Planificación Fiscal Estratégica | Asancus Legal",
