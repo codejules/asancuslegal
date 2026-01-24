@@ -29,14 +29,17 @@
     "AREAS_TITLE": "Our Main Areas",
     "SERVICES": {
         "title": [
+            "Civil",
             "Mercantil",
             "Tributario"
         ],
         "number": [
             "+",
+            "+",
             "+"
         ],
         "url": [
+            "/servicio-civil",
             "/servicio-legal",
             "/servicio-tributario"
         ]
@@ -120,8 +123,8 @@
             "Focused on providing legal advice to entrepreneurs, partners, and company administrators in decision-making, both in the Board of Directors and in the General Meeting, as well as in day-to-day operations for the preparation and signing of shareholder agreements or agreements between third parties. Defense in the challenge of corporate agreements, protection of trademarks, designs, acts of unfair competition, negotiating and resolving disputes between partners and administrators."
         ]
     },
-    "SEO_SERVICES_CIVIL_TITLE": "Legal Advice in Civil Law | Asancus Legal",
-    "SEO_SERVICES_CIVIL_DESCRIPTION": "Lawyers specializing in civil law. We help you resolve legal disputes with confidence, clarity, and professional support.",
+    "SEO_SERVICIOS_CIVILES_TITLE": "Legal Advice in Civil Law | Asancus Legal",
+    "SEO_SERVICIOS_CIVILES_DESCRIPTION": "Lawyers specializing in civil law. We help you resolve legal disputes with confidence, clarity, and professional support.",
     "SEO_SERVICIOS_LEGALES_TITLE": "Servicios Legales | Asesoramiento Jurídico Especializado | Asancus Legal",
     "SEO_SERVICIOS_LEGALES_DESCRIPTION": "Descubre nuestros servicios legales especializados en derecho civil y mercantil. En Asesoramiento Legal e Internacional te ofrecemos soluciones jurídicas personalizadas para particulares y empresas.",
     "SEO_SERVICIOS_FISCALES_TITLE": "Servicios Tributarios | Defensa Tributaria y Planificación Fiscal Estratégica | Asancus Legal",
