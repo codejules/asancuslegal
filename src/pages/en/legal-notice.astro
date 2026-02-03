@@ -13,7 +13,12 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.LEGAL_SEO_TITLE} description={i18n.LEGAL_SEO_DESCRIPTION}>
+<Layout
+    currentLocale="es"
+    title={i18n.LEGAL_SEO_TITLE}
+    description={i18n.LEGAL_SEO_DESCRIPTION}
+    ogDescription={i18n.LEGAL_SEO_DESCRIPTION}
+>
     <Header />
     <main>
         <Section>
@@ -24,12 +29,18 @@ const i18n = getI18N({ currentLocale });
                         <article>
                             <h2 class="py-2 font-semibold">{title}</h2>
                             {Array.isArray(description)
-                                ? description.map((paragraph) => paragraph && <p class="py-2">{paragraph}</p>)
-                                : description && <p class="py-2">{description}</p>}
+                                ? description.map(
+                                      (paragraph) =>
+                                          paragraph && (
+                                              <p class="py-2">{paragraph}</p>
+                                          ),
+                                  )
+                                : description && (
+                                      <p class="py-2">{description}</p>
+                                  )}
                         </article>
                     ))
                 }
-                
             </div>
         </Section>
     </main>
