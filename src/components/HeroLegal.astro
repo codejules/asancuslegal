@@ -1,0 +1,7 @@
+---
+const { heightClass = "h-72 lg:h-[500px]" } = Astro.props;
+---
+
+<div class={`bg-[url('/assets/img/hero-mercantil.webp')] bg-cover bg-center ${heightClass}`}>
+  <slot />
+</div>
